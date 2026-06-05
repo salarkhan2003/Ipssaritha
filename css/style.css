@@ -281,6 +281,7 @@ body.light-theme .btn-secondary:hover {
     border-radius: var(--radius-sm);
     object-fit: cover;
     box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
 }
 
 .logo-text {
@@ -298,6 +299,17 @@ body.light-theme .btn-secondary:hover {
     color: var(--accent);
     display: block;
     margin-top: -2px;
+    line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    .logo-subtitle {
+        font-size: 0.55rem;
+        letter-spacing: 0.05em;
+    }
 }
 
 body.light-theme .logo-subtitle {
