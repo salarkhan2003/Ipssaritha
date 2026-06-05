@@ -311,6 +311,10 @@ body.light-theme .logo-subtitle {
     gap: 2rem;
 }
 
+.nav-close-btn {
+    display: none;
+}
+
 .nav-link {
     font-family: var(--font-heading);
     font-weight: 500;
@@ -394,6 +398,21 @@ body.light-theme .theme-toggle .sun-icon {
 }
 
 @media (max-width: 1024px) {
+    .nav-close-btn {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: transparent;
+        border: none;
+        color: var(--text-primary);
+        font-size: 1.75rem;
+        cursor: pointer;
+        transition: color var(--transition-fast);
+    }
+    .nav-close-btn:hover {
+        color: var(--accent);
+    }
     .nav-menu {
         position: fixed;
         top: 0;
@@ -629,10 +648,6 @@ body.light-theme .hero-badge {
     }
 }
 
-.stat-num::after {
-    content: '+';
-    color: var(--accent);
-}
 
 .stat-label {
     font-size: 0.85rem;

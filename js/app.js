@@ -33,23 +33,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const navCloseBtn = document.querySelector('.nav-close-btn');
 
     menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-        const icon = menuToggle.querySelector('i');
-        if (navMenu.classList.contains('open')) {
-            icon.className = 'fas fa-times';
-        } else {
-            icon.className = 'fas fa-bars';
-        }
+        navMenu.classList.add('open');
+        menuToggle.querySelector('i').className = 'fas fa-times';
     });
+
+    function closeMenu() {
+        navMenu.classList.remove('open');
+        menuToggle.querySelector('i').className = 'fas fa-bars';
+    }
+
+    if (navCloseBtn) {
+        navCloseBtn.addEventListener('click', closeMenu);
+    }
 
     // Close menu when clicking a nav link
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('open');
-            menuToggle.querySelector('i').className = 'fas fa-bars';
-        });
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu when clicking outside (empty space)
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            closeMenu();
+        }
     });
 
     // --- 4. Hero Subtitle Typewriter Effect ---
