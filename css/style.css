@@ -470,6 +470,10 @@ body.light-theme .hero-gradient {
 }
 
 @media (max-width: 992px) {
+    .hero {
+        min-height: auto;
+        padding-top: 7rem;
+    }
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -585,6 +589,8 @@ body.light-theme .hero-badge {
 @media (max-width: 480px) {
     .hero-stats {
         gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
@@ -712,10 +718,17 @@ body.light-theme .hero-image-frame::before {
 @media (max-width: 992px) {
     .hero-image-wrapper {
         max-width: 400px;
+        width: 100%;
         margin: 0 auto;
     }
     .floating-badge-1 { left: -5%; top: 10%; }
     .floating-badge-2 { right: -5%; bottom: 10%; }
+}
+
+@media (max-width: 576px) {
+    .hero-image-wrapper {
+        max-width: 280px;
+    }
 }
 
 .floating-badge-icon {
