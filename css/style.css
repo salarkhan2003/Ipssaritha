@@ -334,6 +334,7 @@ body.light-theme .logo-subtitle {
     color: var(--text-secondary);
     position: relative;
     padding: 0.5rem 0;
+    transition: color var(--transition-fast);
 }
 
 .nav-link::after {
@@ -348,11 +349,76 @@ body.light-theme .logo-subtitle {
 }
 
 .nav-link:hover, .nav-link.active {
-    color: var(--text-primary);
+    color: var(--accent);
 }
 
 .nav-link.active::after {
     width: 100%;
+}
+
+/* Premium Desktop Redesign with Sliding Active Highlighter and Section Separators */
+@media (min-width: 1025px) {
+    .nav-menu {
+        gap: 0.75rem;
+        position: relative;
+        padding: 0.25rem;
+    }
+
+    .nav-link {
+        font-weight: 600;
+        padding: 0.5rem 1.1rem;
+        border-radius: var(--radius-md);
+        z-index: 1;
+    }
+
+    /* Disable simple underline on desktop, using sliding pill background instead */
+    .nav-link::after {
+        display: none !important;
+    }
+
+    /* Section separators to prevent nav items looking mixed */
+    .nav-link:not(:last-of-type)::before {
+        content: '';
+        position: absolute;
+        right: -0.4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 12px;
+        background-color: var(--border-color);
+        opacity: 0.5;
+        pointer-events: none;
+        transition: opacity var(--transition-fast);
+    }
+
+    /* Hide separators for active or hovered items for perfect visual transition */
+    .nav-link:hover::before,
+    .nav-link.active::before,
+    .nav-link:has(+ .nav-link:hover)::before,
+    .nav-link:has(+ .nav-link.active)::before {
+        opacity: 0;
+    }
+
+    /* Sliding pill active highlighter */
+    .nav-indicator {
+        position: absolute;
+        height: 36px;
+        background: rgba(202, 138, 4, 0.12); /* Accent gold glow */
+        border: 1px solid rgba(202, 138, 4, 0.4); /* Accent gold border */
+        border-radius: var(--radius-md);
+        transition: left var(--transition-normal), width var(--transition-normal), opacity var(--transition-fast);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 2px 10px rgba(202, 138, 4, 0.1);
+    }
+
+    body.light-theme .nav-indicator {
+        background: rgba(217, 119, 6, 0.08);
+        border-color: rgba(217, 119, 6, 0.35);
+    }
 }
 
 .nav-actions {

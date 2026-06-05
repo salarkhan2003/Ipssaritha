@@ -116,6 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Active Highlight on Scroll (Scrollspy)
     const sections = document.querySelectorAll('section[id]');
     
+    // Inject and handle the sliding navigation indicator for desktop
+    let navIndicator = document.querySelector('.nav-indicator');
+    if (!navIndicator && navMenu) {
+        navIndicator = document.createElement('div');
+        navIndicator.classList.add('nav-indicator');
+        navMenu.appendChild(navIndicator);
+    }
+    
     function scrollSpy() {
         const scrollPos = window.scrollY || document.documentElement.scrollTop;
         const offset = 120; // Header height offset
@@ -130,18 +138,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         // Highlight active link
+        let activeLink = null;
         navLinks.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
             if (href === `#${currentSectionId}`) {
                 link.classList.add('active');
+                activeLink = link;
             }
         });
+        
+        // Update position of the sliding indicator
+        if (navIndicator) {
+            if (activeLink && window.innerWidth > 1024) {
+                navIndicator.style.opacity = '1';
+                navIndicator.style.width = `${activeLink.offsetWidth}px`;
+                navIndicator.style.left = `${activeLink.offsetLeft}px`;
+            } else {
+                navIndicator.style.opacity = '0';
+            }
+        }
     }
     
     window.addEventListener('scroll', scrollSpy);
     window.addEventListener('resize', scrollSpy);
     scrollSpy(); // Initial run
+    setTimeout(scrollSpy, 100); // Re-run after layout settles
 
     // --- 6. Testimonial Slider ---
     const sliderTrack = document.querySelector('.testimonials-track');
