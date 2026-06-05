@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Check local storage for theme preference
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        body.classList.add('light-theme');
+    if (savedTheme === 'dark') {
+        body.classList.remove('light-theme');
     }
     
     themeToggleBtn.addEventListener('click', () => {
