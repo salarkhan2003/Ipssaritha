@@ -153,7 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (activeLink && window.innerWidth > 1024) {
                 navIndicator.style.opacity = '1';
                 navIndicator.style.width = `${activeLink.offsetWidth}px`;
+                navIndicator.style.height = `${activeLink.offsetHeight}px`;
                 navIndicator.style.left = `${activeLink.offsetLeft}px`;
+                navIndicator.style.top = `${activeLink.offsetTop}px`;
             } else {
                 navIndicator.style.opacity = '0';
             }

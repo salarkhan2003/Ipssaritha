@@ -138,6 +138,27 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-padding {
     padding: 7rem 0;
+    position: relative;
+}
+
+/* Premium thick solid section separator line */
+.section-padding::after,
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(212, 175, 55, 0.5); /* Solid gold line in dark mode */
+    z-index: 5;
+}
+
+body.light-theme .section-padding::after,
+body.light-theme .hero::after {
+    background-color: #0f172a; /* Thick, dark navy/slate line in light mode */
+    height: 4px;
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -377,6 +398,8 @@ body.light-theme .logo-subtitle {
         padding: 0.5rem 1.1rem;
         border-radius: var(--radius-md);
         z-index: 1;
+        text-align: center;
+        line-height: 1.2;
     }
 
     /* Disable simple underline on desktop, using sliding pill background instead */
@@ -384,36 +407,16 @@ body.light-theme .logo-subtitle {
         display: none !important;
     }
 
-/* Light mode navigation separators – ensure visibility */
-body.light-theme .nav-link:not(:last-of-type)::before {
-    background-color: var(--accent); /* Use gold accent for contrast */
-    opacity: 0.9;
-    box-shadow: 0 0 4px var(--accent-glow);
-}
-
-/* Highlight separator when adjacent link is hovered or active */
-body.light-theme .nav-link:hover::before,
-body.light-theme .nav-link.active::before,
-body.light-theme .nav-link:has(+ .nav-link:hover)::before,
-body.light-theme .nav-link:has(+ .nav-link.active)::before {
-    opacity: 0.4; /* Dim when adjacent link is active/hovered */
-    background-color: var(--primary);
-    box-shadow: none;
-}
-
     /* Sliding pill active highlighter */
     .nav-indicator {
         position: absolute;
-        height: 36px;
         background: rgba(202, 138, 4, 0.12); /* Accent gold glow */
         border: 1px solid rgba(202, 138, 4, 0.4); /* Accent gold border */
         border-radius: var(--radius-md);
-        transition: left var(--transition-normal), width var(--transition-normal), opacity var(--transition-fast);
+        transition: left var(--transition-normal), width var(--transition-normal), height var(--transition-normal), top var(--transition-normal), opacity var(--transition-fast);
         pointer-events: none;
         z-index: 0;
         opacity: 0;
-        top: 50%;
-        transform: translateY(-50%);
         box-shadow: 0 2px 10px rgba(202, 138, 4, 0.1);
     }
 
