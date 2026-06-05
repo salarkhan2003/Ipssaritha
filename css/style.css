@@ -2,22 +2,22 @@
 
 :root {
     /* Color Palette - Premium Dark Theme */
-    --bg-primary: #000000;
-    --bg-secondary: #0a0a0a;
-    --bg-card: rgba(15, 15, 15, 0.8);
-    --bg-card-hover: rgba(25, 25, 25, 0.95);
+    --bg-primary: #0f172a; /* Slate 900 */
+    --bg-secondary: #1e293b; /* Slate 800 */
+    --bg-card: rgba(30, 41, 59, 0.8);
+    --bg-card-hover: rgba(51, 65, 85, 0.95);
     --border-color: rgba(255, 255, 255, 0.1);
-    --border-hover: rgba(212, 175, 55, 0.5);
+    --border-hover: rgba(56, 189, 248, 0.5);
     
-    --text-primary: #ffffff;
-    --text-secondary: #a1a1aa;
-    --text-muted: #71717a;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
     
-    --primary: #1e3a8a;       /* Royal Blue */
-    --primary-glow: rgba(30, 58, 138, 0.2);
-    --accent: #d4af37;        /* Premium Gold */
-    --accent-glow: rgba(212, 175, 55, 0.2);
-    --accent-dark: #aa8c2c;
+    --primary: #0369a1;       /* Civic Blue */
+    --primary-glow: rgba(3, 105, 161, 0.2);
+    --accent: #ca8a04;        /* Institutional Gold */
+    --accent-glow: rgba(202, 138, 4, 0.2);
+    --accent-dark: #a16207;
     
     --glass-bg: rgba(0, 0, 0, 0.8);
     --glass-blur: 24px;
@@ -43,15 +43,15 @@ body.light-theme {
     --bg-secondary: #ffffff;
     --bg-card: rgba(255, 255, 255, 0.8);
     --bg-card-hover: rgba(255, 255, 255, 0.95);
-    --border-color: rgba(0, 0, 0, 0.06);
-    --border-hover: rgba(37, 99, 235, 0.3);
+    --border-color: rgba(15, 23, 42, 0.1);
+    --border-hover: rgba(3, 105, 161, 0.3);
     
     --text-primary: #0f172a;
-    --text-secondary: #475569;
+    --text-secondary: #334155;
     --text-muted: #64748b;
     
-    --primary: #1d4ed8;
-    --primary-glow: rgba(29, 78, 216, 0.1);
+    --primary: #0284c7;
+    --primary-glow: rgba(2, 132, 199, 0.1);
     --accent: #d97706;
     --accent-glow: rgba(217, 119, 6, 0.15);
     
@@ -71,6 +71,7 @@ body.light-theme {
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -396,7 +397,8 @@ body.light-theme .theme-toggle .sun-icon {
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
+        transform: translateX(100%);
         height: 100vh;
         width: 300px;
         background-color: var(--bg-secondary);
@@ -405,12 +407,12 @@ body.light-theme .theme-toggle .sun-icon {
         padding: 4rem 2rem;
         gap: 2.5rem;
         box-shadow: var(--shadow-lg);
-        transition: right var(--transition-normal);
+        transition: transform var(--transition-normal);
         z-index: 999;
     }
 
     .nav-menu.open {
-        right: 0;
+        transform: translateX(0);
     }
 
     .menu-toggle {
