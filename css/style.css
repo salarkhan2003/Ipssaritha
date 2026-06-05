@@ -384,36 +384,22 @@ body.light-theme .logo-subtitle {
         display: none !important;
     }
 
-    /* Section separators to physically divide nav items clearly */
-    .nav-link:not(:last-of-type)::before {
-        content: '';
-        position: absolute;
-        right: -0.4rem;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 2px;
-        height: 14px;
-        background-color: var(--accent); /* Solid gold separator */
-        border-radius: 2px;
-        opacity: 0.8;
-        pointer-events: none;
-        transition: opacity var(--transition-fast);
-        box-shadow: 0 0 4px var(--accent-glow);
-    }
+/* Light mode navigation separators – ensure visibility */
+body.light-theme .nav-link:not(:last-of-type)::before {
+    background-color: var(--accent); /* Use gold accent for contrast */
+    opacity: 0.9;
+    box-shadow: 0 0 4px var(--accent-glow);
+}
 
-    body.light-theme .nav-link:not(:last-of-type)::before {
-        background-color: var(--primary); /* Deep navy separator in light mode */
-        opacity: 0.6;
-        box-shadow: none;
-    }
-
-    /* Hide separators for active or hovered items for perfect visual transition */
-    .nav-link:hover::before,
-    .nav-link.active::before,
-    .nav-link:has(+ .nav-link:hover)::before,
-    .nav-link:has(+ .nav-link.active)::before {
-        opacity: 0;
-    }
+/* Highlight separator when adjacent link is hovered or active */
+body.light-theme .nav-link:hover::before,
+body.light-theme .nav-link.active::before,
+body.light-theme .nav-link:has(+ .nav-link:hover)::before,
+body.light-theme .nav-link:has(+ .nav-link.active)::before {
+    opacity: 0.4; /* Dim when adjacent link is active/hovered */
+    background-color: var(--primary);
+    box-shadow: none;
+}
 
     /* Sliding pill active highlighter */
     .nav-indicator {
