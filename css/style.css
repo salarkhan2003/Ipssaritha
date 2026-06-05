@@ -479,6 +479,12 @@ body.light-theme .hero-gradient {
         gap: 3rem;
         text-align: center;
     }
+    .hero-content {
+        order: 2;
+    }
+    .hero-image-wrapper {
+        order: 1;
+    }
 }
 
 .hero-badge {
