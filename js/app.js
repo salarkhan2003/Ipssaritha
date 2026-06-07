@@ -145,6 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add('active');
             }
         });
+
+        // Apply dynamic theme class to body
+        sections.forEach(section => {
+            body.classList.remove(`theme-${section.id}`);
+        });
+        body.classList.add(`theme-${currentSectionId}`);
     }
     
     window.addEventListener('scroll', scrollSpy);
