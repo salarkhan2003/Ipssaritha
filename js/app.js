@@ -1,23 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. Theme Toggle ---
-    const themeToggleBtn = document.querySelector('.theme-toggle');
+    // --- 1. Theme Toggle (Default is Light, Toggles to .dark-theme) ---
+    const themeToggleBtn = document.getElementById('themeToggler');
     const body = document.body;
     
     // Check local storage for theme preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
-        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+    } else {
+        body.classList.remove('dark-theme');
     }
     
-    themeToggleBtn.addEventListener('click', () => {
-        body.classList.toggle('light-theme');
-        if (body.classList.contains('light-theme')) {
-            localStorage.setItem('theme', 'light');
-        } else {
-            localStorage.setItem('theme', 'dark');
-        }
-    });
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
 
     // --- 2. Header Scroll Effect ---
     const header = document.querySelector('.header');
@@ -30,51 +34,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 3. Mobile Navigation Menu ---
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const menuToggle = document.getElementById('menuToggler');
+    const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
     const navCloseBtn = document.querySelector('.nav-close-btn');
 
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.add('open');
-        menuToggle.querySelector('i').className = 'fas fa-times';
-    });
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.add('open');
+        });
 
-    function closeMenu() {
-        navMenu.classList.remove('open');
-        menuToggle.querySelector('i').className = 'fas fa-bars';
-    }
-
-    if (navCloseBtn) {
-        navCloseBtn.addEventListener('click', closeMenu);
-    }
-
-    // Close menu when clicking a nav link
-    navLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
-
-    // Close menu when clicking outside (empty space)
-    document.addEventListener('click', (e) => {
-        if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-            closeMenu();
+        function closeMenu() {
+            navMenu.classList.remove('open');
         }
-    });
+
+        if (navCloseBtn) {
+            navCloseBtn.addEventListener('click', closeMenu);
+        }
+
+        // Close menu when clicking a nav link
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when clicking outside (empty space)
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeMenu();
+            }
+        });
+    }
 
     // --- 4. Hero Subtitle Typewriter Effect ---
     const words = ["Indian Police Service", "DCP - Public Servant", "Motivational Speaker", "Community Leader"];
-    let i = 0;
-    let timer;
+    let wordIndex = 0;
+    let charIndex = 0;
     const typingDelay = 100;
     const erasingDelay = 60;
     const newWordDelay = 2000;
-    let wordIndex = 0;
-    let charIndex = 0;
-    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroSubtitle = document.getElementById('typewriterText');
 
     function type() {
         if (charIndex < words[wordIndex].length) {
-            heroSubtitle.textContent += words[wordIndex].charAt(charIndex);
+            if (heroSubtitle) {
+                heroSubtitle.textContent += words[wordIndex].charAt(charIndex);
+            }
             charIndex++;
             setTimeout(type, typingDelay);
         } else {
@@ -84,7 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function erase() {
         if (charIndex > 0) {
-            heroSubtitle.textContent = words[wordIndex].substring(0, charIndex - 1);
+            if (heroSubtitle) {
+                heroSubtitle.textContent = words[wordIndex].substring(0, charIndex - 1);
+            }
             charIndex--;
             setTimeout(erase, erasingDelay);
         } else {
@@ -94,7 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (heroSubtitle) {
-        setTimeout(type, newWordDelay);
+        // Clear default text and start type
+        heroSubtitle.textContent = "";
+        setTimeout(type, 500);
     }
 
     // --- 5. Intersection Observer for Scroll Animations ---
@@ -107,22 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
     // Active Highlight on Scroll (Scrollspy)
     const sections = document.querySelectorAll('section[id]');
-    
-    // Inject and handle the sliding navigation indicator for desktop
-    let navIndicator = document.querySelector('.nav-indicator');
-    if (!navIndicator && navMenu) {
-        navIndicator = document.createElement('div');
-        navIndicator.classList.add('nav-indicator');
-        navMenu.appendChild(navIndicator);
-    }
     
     function scrollSpy() {
         const scrollPos = window.scrollY || document.documentElement.scrollTop;
@@ -138,103 +138,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         // Highlight active link
-        let activeLink = null;
         navLinks.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
             if (href === `#${currentSectionId}`) {
                 link.classList.add('active');
-                activeLink = link;
             }
         });
-        
-        // Update position of the sliding indicator
-        if (navIndicator) {
-            if (activeLink && window.innerWidth > 1024) {
-                navIndicator.style.opacity = '1';
-                navIndicator.style.width = `${activeLink.offsetWidth}px`;
-                navIndicator.style.height = `${activeLink.offsetHeight}px`;
-                navIndicator.style.left = `${activeLink.offsetLeft}px`;
-                navIndicator.style.top = `${activeLink.offsetTop}px`;
-            } else {
-                navIndicator.style.opacity = '0';
-            }
-        }
     }
     
     window.addEventListener('scroll', scrollSpy);
     window.addEventListener('resize', scrollSpy);
     scrollSpy(); // Initial run
-    setTimeout(scrollSpy, 100); // Re-run after layout settles
 
-    // --- 6. Testimonial Slider ---
-    const sliderTrack = document.querySelector('.testimonials-track');
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const prevBtn = document.querySelector('.slider-btn.prev');
-    const nextBtn = document.querySelector('.slider-btn.next');
-    const dotsContainer = document.querySelector('.slider-dots');
-    
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    let autoSlideInterval;
-
-    if (sliderTrack && totalSlides > 0) {
-        // Create Dots
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('slider-dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                goToSlide(i);
-                resetAutoSlide();
-            });
-            dotsContainer.appendChild(dot);
-        }
-        
-        const dots = document.querySelectorAll('.slider-dot');
-
-        function updateSlider() {
-            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-            dots.forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
-
-        function goToSlide(index) {
-            currentSlide = (index + totalSlides) % totalSlides;
-            updateSlider();
-        }
-
-        prevBtn.addEventListener('click', () => {
-            goToSlide(currentSlide - 1);
-            resetAutoSlide();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            goToSlide(currentSlide + 1);
-            resetAutoSlide();
-        });
-
-        // Auto slide
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                goToSlide(currentSlide + 1);
-            }, 6000);
-        }
-
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        }
-
-        startAutoSlide();
-    }
-
-    // --- 7. Speeches & Media / Press Filter Tabs ---
+    // --- 6. Speeches & Media / Press Filter Tabs ---
     const mediaTabButtons = document.querySelectorAll('.speeches-media-tabs .tab-btn');
     const mediaCards = document.querySelectorAll('.media-grid .media-card');
 
@@ -265,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 8. Photo Gallery Filter Tabs ---
+    // --- 7. Photo Gallery Filter Tabs ---
     const galleryTabButtons = document.querySelectorAll('.gallery-filters .tab-btn');
     const galleryItems = document.querySelectorAll('.gallery-grid .gallery-item');
 
@@ -296,23 +213,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 9. Photo Gallery Lightbox Modal ---
+    // --- 8. Photo Gallery Lightbox Modal ---
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('.lightbox-img');
-    const lightboxTitle = lightbox.querySelector('.lightbox-caption h4');
-    const lightboxCat = lightbox.querySelector('.lightbox-caption p');
-    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const lightboxImg = lightbox ? lightbox.querySelector('.lightbox-img') : null;
+    const lightboxTitle = lightbox ? lightbox.querySelector('.lightbox-caption h4') : null;
+    const lightboxCat = lightbox ? lightbox.querySelector('.lightbox-caption p') : null;
+    const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
 
-    if (galleryItems.length > 0 && lightbox) {
+    if (galleryItems.length > 0 && lightbox && lightboxClose) {
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
                 const img = item.querySelector('.gallery-item-img');
-                const title = item.querySelector('.gallery-item-title').textContent;
-                const cat = item.querySelector('.gallery-item-cat').textContent;
+                const titleEl = item.querySelector('.gallery-item-title');
+                const catEl = item.querySelector('.gallery-item-cat');
                 
-                lightboxImg.src = img.src;
-                lightboxTitle.textContent = title;
-                lightboxCat.textContent = cat;
+                if (img && lightboxImg) {
+                    lightboxImg.src = img.src;
+                }
+                if (titleEl && lightboxTitle) {
+                    lightboxTitle.textContent = titleEl.textContent;
+                }
+                if (catEl && lightboxCat) {
+                    lightboxCat.textContent = catEl.textContent;
+                }
                 
                 lightbox.classList.add('active');
                 body.style.overflow = 'hidden'; // Lock scrolling
@@ -332,18 +255,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 10. Video Player Modal ---
+    // --- 9. Video Player Modal ---
     const videoModal = document.getElementById('videoModal');
-    const videoIframe = videoModal.querySelector('.video-modal-iframe');
-    const videoModalClose = videoModal.querySelector('.video-modal-close');
+    const videoIframe = videoModal ? videoModal.querySelector('.video-modal-iframe') : null;
+    const videoModalClose = videoModal ? videoModal.querySelector('.video-modal-close') : null;
     const playMediaCards = document.querySelectorAll('.media-card[data-youtube-id]');
 
-    if (playMediaCards.length > 0 && videoModal) {
+    if (playMediaCards.length > 0 && videoModal && videoModalClose) {
         playMediaCards.forEach(card => {
-            card.addEventListener('click', (e) => {
-                // Prevent trigger if they click other links (like publications if integrated)
+            card.addEventListener('click', () => {
                 const ytId = card.getAttribute('data-youtube-id');
-                if (ytId) {
+                if (ytId && videoIframe) {
                     videoIframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1`;
                     videoModal.classList.add('active');
                     body.style.overflow = 'hidden'; // Lock scrolling
@@ -360,12 +282,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function closeVideoModal() {
             videoModal.classList.remove('active');
-            videoIframe.src = ''; // Clear source to stop video
+            if (videoIframe) {
+                videoIframe.src = ''; // Clear source to stop video
+            }
             body.style.overflow = ''; // Unlock scrolling
         }
     }
 
-    // --- 11. Contact Form Redirection (WhatsApp & Email) ---
+    // --- 10. Contact Form Redirection (WhatsApp & Email) ---
     const contactForm = document.getElementById('contactForm');
     const submitMsg = document.getElementById('submitMessage');
 
@@ -384,9 +308,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Target Details (Customizable placeholders)
             const targetEmail = "dcp.saritha.ips@gmail.com";
-            const targetPhone = "919000000000"; // Real WhatsApp phone number format (with country code, no + or spaces)
+            const targetPhone = "919000000000"; 
 
             // Construct text message
             const emailSubject = encodeURIComponent(`Inquiry from ${name} via Website`);
@@ -394,24 +317,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const encodedBody = encodeURIComponent(messageBody);
 
             if (channel === 'whatsapp') {
-                // Open in WhatsApp
                 const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodedBody}`;
                 window.open(whatsappUrl, '_blank');
             } else {
-                // Open in default Mail client
                 const mailtoUrl = `mailto:${targetEmail}?subject=${emailSubject}&body=${encodedBody}`;
                 window.location.href = mailtoUrl;
             }
 
             // Display success message and reset form
-            submitMsg.textContent = `Thank you, ${name}! Your message has been prepared for dispatch via ${channel.toUpperCase()}.`;
-            submitMsg.style.display = 'block';
-            submitMsg.className = 'submit-message success';
+            if (submitMsg) {
+                submitMsg.textContent = `Thank you, ${name}! Your message has been prepared for dispatch via ${channel.toUpperCase()}.`;
+                submitMsg.style.display = 'block';
+                submitMsg.className = 'submit-message success';
+            }
             contactForm.reset();
 
-            // Clear notice after 5 seconds
+            // Clear notice after 6 seconds
             setTimeout(() => {
-                submitMsg.style.display = 'none';
+                if (submitMsg) {
+                    submitMsg.style.display = 'none';
+                }
             }, 6000);
         });
     }

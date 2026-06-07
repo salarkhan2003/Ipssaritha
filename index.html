@@ -23,7 +23,7 @@
                 <img src="images/kgv_saritha.jpg" alt="Logo" class="logo-img">
                 <div>
                     <span class="logo-text">K.G.V. SARITHA, IPS</span>
-                    <span class="logo-subtitle">DCP (Admn.), Vijayawada | Service & Integrity</span>
+                    <span class="logo-subtitle">DCP (Admn.), Vijayawada</span>
                 </div>
             </a>
 
@@ -32,11 +32,11 @@
                 <button class="nav-close-btn" aria-label="Close Menu"><i class="fas fa-times"></i></button>
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About Officer</a>
+                <a href="#showcase" class="nav-link">Showcase</a>
                 <a href="#initiatives" class="nav-link">Public Outreach</a>
                 <a href="#speeches" class="nav-link">Speeches & Media</a>
                 <a href="#gallery" class="nav-link">Photo Gallery</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#contact" class="btn btn-secondary nav-cta">Contact/Connect</a>
+                <a href="#contact" class="nav-cta">Contact/Connect</a>
             </nav>
 
             <!-- Actions (Theme Toggle & Menu Toggle) -->
@@ -52,15 +52,18 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Pure Typography with Echo Stack) -->
     <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="hero-gradient"></div>
-        </div>
-        <div class="container hero-grid">
+        <div class="hero-container">
+            <div class="echo-stack">
+                <span class="echo-layer" style="transform: translate(-0.16em, -0.16em); color: var(--echo-l5); opacity: 0.3;" aria-hidden="true">SARITHA</span>
+                <span class="echo-layer" style="transform: translate(-0.12em, -0.12em); color: var(--echo-l4); opacity: 0.5;" aria-hidden="true">SARITHA</span>
+                <span class="echo-layer" style="transform: translate(-0.08em, -0.08em); color: var(--echo-l3); opacity: 0.7;" aria-hidden="true">SARITHA</span>
+                <span class="echo-layer" style="transform: translate(-0.04em, -0.04em); color: var(--echo-l2); opacity: 0.9;" aria-hidden="true">SARITHA</span>
+                <span class="echo-layer-front">SARITHA</span>
+            </div>
+            
             <div class="hero-content">
-
-                <h1 class="hero-title" id="heroTitle">Smt K.G.V. Saritha <br><span>IPS</span></h1>
                 <div class="hero-subtitle" id="typewriterText">Indian Police Service</div>
                 <p class="hero-desc">
                     Official public information portal for Smt K.G.V. Saritha, IPS. Serving as Deputy Commissioner of Police (Administration) in Vijayawada, dedicated to structured administration, community safety, and progressive public outreach.
@@ -71,67 +74,134 @@
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-num" style="font-size: 1.25rem;">DCP (Admn.)</div>
+                        <div class="stat-num">DCP (Admn.)</div>
                         <div class="stat-label">Current Posting</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-num" style="font-size: 1.25rem;">Vijayawada</div>
+                        <div class="stat-num">Vijayawada</div>
                         <div class="stat-label">Location</div>
                     </div>
-
-                </div>
-            </div>
-            
-            <div class="hero-image-wrapper">
-                <!-- Profile Image Frame -->
-                <div class="hero-image-frame">
-                    <img src="images/kgv_saritha.jpg" alt="Smt K.G.V. Saritha IPS Official Portrait" class="hero-image" id="heroPortrait">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Biography & Career Timeline -->
-    <section class="section-padding" id="about">
+    <!-- Philosophy / Narrative Section -->
+    <section class="section-padding philosophy-section" id="about">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">About</span>
-                <h2 class="section-title">Posting Details</h2>
-                <div class="title-line"></div>
-                <p class="section-desc">Information regarding the current operational duties and administrative placement.</p>
+            <!-- Centered block with hairline divider -->
+            <div class="hairline-divider"></div>
+            
+            <div class="philosophy-quote-container reveal">
+                <h2 class="philosophy-quote">
+                    INTEGRITY is not just a virtue, it is the <span class="italic-serif">foundation</span> of public trust.
+                </h2>
             </div>
             
-            <div class="about-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
-                <!-- Biography and Key stats -->
-                <div class="reveal-left">
-                    <h3 class="about-intro-title">Administrative Role</h3>
-                    <p class="about-intro-text">
-                        Smt K.G.V. Saritha is an officer of the Indian Police Service (IPS). Currently, she serves as the Deputy Commissioner of Police (Administration) in Vijayawada. In this role, she oversees the structured functioning of police operations, resource allocation, and general administrative duties under the Commissionerate.
+            <!-- 3-Column Narrative Grid -->
+            <div class="philosophy-grid reveal">
+                <div class="philosophy-col">
+                    <h3>Structured Administration</h3>
+                    <p>
+                        Supervising operations, managing resources, and optimizing administrative protocols under the NTR Police Commissionerate. Smt K.G.V. Saritha, IPS, leads with structural efficiency and absolute transparency.
                     </p>
-                    <p class="about-intro-text" style="margin-top: -1rem; margin-bottom: 2.5rem;">
-                        This portal serves as a source for departmental communication and public outreach appointments regarding her service.
+                </div>
+                <div class="philosophy-col">
+                    <h3>Community Safety</h3>
+                    <p>
+                        Spearheading proactive safety programs, emergency response protocols, and dedicated SHE Teams to secure urban campuses, public transit systems, and corporate neighborhoods.
                     </p>
-                    
-                    <div class="about-details-grid">
-                        <div class="detail-card">
-                            <i class="fas fa-building-columns detail-icon"></i>
-                            <div class="detail-label">Service</div>
-                            <div class="detail-val">Indian Police Service</div>
+                </div>
+                <div class="philosophy-col">
+                    <h3>Progressive Outreach</h3>
+                    <p>
+                        Directly engaging with youth against substance abuse, addressing student groups on cyber-hygiene, and establishing weekly citizen-police councils to build community-wide trust.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Biography Details Card -->
+            <div class="hairline-divider" style="margin-top: 5rem; margin-bottom: 3rem;"></div>
+            
+            <div class="section-header reveal">
+                <span class="section-tag">Posting Profile</span>
+                <h2 class="section-title">Administrative Placement</h2>
+                <p class="section-desc">Departmental details regarding active operational duties and secretariat hours.</p>
+            </div>
+            
+            <div class="philosophy-grid reveal" style="margin-top: 2rem;">
+                <div class="philosophy-col" style="border: 1px solid var(--border-color); padding: 2rem;">
+                    <h4 class="section-tag" style="margin-bottom: 0.5rem;">Service Designation</h4>
+                    <h3 style="font-size: 1.25rem; line-height: 1.2; margin-bottom: 0.5rem;">Indian Police Service</h3>
+                    <p style="font-size: 0.85rem;">Officer of the Indian Police Service (IPS) cadre, executing constitutional security mandates.</p>
+                </div>
+                <div class="philosophy-col" style="border: 1px solid var(--border-color); padding: 2rem;">
+                    <h4 class="section-tag" style="margin-bottom: 0.5rem;">Office Visiting Hours</h4>
+                    <h3 style="font-size: 1.25rem; line-height: 1.2; margin-bottom: 0.5rem;">10:30 AM to 5:00 PM</h3>
+                    <p style="font-size: 0.85rem;">Visiting hours by prior secretariat appointment at the NTR Commissionerate headquarters.</p>
+                </div>
+                <div class="philosophy-col" style="border: 1px solid var(--border-color); padding: 2rem;">
+                    <h4 class="section-tag" style="margin-bottom: 0.5rem;">Primary Responsibility</h4>
+                    <h3 style="font-size: 1.25rem; line-height: 1.2; margin-bottom: 0.5rem;">Police Administration</h3>
+                    <p style="font-size: 0.85rem;">Directing human resources, operational logistics, departmental welfare, and public inquiries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Asymmetrical Showcase Grid Section -->
+    <section class="section-padding" id="showcase" style="border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Visual Narrative</span>
+                <h2 class="section-title">Operational Chapters</h2>
+                <p class="section-desc">Glimpses of official ceremonies, public addresses, and community interactions.</p>
+            </div>
+
+            <div class="showcase-grid">
+                <!-- Card 1: 8-column rectangle (rounded-sm corners) -->
+                <div class="grid-item card-large-rect reveal">
+                    <div class="reveal-img-wrap reveal">
+                        <img src="images/gallery_official_1.png" alt="DCP K.G.V. Saritha receiving award medal">
+                        <div class="showcase-caption">
+                            <h4>Police Medal Ceremony</h4>
+                            <p>Official Recognition</p>
                         </div>
-                        <div class="detail-card">
-                            <i class="fas fa-location-dot detail-icon"></i>
-                            <div class="detail-label">Current Posting</div>
-                            <div class="detail-val">DCP (Admn.), Vijayawada</div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Vertical 4-column pill-shaped showcase -->
+                <div class="grid-item card-vertical-pill reveal">
+                    <div class="reveal-img-wrap reveal">
+                        <img src="images/kgv_saritha.jpg" alt="DCP K.G.V. Saritha IPS Official Portrait">
+                        <div class="pill-hover-overlay">
+                            <div class="pill-overlay-text">Smt K.G.V. Saritha<br><br><span style="font-weight: 500; text-transform: none;">DCP (Admn.)</span></div>
                         </div>
-                        <div class="detail-card">
-                            <i class="fas fa-clock detail-icon"></i>
-                            <div class="detail-label">Office Hours</div>
-                            <div class="detail-val">10:30 AM to 5:00 PM</div>
+                        <div class="showcase-caption" style="border-radius: 0 0 9999px 9999px;">
+                            <h4>Official Portrait</h4>
+                            <p>Smt K.G.V. Saritha, IPS</p>
                         </div>
-                        <div class="detail-card">
-                            <i class="fas fa-bullseye detail-icon"></i>
-                            <div class="detail-label">Primary Role</div>
-                            <div class="detail-val">Police Administration</div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Circular 5-column aspect-square image -->
+                <div class="grid-item card-circular-square reveal">
+                    <div class="reveal-img-wrap reveal" style="border-radius: 50%;">
+                        <img src="images/gallery_comm_1.png" alt="DCP Saritha meeting community elders">
+                        <div class="showcase-caption" style="border-radius: 50%; height: 50%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center; padding-bottom: 2rem;">
+                            <h4>Jan-Mitra Council</h4>
+                            <p>Community outreach</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Wide 7-column rectangle -->
+                <div class="grid-item card-wide-rect reveal">
+                    <div class="reveal-img-wrap reveal">
+                        <img src="images/gallery_official_2.png" alt="DCP Saritha reviewing guard of honor parade">
+                        <div class="showcase-caption">
+                            <h4>Independence Day Parade</h4>
+                            <p>Guard Review, Vijayawada</p>
                         </div>
                     </div>
                 </div>
@@ -139,118 +209,98 @@
         </div>
     </section>
 
-    <!-- Initiatives & Activities -->
-    <section class="section-padding" id="initiatives" style="background-color: var(--bg-secondary);">
+    <!-- Bespoke Service Cards Section (Initiatives & community programs) -->
+    <section class="section-padding initiatives-section" id="initiatives" style="border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">Actions & Impact</span>
-                <h2 class="section-title">Initiatives & Community Programs</h2>
-                <div class="title-line"></div>
-                <p class="section-desc">Pioneering social reforms, women safety measures, and youth counseling programs to build a resilient and law-abiding community.</p>
+                <span class="section-tag">Departmental Actions</span>
+                <h2 class="section-title">Community Safety Initiatives</h2>
+                <p class="section-desc">Pioneering social counseling, security frameworks, and awareness campaigns for public safety.</p>
             </div>
-            
+
             <div class="initiatives-grid">
-                <!-- Card 1: SHE Teams -->
-                <div class="initiative-card reveal delay-100">
-                    <div class="initiative-image-wrapper">
-                        <span class="initiative-tag">Women Safety</span>
-                        <img src="images/she_teams_initiative.png" alt="DCP Saritha she teams initiative" class="initiative-image">
+                <!-- Initiative 1: SHE Teams -->
+                <div class="initiative-card reveal">
+                    <div class="icon-container-geom">
+                        <span>01</span>
                     </div>
-                    <div class="initiative-content">
-                        <h3 class="initiative-title">SHE Teams & Public Safety</h3>
-                        <p class="initiative-desc">
-                            Designed to curb street harassment and build an environment of absolute safety. Active undercover units patrol public transport, educational campuses, and corporate hubs. Under her guidance, emergency response latency was cut down to under 5 minutes.
-                        </p>
-                        <a href="#contact" class="initiative-link">Request Partnership/Talk <i class="fas fa-chevron-right"></i></a>
-                    </div>
+                    <h3 class="initiative-card-title">SHE Teams & Women Safety</h3>
+                    <p class="initiative-card-desc">
+                        Curbing street harassment and deploying active undercover safety patrols across university campuses, transit terminals, and commercial centers.
+                    </p>
+                    <a href="#contact" class="initiative-card-cta">Request Safety Outreach <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Card 2: Student Connect -->
-                <div class="initiative-card reveal delay-200">
-                    <div class="initiative-image-wrapper">
-                        <span class="initiative-tag">Youth Guidance</span>
-                        <img src="images/student_interaction.png" alt="DCP Saritha student interaction" class="initiative-image">
+                <!-- Initiative 2: Youth Against Narcotics -->
+                <div class="initiative-card reveal">
+                    <div class="icon-container-geom">
+                        <span>02</span>
                     </div>
-                    <div class="initiative-content">
-                        <h3 class="initiative-title">Youth Against Narcotics</h3>
-                        <p class="initiative-desc">
-                            A highly successful interactive camp organized across high schools and universities. DCP Saritha conducts direct dialog sessions with young minds, educating them on the psychological hazards of narcotics, cyber-hygiene, and paths to entering civil service.
-                        </p>
-                        <a href="#contact" class="initiative-link">Request School Session <i class="fas fa-chevron-right"></i></a>
-                    </div>
+                    <h3 class="initiative-card-title">Youth Against Narcotics</h3>
+                    <p class="initiative-card-desc">
+                        Direct engagement and counselor-led dialogues across educational campuses to raise awareness on substance hazards and pathways to civil service.
+                    </p>
+                    <a href="#contact" class="initiative-card-cta">Request Campus Session <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Card 3: Community Policing -->
-                <div class="initiative-card reveal delay-300">
-                    <div class="initiative-image-wrapper">
-                        <span class="initiative-tag">Grassroots</span>
-                        <img src="images/community_policing.png" alt="DCP Saritha community policing" class="initiative-image">
+                <!-- Initiative 3: Jan-Mitra Outreach -->
+                <div class="initiative-card reveal">
+                    <div class="icon-container-geom">
+                        <span>03</span>
                     </div>
-                    <div class="initiative-content">
-                        <h3 class="initiative-title">Jan-Mitra Outreach</h3>
-                        <p class="initiative-desc">
-                            Re-engineering police-citizen rapport. Initiated localized neighborhood committees where police representatives interact with community stakeholders weekly to resolve civilian issues, prevent petty crimes, and optimize security coverage.
-                        </p>
-                        <a href="#contact" class="initiative-link">Join Neighborhood Watch <i class="fas fa-chevron-right"></i></a>
-                    </div>
+                    <h3 class="initiative-card-title">Jan-Mitra Council</h3>
+                    <p class="initiative-card-desc">
+                        Weekly localized councils matching civic leaders with precinct officers to discuss local safety concerns, preventing neighborhood crime.
+                    </p>
+                    <a href="#contact" class="initiative-card-cta">Join Neighborhood Council <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Card 4: Cyber Suraksha -->
-                <div class="initiative-card reveal delay-100">
-                    <div class="initiative-image-wrapper">
-                        <span class="initiative-tag">Awareness</span>
-                        <img src="images/cyber_awareness.png" alt="DCP Saritha cyber awareness campaign" class="initiative-image">
+                <!-- Initiative 4: Cyber Suraksha Campaign -->
+                <div class="initiative-card reveal">
+                    <div class="icon-container-geom">
+                        <span>04</span>
                     </div>
-                    <div class="initiative-content">
-                        <h3 class="initiative-title">Cyber Suraksha Campaign</h3>
-                        <p class="initiative-desc">
-                            Educating seniors, students, and home-makers on preventing online scams, identity theft, and fake transaction fraud. Includes offline modules, localized flyers, and social media webinars hosted directly by expert technical officers.
-                        </p>
-                        <a href="#contact" class="initiative-link">Download Cyber Materials <i class="fas fa-chevron-right"></i></a>
-                    </div>
+                    <h3 class="initiative-card-title">Cyber Suraksha Campaign</h3>
+                    <p class="initiative-card-desc">
+                        Educating citizens, students, and businesses on digital hygiene, financial phishing prevention, and quick recovery protocols.
+                    </p>
+                    <a href="#contact" class="initiative-card-cta">Download Cyber Material <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Card 5: Social Support outreach -->
-                <div class="initiative-card reveal delay-200">
-                    <div class="initiative-image-wrapper">
-                        <span class="initiative-tag">Social Outreach</span>
-                        <img src="images/social_outreach.png" alt="DCP Saritha social outreach" class="initiative-image">
+                <!-- Initiative 5: Sahaay Outreach -->
+                <div class="initiative-card reveal">
+                    <div class="icon-container-geom">
+                        <span>05</span>
                     </div>
-                    <div class="initiative-content">
-                        <h3 class="initiative-title">Sahaay: Rehabilitation Support</h3>
-                        <p class="initiative-desc">
-                            A cooperative outreach designed to assist runaways, homeless children, and victims of violence. Partnering with NGOs to offer safe shelter, psychological counseling, basic healthcare, and basic vocational training for long-term integration.
-                        </p>
-                        <a href="#contact" class="initiative-link">Partner/Donate Goods <i class="fas fa-chevron-right"></i></a>
-                    </div>
+                    <h3 class="initiative-card-title">Sahaay Support</h3>
+                    <p class="initiative-card-desc">
+                        Providing rescue, emergency shelter, health checks, and long-term vocational guidance to vulnerable youth and displaced children.
+                    </p>
+                    <a href="#contact" class="initiative-card-cta">Partner/Donate Goods <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Card 6: Police Welfare -->
-                <div class="initiative-card reveal delay-300">
-                    <div class="initiative-image-wrapper">
-                        <span class="initiative-tag">Internal Welfare</span>
-                        <img src="images/police_welfare.png" alt="DCP Saritha police welfare" class="initiative-image">
+                <!-- Initiative 6: Prahari Health & Wellness -->
+                <div class="initiative-card reveal">
+                    <div class="icon-container-geom">
+                        <span>06</span>
                     </div>
-                    <div class="initiative-content">
-                        <h3 class="initiative-title">Prahari Health & Wellness</h3>
-                        <p class="initiative-desc">
-                            Caring for our force. Under her leadership, periodic physical medical camps, mental health workshops, and yoga camps are organized to ensure the operational readiness and psychological health of active policing units.
-                        </p>
-                        <a href="#contact" class="initiative-link">View Welfare Reports <i class="fas fa-chevron-right"></i></a>
-                    </div>
+                    <h3 class="initiative-card-title">Prahari Wellness</h3>
+                    <p class="initiative-card-desc">
+                        Sustaining force health through structured medical camps, health workshops, and yoga programs for active-duty personnel.
+                    </p>
+                    <a href="#contact" class="initiative-card-cta">Force Health Records <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Motivational Speeches, Media & Press -->
-    <section class="section-padding" id="speeches">
+    <!-- Speeches, Media & Publications -->
+    <section class="section-padding media-section" id="speeches" style="border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">Public Voices</span>
-                <h2 class="section-title">Motivational Speeches & Media</h2>
-                <div class="title-line"></div>
-                <p class="section-desc">Key messages of integrity, digital responsibility, and civil leadership shared across prominent media channels and academic platforms.</p>
+                <span class="section-tag">Public Record</span>
+                <h2 class="section-title">Speeches & Publications</h2>
+                <p class="section-desc">Keynotes, TV statements, official guidelines, and handbooks shared across public forums.</p>
             </div>
 
             <!-- Tab Navigation for Media -->
@@ -400,13 +450,12 @@
     </section>
 
     <!-- Photo Gallery Section -->
-    <section class="section-padding" id="gallery" style="background-color: var(--bg-secondary);">
+    <section class="section-padding" id="gallery" style="background-color: var(--bg-primary); border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Visual Archives</span>
                 <h2 class="section-title">Photo Gallery</h2>
-                <div class="title-line"></div>
-                <p class="section-desc">Glimpses of daily active policing duties, citizen counseling, prestigious ceremonies, and grassroots outreach.</p>
+                <p class="section-desc">Glimpses of active policing duties, citizen interactions, and prestigious ceremonies.</p>
             </div>
 
             <!-- Gallery Filter Buttons -->
@@ -420,8 +469,8 @@
             <!-- Gallery Grid -->
             <div class="gallery-grid reveal">
                 <!-- Image 1: Official -->
-                <div class="gallery-item" data-category="official">
-                    <img src="images/gallery_official_1.png" alt="DCP Saritha receiving award" class="gallery-item-img">
+                <div class="gallery-item reveal" data-category="official">
+                    <img src="images/gallery_official_1.png" alt="DCP Saritha receiving award medal" class="gallery-item-img">
                     <div class="gallery-item-overlay">
                         <span class="gallery-item-cat">Official & Events</span>
                         <h4 class="gallery-item-title">Receiving the Police Medal</h4>
@@ -430,7 +479,7 @@
                 </div>
 
                 <!-- Image 2: Community -->
-                <div class="gallery-item" data-category="community">
+                <div class="gallery-item reveal" data-category="community">
                     <img src="images/gallery_comm_1.png" alt="DCP Saritha meeting local elders" class="gallery-item-img">
                     <div class="gallery-item-overlay">
                         <span class="gallery-item-cat">Community Interaction</span>
@@ -440,7 +489,7 @@
                 </div>
 
                 <!-- Image 3: Awareness -->
-                <div class="gallery-item" data-category="awareness">
+                <div class="gallery-item reveal" data-category="awareness">
                     <img src="images/gallery_aware_1.png" alt="DCP Saritha speaking to kids" class="gallery-item-img">
                     <div class="gallery-item-overlay">
                         <span class="gallery-item-cat">Awareness Campaigns</span>
@@ -450,17 +499,17 @@
                 </div>
 
                 <!-- Image 4: Official -->
-                <div class="gallery-item" data-category="official">
+                <div class="gallery-item reveal" data-category="official">
                     <img src="images/gallery_official_2.png" alt="DCP Saritha reviewing parade" class="gallery-item-img">
                     <div class="gallery-item-overlay">
                         <span class="gallery-item-cat">Official & Events</span>
-                        <h4 class="gallery-item-title">Independence Day Parade Guard Review</h4>
+                        <h4 class="gallery-item-title">Parade Guard Review</h4>
                     </div>
                     <div class="gallery-zoom-icon"><i class="fas fa-up-right-and-down-left-from-center"></i></div>
                 </div>
 
                 <!-- Image 5: Community -->
-                <div class="gallery-item" data-category="community">
+                <div class="gallery-item reveal" data-category="community">
                     <img src="images/gallery_comm_2.png" alt="DCP Saritha visiting shelter home" class="gallery-item-img">
                     <div class="gallery-item-overlay">
                         <span class="gallery-item-cat">Community Interaction</span>
@@ -470,7 +519,7 @@
                 </div>
 
                 <!-- Image 6: Awareness -->
-                <div class="gallery-item" data-category="awareness">
+                <div class="gallery-item reveal" data-category="awareness">
                     <img src="images/gallery_aware_2.png" alt="DCP Saritha cyber poster release" class="gallery-item-img">
                     <div class="gallery-item-overlay">
                         <span class="gallery-item-cat">Awareness Campaigns</span>
@@ -480,7 +529,7 @@
                 </div>
 
                 <!-- Image 7: Official -->
-                <div class="gallery-item" data-category="official">
+                <div class="gallery-item reveal" data-category="official">
                     <img src="images/gallery_official_3.png" alt="DCP Saritha conference meeting" class="gallery-item-img">
                     <div class="gallery-item-overlay">
                         <span class="gallery-item-cat">Official & Events</span>
@@ -490,7 +539,7 @@
                 </div>
 
                 <!-- Image 8: Community -->
-                <div class="gallery-item" data-category="community">
+                <div class="gallery-item reveal" data-category="community">
                     <img src="images/gallery_comm_3.png" alt="DCP Saritha interacting with girls" class="gallery-item-img">
                     <div class="gallery-item-overlay">
                         <span class="gallery-item-cat">Community Interaction</span>
@@ -502,108 +551,113 @@
         </div>
     </section>
 
-    <!-- Testimonials / Community Feedback -->
+    <!-- Testimonials / Community Feedback Section -->
     <section class="section-padding testimonials-section" id="testimonials">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Public Record</span>
                 <h2 class="section-title">Community Feedback</h2>
-                <div class="title-line"></div>
-                <p class="section-desc">Commendations and community feedback regarding public outreach and administrative initiatives.</p>
+                <p class="section-desc">Departmental logs regarding civic outreach initiatives and safety campaigns.</p>
             </div>
             
             <div class="testimonials-slider-container reveal" style="text-align: center; color: var(--text-secondary); padding: 4rem 0;">
-                <p><em>Records of community feedback are currently being aggregated by the administrative division. Public endorsements will be published here.</em></p>
+                <p class="italic-serif" style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 1rem;">
+                    "Records of community feedback are currently being aggregated by the administrative division. Public testimonials will be listed shortly."
+                </p>
+                <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Administrative Division, Vijayawada</p>
             </div>
         </div>
     </section>
 
     <!-- Contact & Connect -->
     <section class="section-padding" id="contact" style="border-top: 1px solid var(--border-color);">
-        <div class="container contact-grid">
+        <div class="container">
+            <div class="hairline-divider"></div>
             
-            <!-- Left Info Panel -->
-            <div class="contact-info-panel reveal-left">
-                <div>
-                    <span class="section-tag" style="text-align: left;">Connect Directly</span>
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Official Channels</h2>
-                    <p class="about-intro-text">
-                        For institutional invitations, school/college outreach sessions, SHE Teams support requests, or official communications, please utilize the approved channels listed below.
-                    </p>
-                </div>
-                
-                <div class="contact-info-card">
-                    <div class="contact-card-icon"><i class="far fa-envelope"></i></div>
-                    <div class="contact-card-content">
-                        <h4>Official Correspondence</h4>
-                        <p>Write to the secretariat for scheduling lectures or panel requests.</p>
-                        <a href="mailto:dcp.saritha.ips@gmail.com" class="contact-action-link">dcp.saritha.ips@gmail.com <i class="fas fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-
-                <div class="contact-info-card">
-                    <div class="contact-card-icon"><i class="fab fa-whatsapp"></i></div>
-                    <div class="contact-card-content">
-                        <h4>Community WhatsApp Helpline</h4>
-                        <p>Direct citizen connectivity forum for suggestions and community concerns.</p>
-                        <a href="https://wa.me/919000000000?text=Hello%20DCP%20Saritha%20Madam" target="_blank" class="contact-action-link">Open WhatsApp Chat <i class="fas fa-comments"></i></a>
-                    </div>
-                </div>
-
-                <!-- Social Connect Grid -->
-                <div class="social-connect">
-                    <h3 class="social-title">Follow Leadership Journey</h3>
-                    <div class="social-links-grid">
-                        <a href="https://twitter.com/SarithaIPS" target="_blank" class="social-btn twitter" aria-label="Twitter X Profile"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://linkedin.com/in/SarithaIPS" target="_blank" class="social-btn linkedin" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://facebook.com/SarithaIPS" target="_blank" class="social-btn facebook" aria-label="Facebook Page"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/SarithaIPS" target="_blank" class="social-btn instagram" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/SarithaIPS" target="_blank" class="social-btn youtube" aria-label="YouTube Channel"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Interactive Form -->
-            <div class="contact-form-wrapper reveal-right" id="formWrapper">
-                <h3 class="form-title">Public Request Form</h3>
-                <p class="form-desc">Fill out the credentials and details below for official inquiries, coordination requests, or community feedback. This form dispatches via secure channels.</p>
-                
-                <form id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="formName" class="form-label">Full Name *</label>
-                            <input type="text" class="form-control" id="formName" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="formEmail" class="form-label">Email Address *</label>
-                            <input type="email" class="form-control" id="formEmail" placeholder="yourname@domain.com" required>
-                        </div>
+            <div class="contact-grid">
+                <!-- Left Info Panel -->
+                <div class="contact-info-panel reveal">
+                    <div>
+                        <span class="section-tag">Connect Directly</span>
+                        <h2 class="section-title" style="font-size: 2.75rem; margin-bottom: 1.5rem;">Official Channels</h2>
+                        <p style="margin-bottom: 2rem;">
+                            For lectures, university outreach sessions, SHE Teams programs, or scheduling enquiries, use the official pathways listed below.
+                        </p>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="formChannel" class="form-label">Preferred Dispatch Mechanism</label>
-                        <select class="form-control" id="formChannel">
-                            <option value="email">Send via Email (Secure Desktop/Mobile)</option>
-                            <option value="whatsapp">Launch Pre-Filled WhatsApp Chat</option>
-                        </select>
+                    <div class="contact-info-card">
+                        <div class="contact-card-icon"><i class="far fa-envelope"></i></div>
+                        <div class="contact-card-content">
+                            <h4>Official Correspondence</h4>
+                            <p>Write to the secretariat for schedule availability.</p>
+                            <a href="mailto:dcp.saritha.ips@gmail.com" class="contact-action-link">dcp.saritha.ips@gmail.com <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
                     </div>
 
-                    <div class="form-group last">
-                        <label for="formMessage" class="form-label">Message Details *</label>
-                        <textarea class="form-control" id="formMessage" placeholder="State details of your inquiry, coordination request or feedback..." required></textarea>
+                    <div class="contact-info-card">
+                        <div class="contact-card-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-card-content">
+                            <h4>Community Whatsapp Helpline</h4>
+                            <p>Direct outreach messaging channel for citizen safety feedback.</p>
+                            <a href="https://wa.me/919000000000?text=Hello%20DCP%20Saritha%20Madam" target="_blank" class="contact-action-link">Open Helpline Chat <i class="fas fa-comments"></i></a>
+                        </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-accent" style="width: 100%;">
-                        Submit Request & Coordinate <i class="fas fa-paper-plane"></i>
-                    </button>
+                    <!-- Social Connect -->
+                    <div class="social-connect">
+                        <h3 class="social-title">Departmental Updates</h3>
+                        <div class="social-links-grid">
+                            <a href="https://twitter.com/SarithaIPS" target="_blank" class="social-btn" aria-label="Twitter X Profile"><i class="fab fa-x-twitter"></i></a>
+                            <a href="https://linkedin.com/in/SarithaIPS" target="_blank" class="social-btn" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://facebook.com/SarithaIPS" target="_blank" class="social-btn" aria-label="Facebook Page"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/SarithaIPS" target="_blank" class="social-btn" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/SarithaIPS" target="_blank" class="social-btn" aria-label="YouTube Channel"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Interactive Form (Sleek Underlined Inputs) -->
+                <div class="contact-form-wrapper reveal" id="formWrapper">
+                    <h3 class="form-title">Public Request Form</h3>
+                    <p class="form-desc">Provide details below for scheduling requests, digital session coordination, or safety feedback.</p>
                     
-                    <div class="submit-message" id="submitMessage"></div>
-                </form>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formName" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="formName" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formEmail" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="formEmail" placeholder="yourname@domain.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="formChannel" class="form-label">Dispatch Format</label>
+                            <select class="form-control" id="formChannel">
+                                <option value="email">Send via Email (Secure Dispatch)</option>
+                                <option value="whatsapp">Launch pre-filled WhatsApp Chat</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group last">
+                            <label for="formMessage" class="form-label">Message Details *</label>
+                            <textarea class="form-control" id="formMessage" placeholder="State the details of your inquiry, session invitation or feedback..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Submit Request <i class="fas fa-paper-plane"></i>
+                        </button>
+                        
+                        <div class="submit-message" id="submitMessage"></div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (Deep dark theme #1e1e1e, 60% opacity off-white text #f6f6f6, thin 5% opacity white top border) -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-logo-panel">
@@ -611,29 +665,29 @@
                     <img src="images/kgv_saritha.jpg" alt="Logo" class="logo-img">
                     <div>
                         <span class="logo-text">K.G.V. SARITHA, IPS</span>
-                        <span class="logo-subtitle">DCP (Admn.), Vijayawada | Service & Integrity</span>
+                        <span class="logo-subtitle">DCP (Admn.), Vijayawada</span>
                     </div>
                 </a>
-                <p>Ensuring civil security, cultivating citizen trust, and fostering progressive societal initiatives under the Indian Police Service banner.</p>
+                <p>Upholding administrative integrity, cultivating citizen trust, and coordinating security outreach programs under the Indian Police Service.</p>
             </div>
 
             <div>
-                <h3 class="footer-title">Quick Navigation</h3>
+                <h3 class="footer-title">Navigation</h3>
                 <ul class="footer-links">
                     <li><a href="#home">Home Portal</a></li>
                     <li><a href="#about">About Officer</a></li>
+                    <li><a href="#showcase">Showcase</a></li>
                     <li><a href="#initiatives">Public Outreach</a></li>
-                    <li><a href="#testimonials">Community Feedback</a></li>
-                    <li><a href="#contact">Public Request Form</a></li>
+                    <li><a href="#contact">Request Form</a></li>
                 </ul>
             </div>
 
             <div>
-                <h3 class="footer-title">Resources & Docs</h3>
+                <h3 class="footer-title">Resources</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-file-pdf" style="color: var(--accent);"></i> Fact Sheet</a></li>
-                    <li><a href="#"><i class="fas fa-file-pdf" style="color: var(--accent);"></i> Cyber Safety Guidelines</a></li>
-                    <li><a href="#"><i class="fas fa-file-pdf" style="color: var(--accent);"></i> Public Outreach Policy</a></li>
+                    <li><a href="#"><i class="fas fa-file-pdf"></i> Fact Sheet</a></li>
+                    <li><a href="#"><i class="fas fa-file-pdf"></i> Cyber Guidelines</a></li>
+                    <li><a href="#"><i class="fas fa-file-pdf"></i> Outreach Guidelines</a></li>
                 </ul>
             </div>
 
@@ -646,18 +700,18 @@
                     </li>
                     <li>
                         <i class="fas fa-clock"></i>
-                        <span>10:30 AM - 05:00 PM (IST)<br>Official Visiting Hours by Appointment</span>
+                        <span>10:30 AM - 05:00 PM (IST)<br>Visiting Hours by Appointment Only</span>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div class="container footer-bottom" style="flex-direction: column; gap: 1rem; align-items: flex-start;">
-            <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 800px;">
-                <strong>Disclaimer:</strong> This portal serves as a public information conduit for Smt K.G.V. Saritha, IPS, currently serving as DCP (Admn.), Vijayawada. This is not for emergency reporting. In case of an emergency, please dial 100/112.
+        <div class="container footer-bottom">
+            <p style="font-size: 0.8rem; line-height: 1.4; max-width: 800px; margin-bottom: 1.5rem;">
+                <strong>Disclaimer:</strong> This is a public information portal for Smt K.G.V. Saritha, IPS. This portal is not for urgent crime reporting or emergency complaints. In case of emergency, please dial 100 or 112 immediately.
             </p>
-            <div style="display: flex; justify-content: space-between; width: 100%; border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 0.5rem;">
-                <p>&copy; 2026 Smt K.G.V. Saritha, IPS. All rights reserved. Developed for public outreach.</p>
+            <div style="display: flex; justify-content: space-between; width: 100%; border-top: 1px solid var(--footer-border); padding-top: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                <p>&copy; 2026 Smt K.G.V. Saritha, IPS. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Use</a>
