@@ -300,21 +300,23 @@ document.addEventListener('DOMContentLoaded', () => {
             // Retrieve form values
             const name = document.getElementById('formName').value.trim();
             const email = document.getElementById('formEmail').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
             const subject = document.getElementById('formSubject').value.trim();
+            const category = document.getElementById('formCategory').value;
             const channel = document.getElementById('formChannel').value;
             const message = document.getElementById('formMessage').value.trim();
 
-            if (!name || !email || !subject || !message) {
+            if (!name || !email || !phone || !subject || !category || !message) {
                 alert("Please fill in all required fields.");
                 return;
             }
 
-            const targetEmail = "dcp.saritha.ips@gmail.com";
-            const targetPhone = "919000000000"; 
+            const targetEmail = "cp@vza.appolice.gov.in";
+            const targetPhone = "919552300009"; 
 
             // Construct text message
             const emailSubject = encodeURIComponent(subject || `Inquiry from ${name} via Website`);
-            const messageBody = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nPreferred Contact Method: ${channel}\n\nMessage:\n${message}`;
+            const messageBody = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\nSubject: ${subject}\nPreferred Contact Method: ${channel}\n\nMessage:\n${message}`;
             const encodedBody = encodeURIComponent(messageBody);
 
             if (channel === 'phone') {
@@ -340,5 +342,107 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }, 6000);
         });
+    }
+
+    // --- 11. AI Public Information Assistant Chatbot ---
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const chatbotSend = document.getElementById('chatbotSend');
+
+    if (chatbotToggle && chatbotWindow && chatbotClose) {
+        // Toggle Chatbot Window
+        chatbotToggle.addEventListener('click', () => {
+            chatbotWindow.classList.toggle('active');
+        });
+
+        // Close Chatbot Window
+        chatbotClose.addEventListener('click', () => {
+            chatbotWindow.classList.remove('active');
+        });
+
+        // Send message on click
+        chatbotSend.addEventListener('click', handleUserSendMessage);
+
+        // Send message on Enter key press
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleUserSendMessage();
+            }
+        });
+    }
+
+    function appendMessage(text, sender) {
+        if (!chatbotMessages) return;
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `chatbot-message ${sender}`;
+        msgDiv.textContent = text;
+        chatbotMessages.appendChild(msgDiv);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function handleUserSendMessage() {
+        if (!chatbotInput) return;
+        const text = chatbotInput.value.trim();
+        if (!text) return;
+
+        // Append user message
+        appendMessage(text, 'user');
+        chatbotInput.value = '';
+
+        // Generate response
+        setTimeout(() => {
+            const reply = getChatbotResponse(text);
+            appendMessage(reply, 'assistant');
+        }, 500);
+    }
+
+    function getChatbotResponse(query) {
+        const q = query.toLowerCase();
+
+        // 1. Emergency Check
+        if (q.includes('emergency') || q.includes('danger') || q.includes('urgent') || q.includes('save') || q.includes('threat') || q.includes('kill') || q.includes('accident') || q.includes('robbery') || q.includes('theft') || q.includes('murder') || q.includes('assault') || q.includes('fight') || q.includes('help me') || q.includes('100') || q.includes('112')) {
+            return "This assistant does not handle emergency complaints or active crimes. For urgent police assistance, please call 100 or 112 immediately.";
+        }
+
+        // 2. Cyber fraud Check
+        if (q.includes('cyber') || q.includes('hack') || q.includes('online fraud') || q.includes('scam') || q.includes('bank fraud') || q.includes('money lost') || q.includes('otp') || q.includes('financial fraud') || q.includes('cybercrime') || q.includes('nude')) {
+            return "For cyber safety concerns or online/financial fraud, please report immediately by dialing the National Cyber Crime Helpline at 1930, or file an official complaint on the web portal: https://cybercrime.gov.in. You can also view the Cyber Safety card in our Public Outreach section.";
+        }
+
+        // 3. Profile / Officer Details
+        if (q.includes('who is') || q.includes('saritha') || q.includes('rank') || q.includes('designation') || q.includes('posting') || q.includes('role') || q.includes('education') || q.includes('career') || q.includes('degree') || q.includes('award') || q.includes('journey')) {
+            return "Officer Details:\n• Name: Smt K.G.V. Saritha, IPS\n• Designation: DCP (Admn.), Vijayawada\n• Office: NTR Police Commissionerate, Vijayawada\n• Education: M.Sc. in Psychology, LL.M.\n• Career: Joined as DSP (2010 batch), served in Bodhan, Narsampet, Eluru, Guntur West, SP CID/Women Protection Cell; appointed to IPS (Select List 2023).\n• Awards: AP Police Seva Medal, Best Women Police Officer Award.";
+        }
+
+        // 4. Outreach / Programs
+        if (q.includes('outreach') || q.includes('program') || q.includes('women') || q.includes('child') || q.includes('school') || q.includes('college') || q.includes('community') || q.includes('initiative') || q.includes('seminar') || q.includes('session')) {
+            return "Approved Outreach Initiatives:\n• Women Safety: Awareness campaigns and SHE Teams support pathways.\n• Child Protection: School/college awareness on child safety and abuse prevention.\n• Cyber Safety: Online fraud prevention and digital hygiene education.\n• Community Policing: Citizen-police neighborhood coordination platforms.";
+        }
+
+        // 5. Speeches & Media
+        if (q.includes('speech') || q.includes('video') || q.includes('youtube') || q.includes('media') || q.includes('interview') || q.includes('press')) {
+            return "Verified Speeches & Media:\n• iDream Media 'Dil Se With Anjali' Interview (2020) discussing women safety, youth guidance, and CID experience.\n• iDream News 'Crime Diaries With Muralidhar #662' Interview (2021).\n• Manastars Student Outreach Inspirational Speech (2019).\n• Ramakrishna Math Speech (June 2026) titled 'How to Live Courageously in Society?'.\n• Official IPS Cadre Notification (Jan 2025).";
+        }
+
+        // 6. Contact / Appointment Details
+        if (q.includes('contact') || q.includes('address') || q.includes('email') || q.includes('phone') || q.includes('number') || q.includes('whatsapp') || q.includes('visiting') || q.includes('hours') || q.includes('meet') || q.includes('appointment')) {
+            return "Office Details:\n• Office Address: Office of the DCP (Administration), NTR Police Commissionerate Headquarters, Vijayawada, AP, India.\n• Visiting Hours: 10:30 AM to 05:00 PM (IST) by prior appointment.\n• Official Email: cp@vza.appolice.gov.in (Attn: DCP Administration)\n• WhatsApp-based Citizen Helpline: 9552300009.\n• Note: Personal contact details are to be confirmed by the office. For official requests, use the Public Request Form on the site.";
+        }
+
+        // 7. Resources / Links
+        if (q.includes('resource') || q.includes('link') || q.includes('website') || q.includes('citizen') || q.includes('portal') || q.includes('faq') || q.includes('form')) {
+            return "Official Public Resources:\n• Citizen Services: https://citizen.appolice.gov.in\n• AP Police Main Portal: https://appolice.gov.in\n• Emergency Helpline: Dial 100 or 112\n• You can also access e-complaints, download forms, and other services in the Resources Section on this portal.";
+        }
+
+        // 8. General Greetings / Conversational
+        if (q.includes('hello') || q.includes('hi ') || q.includes('hey') || q.includes('greetings') || q.includes('good morning') || q.includes('good afternoon') || q.includes('good evening')) {
+            return "Hello. I am the Saritha IPS Public Information Assistant. How can I help you find approved public information? You can ask about the officer's profile, outreach programs, media updates, contact details, or citizen resources.";
+        }
+
+        // 9. Default Fallback
+        return "I apologize, but I can only answer queries based on the approved public information on this website. For other official inquiries, please fill out the Public Request Form on the site or visit the NTR Police Commissionerate office.";
     }
 });
