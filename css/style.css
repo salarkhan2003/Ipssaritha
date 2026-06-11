@@ -2341,6 +2341,7 @@ body.dark-theme .chatbot-header {
     font-size: 0.85rem;
     line-height: 1.4;
     word-break: break-word;
+    white-space: pre-wrap;
 }
 
 .chatbot-message.assistant {

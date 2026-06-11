@@ -400,49 +400,115 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function getChatbotResponse(query) {
-        const q = query.toLowerCase();
+        const q = query.toLowerCase().trim();
 
-        // 1. Emergency Check
-        if (q.includes('emergency') || q.includes('danger') || q.includes('urgent') || q.includes('save') || q.includes('threat') || q.includes('kill') || q.includes('accident') || q.includes('robbery') || q.includes('theft') || q.includes('murder') || q.includes('assault') || q.includes('fight') || q.includes('help me') || q.includes('100') || q.includes('112')) {
-            return "This assistant does not handle emergency complaints or active crimes. For urgent police assistance, please call 100 or 112 immediately.";
+        // 1. Emergency Checks
+        if (/\b(emergency|danger|urgent|threat|save|kill|accident|robbery|theft|murder|assault|fight|help|attack|abuse|violence|crime|police help|100|112)\b/i.test(q)) {
+            return "NOTICE: This assistant cannot register complaints, log FIRs, or respond to active crimes.\n\n" +
+                   "• For immediate emergencies or life-threatening situations, please call 100 or 112 immediately.\n" +
+                   "• To register an official complaint or file an FIR, please visit your local police station or log in to the Andhra Pradesh Police Citizen Portal (https://citizen.appolice.gov.in).";
         }
 
-        // 2. Cyber fraud Check
-        if (q.includes('cyber') || q.includes('hack') || q.includes('online fraud') || q.includes('scam') || q.includes('bank fraud') || q.includes('money lost') || q.includes('otp') || q.includes('financial fraud') || q.includes('cybercrime') || q.includes('nude')) {
-            return "For cyber safety concerns or online/financial fraud, please report immediately by dialing the National Cyber Crime Helpline at 1930, or file an official complaint on the web portal: https://cybercrime.gov.in. You can also view the Cyber Safety card in our Public Outreach section.";
+        // 2. Cyber Crime / Financial Fraud Checks
+        if (/\b(cyber|hack|online|scam|fraud|money|otp|bank|phishing|nude|harass|website|password|card)\b/i.test(q)) {
+            return "CYBER SAFETY ADVISORY:\n\n" +
+                   "• For online or financial frauds (e.g., OTP scams, unauthorized bank withdrawals, hacking), please report immediately to the National Cyber Crime Helpline by dialing 1930.\n" +
+                   "• You can register official cyber complaints online at: https://cybercrime.gov.in\n" +
+                   "• For cyber security guidance, check the resources listed on our website.";
         }
 
-        // 3. Profile / Officer Details
-        if (q.includes('who is') || q.includes('saritha') || q.includes('rank') || q.includes('designation') || q.includes('posting') || q.includes('role') || q.includes('education') || q.includes('career') || q.includes('degree') || q.includes('award') || q.includes('journey') || q.includes('swechha') || q.includes('child')) {
-            return "Officer Profile & Career Details:\n• Name: K.G.V. Saritha, IPS\n• Designation: Deputy Commissioner of Police (Admin), NTR District Police Commissionerate, Vijayawada\n• Education: M.Sc. Psychology (University Topper), LL.M (Gold Medallist, Osmania University), Multiple Academic Honors.\n• Career Postings:\n  - DCP (Admin), Vijayawada: January 2025 – Present\n  - Women Protection Cell, CID: Additional SP / SP\n  - Early Field Leadership (2010 – 2020): SDPO Bodhan, Narsampet, Eluru, Guntur West (DSP 2010 Batch)\n• Operation Swechha (2023): Statewide child protection campaign that rescued 1,500+ child labour victims (including 326 in a single phase) and reintegrated hundreds into schools.\n• Awards & Honors: AP Police Seva Medal, DGP Commendation, Chief Minister's Award, NGO & Child Protection Honors.";
+        // 3. Operation Swechha
+        if (/\b(swechha|swecha|child|children|rescue|labor|labour|kid|kids|school)\b/i.test(q)) {
+            return "OPERATION SWECHHA DETAILS:\n\n" +
+                   "Operation Swechha is a verified statewide child protection campaign led by K.G.V. Saritha, IPS during tenure at CID in 2023.\n" +
+                   "• Total Rescues: 1,500+ child labor victims rescued and liberated from exploitation.\n" +
+                   "• Single-Phase Impact: 326 child rescues executed in a single phase of operations.\n" +
+                   "• School Reintegration: Hundreds of rescued children were successfully re-admitted to government schools to secure their futures.";
         }
 
-        // 4. Outreach / Programs
-        if (q.includes('outreach') || q.includes('program') || q.includes('women') || q.includes('child') || q.includes('school') || q.includes('college') || q.includes('community') || q.includes('initiative') || q.includes('seminar') || q.includes('session')) {
-            return "Approved Outreach Initiatives:\n• Women Safety: Awareness campaigns and SHE Teams support pathways.\n• Child Protection: School/college awareness on child safety and abuse prevention.\n• Cyber Safety: Online fraud prevention and digital hygiene education.\n• Community Policing: Citizen-police neighborhood coordination platforms.";
+        // 4. Educational Qualifications
+        if (/\b(education|qualification|degree|university|college|study|topper|gold medal|psychology|law|llm|msc)\b/i.test(q)) {
+            return "ACADEMIC QUALIFICATIONS:\n\n" +
+                   "• M.Sc. in Psychology: University Topper (informs emotional intelligence and victim assistance in policing).\n" +
+                   "• LL.M (Master of Laws): Gold Medallist from Osmania University (grounding administrative choices in legal structure and justice).\n" +
+                   "• Academic Distinctions: Recipient of multiple gold medals and academic honors.";
         }
 
-        // 5. Speeches & Media
-        if (q.includes('speech') || q.includes('video') || q.includes('youtube') || q.includes('media') || q.includes('interview') || q.includes('press')) {
-            return "Verified Speeches & Media:\n• iDream Media 'Dil Se With Anjali' Interview (2020) discussing women safety, youth guidance, and CID experience.\n• iDream News 'Crime Diaries With Muralidhar #662' Interview (2021).\n• Manastars Student Outreach Inspirational Speech (2019).\n• Ramakrishna Math Speech (June 2026) titled 'How to Live Courageously in Society?'.\n• Official IPS Cadre Notification (Jan 2025).";
+        // 5. Postings / Career Timeline
+        if (/\b(career|posting|timeline|promotion|history|join|dsp|sp|dcp|rank|role|assignment|experience|eluru|guntur|bodhan|narsampet|cid)\b/i.test(q)) {
+            return "OFFICIAL SERVICE TIMELINE & POSTINGS:\n\n" +
+                   "• 2010 – 2020: Early Field Leadership as Deputy Superintendent of Police (DSP - 2010 Batch). Postings include SDPO Bodhan, SDPO Narsampet, SDPO Eluru, and SDPO Guntur West.\n" +
+                   "• Women Protection Cell, CID: Additional SP / SP. Supervised state anti-human trafficking units and child safety campaigns.\n" +
+                   "• January 2025 – Present: Deputy Commissioner of Police (Administration), NTR District Police Commissionerate, Vijayawada. Leading staff welfare, transparency, and administrative optimizations.";
         }
 
-        // 6. Contact / Appointment Details
-        if (q.includes('contact') || q.includes('address') || q.includes('email') || q.includes('phone') || q.includes('number') || q.includes('whatsapp') || q.includes('visiting') || q.includes('hours') || q.includes('meet') || q.includes('appointment')) {
-            return "Office Details:\n• Office Address: Office of the DCP (Administration), NTR Police Commissionerate Headquarters, Vijayawada, AP, India.\n• Visiting Hours: 10:30 AM to 05:00 PM (IST) by prior appointment.\n• Official Email: cp@vza.appolice.gov.in (Attn: DCP Administration)\n• WhatsApp-based Citizen Helpline: 9552300009.\n• Note: Personal contact details are to be confirmed by the office. For official requests, use the Public Request Form on the site.";
+        // 6. Awards and Honors
+        if (/\b(award|medal|honor|honour|recognition|seva|commendation|cm|chief minister|dgp)\b/i.test(q)) {
+            return "DECORATIONS & HONORS:\n\n" +
+                   "• Andhra Pradesh Police Seva Medal.\n" +
+                   "• DGP Commendation Badge.\n" +
+                   "• Chief Minister’s Award.\n" +
+                   "• NGO & Child Protection Recognition Honors (for anti-trafficking and child rescue contributions).";
         }
 
-        // 7. Resources / Links
-        if (q.includes('resource') || q.includes('link') || q.includes('website') || q.includes('citizen') || q.includes('portal') || q.includes('faq') || q.includes('form')) {
-            return "Official Public Resources:\n• Citizen Services: https://citizen.appolice.gov.in\n• AP Police Main Portal: https://appolice.gov.in\n• Emergency Helpline: Dial 100 or 112\n• You can also access e-complaints, download forms, and other services in the Resources Section on this portal.";
+        // 7. Contact Details, Appointments, Visiting Hours
+        if (/\b(contact|address|office|visit|hours|meet|appointment|email|phone|number|whatsapp|location|office address)\b/i.test(q)) {
+            return "OFFICE LOCATION & CONNECT PATHWAYS:\n\n" +
+                   "• Office Address: Office of the DCP (Administration), NTR Police Commissionerate Headquarters, Vijayawada, Andhra Pradesh, India.\n" +
+                   "• Office Hours: 10:30 AM to 05:00 PM (IST) (Visiting hours by prior appointment).\n" +
+                   "• Official Email: cp@vza.appolice.gov.in (Mark attention: 'DCP Administration').\n" +
+                   "• Official WhatsApp & Helpline: 9552300009 (AP Police Citizen Services).\n" +
+                   "• Public Request: To request a meeting, speech invitation, or coordination, please use the Public Request Form on this portal.";
         }
 
-        // 8. General Greetings / Conversational
-        if (q.includes('hello') || q.includes('hi ') || q.includes('hey') || q.includes('greetings') || q.includes('good morning') || q.includes('good afternoon') || q.includes('good evening')) {
-            return "Hello. I am the Saritha IPS Public Information Assistant. How can I help you find approved public information? You can ask about the officer's profile, outreach programs, media updates, contact details, or citizen resources.";
+        // 8. Citizen Services & Resources Section
+        if (/\b(resource|link|services|portal|website|faq|form|e-complaint|complaint|download)\b/i.test(q)) {
+            return "CITIZEN RESOURCE PORTALS:\n\n" +
+                   "You can click on the following verified portals in our Resources section:\n" +
+                   "• AP Police Citizen Services: https://citizen.appolice.gov.in (For FIR status, complaints, NOCs)\n" +
+                   "• AP Police Main Portal: https://appolice.gov.in\n" +
+                   "• For e-complaints or form downloads, go to the 'Official Resources' grid at the bottom of this page.";
         }
 
-        // 9. Default Fallback
-        return "I apologize, but I can only answer queries based on the approved public information on this website. For other official inquiries, please fill out the Public Request Form on the site or visit the NTR Police Commissionerate office.";
+        // 9. Speeches / Videos / YouTube
+        if (/\b(speech|video|youtube|media|interview|press|anjali|dil se|muralidhar|crime diaries|manastars|speech to students)\b/i.test(q)) {
+            return "VERIFIED SPEECHES & VIDEOS:\n\n" +
+                   "You can watch these verified public records directly in our Speeches & Media section:\n" +
+                   "1. iDream Media 'Dil Se With Anjali' Interview (2020) – Discussing CID operations, women's safety, and policing.\n" +
+                   "2. iDream News 'Crime Diaries with Muralidhar #662' Interview (2021) – In-depth case investigations discussions.\n" +
+                   "3. Manastars Inspirational Speech to Students (2019) – Value education and discipline talk.\n" +
+                   "4. Ramakrishna Math Speech (June 2026) – 'How to Live Courageously in Society?'";
+        }
+
+        // 10. General Police Queries (FIR copy, Passport Verification, NOC status, Police Station location)
+        if (/\b(fir|passport|noc|verification|station|lodge complaint|file fir|status|police station|general query)\b/i.test(q)) {
+            return "GENERAL POLICE SERVICE DESK:\n\n" +
+                   "This website is the personal public information portal for the DCP (Administration), Vijayawada, and does not host regional police desk databases.\n" +
+                   "• For checking Passport Verification status, NOC applications, FIR downloads, or registering general complaints, please visit the AP Police Citizen Services Portal: https://citizen.appolice.gov.in\n" +
+                   "• Alternatively, visit the nearest police station in your jurisdiction.";
+        }
+
+        // 11. Greetings
+        if (/\b(hi|hello|hey|greetings|good morning|good afternoon|good evening|thanks|thank you|welcome|bye|goodbye|who are you|about you)\b/i.test(q)) {
+            if (q.includes('thank') || q.includes('thanks')) {
+                return "You are welcome. Please let me know if you need any other official public information regarding K.G.V. Saritha, IPS or AP Police Citizen Resources.";
+            }
+            if (q.includes('bye') || q.includes('goodbye')) {
+                return "Thank you for visiting the portal. Have a safe day ahead.";
+            }
+            return "Hello! I am the K.G.V. Saritha IPS Public Information Assistant.\n\n" +
+                   "You can ask me questions about:\n" +
+                   "• Academic credentials (Psychology, LL.M Gold Medal)\n" +
+                   "• Career postings & history\n" +
+                   "• Operation Swechha (Child rescue statistics)\n" +
+                   "• Office address, appointment hours & contact info\n" +
+                   "• Speeches, videos, and media interviews\n" +
+                   "• AP Police citizen resources & safety helplines";
+        }
+
+        // 12. Fallback
+        return "I apologize, but I can only answer queries directly relating to the verified public information available on this portal.\n\n" +
+               "• For official meeting requests, academic session invitations, or administrative queries, please use the Public Request Form on this page.\n" +
+               "• For general police services or complaints, please use the official AP Police Citizen Portal at: https://citizen.appolice.gov.in";
     }
 });
