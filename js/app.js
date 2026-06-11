@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 4. Hero Subtitle Typewriter Effect ---
-    const words = ["Indian Police Service", "DCP - Public Servant", "Motivational Speaker", "Community Leader"];
+    const words = ["Indian Police Service", "DCP (Administration), Vijayawada", "NTR Police Commissionerate", "Official Public Information Portal"];
     let wordIndex = 0;
     let charIndex = 0;
     const typingDelay = 100;
@@ -145,12 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add('active');
             }
         });
-
-        // Apply dynamic theme class to body
-        sections.forEach(section => {
-            body.classList.remove(`theme-${section.id}`);
-        });
-        body.classList.add(`theme-${currentSectionId}`);
     }
     
     window.addEventListener('scroll', scrollSpy);
@@ -306,10 +300,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Retrieve form values
             const name = document.getElementById('formName').value.trim();
             const email = document.getElementById('formEmail').value.trim();
+            const subject = document.getElementById('formSubject').value.trim();
             const channel = document.getElementById('formChannel').value;
             const message = document.getElementById('formMessage').value.trim();
 
-            if (!name || !email || !message) {
+            if (!name || !email || !subject || !message) {
                 alert("Please fill in all required fields.");
                 return;
             }
@@ -318,11 +313,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetPhone = "919000000000"; 
 
             // Construct text message
-            const emailSubject = encodeURIComponent(`Inquiry from ${name} via Website`);
-            const messageBody = `Name: ${name}\nEmail: ${email}\nPreferred Contact Channel: ${channel}\n\nMessage:\n${message}`;
+            const emailSubject = encodeURIComponent(subject || `Inquiry from ${name} via Website`);
+            const messageBody = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nPreferred Contact Method: ${channel}\n\nMessage:\n${message}`;
             const encodedBody = encodeURIComponent(messageBody);
 
-            if (channel === 'whatsapp') {
+            if (channel === 'phone') {
                 const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodedBody}`;
                 window.open(whatsappUrl, '_blank');
             } else {
