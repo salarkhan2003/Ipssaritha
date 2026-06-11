@@ -413,8 +413,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // 3. Profile / Officer Details
-        if (q.includes('who is') || q.includes('saritha') || q.includes('rank') || q.includes('designation') || q.includes('posting') || q.includes('role') || q.includes('education') || q.includes('career') || q.includes('degree') || q.includes('award') || q.includes('journey')) {
-            return "Officer Details:\n• Name: Smt K.G.V. Saritha, IPS\n• Designation: DCP (Admn.), Vijayawada\n• Office: NTR Police Commissionerate, Vijayawada\n• Education: M.Sc. in Psychology, LL.M.\n• Career: Joined as DSP (2010 batch), served in Bodhan, Narsampet, Eluru, Guntur West, SP CID/Women Protection Cell; appointed to IPS (Select List 2023).\n• Awards: AP Police Seva Medal, Best Women Police Officer Award.";
+        if (q.includes('who is') || q.includes('saritha') || q.includes('rank') || q.includes('designation') || q.includes('posting') || q.includes('role') || q.includes('education') || q.includes('career') || q.includes('degree') || q.includes('award') || q.includes('journey') || q.includes('swechha') || q.includes('child')) {
+            return "Officer Profile & Career Details:\n• Name: K.G.V. Saritha, IPS\n• Designation: Deputy Commissioner of Police (Admin), NTR District Police Commissionerate, Vijayawada\n• Education: M.Sc. Psychology (University Topper), LL.M (Gold Medallist, Osmania University), Multiple Academic Honors.\n• Career Postings:\n  - DCP (Admin), Vijayawada: January 2025 – Present\n  - Women Protection Cell, CID: Additional SP / SP\n  - Early Field Leadership (2010 – 2020): SDPO Bodhan, Narsampet, Eluru, Guntur West (DSP 2010 Batch)\n• Operation Swechha (2023): Statewide child protection campaign that rescued 1,500+ child labour victims (including 326 in a single phase) and reintegrated hundreds into schools.\n• Awards & Honors: AP Police Seva Medal, DGP Commendation, Chief Minister's Award, NGO & Child Protection Honors.";
         }
 
         // 4. Outreach / Programs
