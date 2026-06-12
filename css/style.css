@@ -495,7 +495,8 @@ h1, h2, h3, h4, h5, h6 {
         align-items: flex-start;
     }
     
-    .nav-menu.active {
+    .nav-menu.active,
+    .nav-menu.open {
         right: 0;
     }
     
@@ -572,6 +573,19 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         align-items: center;
         gap: 16px;
+    }
+    .hero-content .hero-actions {
+        order: 1;
+        margin-top: 0;
+    }
+    .hero-content .hero-subtitle {
+        order: 2;
+    }
+    .hero-content .hero-desc {
+        order: 3;
+    }
+    .hero-content .hero-stats {
+        order: 4;
     }
 }
 
