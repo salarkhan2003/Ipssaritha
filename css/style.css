@@ -623,3 +623,15 @@ body.light-mode #chatbotWindow .border-t {
     background-color: #ffffff !important;
 }
 
+body.light-mode .preloaded-chips-container button {
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    color: #1d1d1f !important;
+}
+
+body.light-mode .preloaded-chips-container button:hover {
+    background-color: rgba(255, 69, 0, 0.1) !important;
+    border-color: #FF4500 !important;
+    color: #FF4500 !important;
+}
+
