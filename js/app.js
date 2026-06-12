@@ -42,10 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             navMenu.classList.add('open');
+            body.classList.add('nav-open');
         });
 
         function closeMenu() {
             navMenu.classList.remove('open');
+            body.classList.remove('nav-open');
         }
 
         if (navCloseBtn) {
