@@ -112,13 +112,85 @@ body {
     transition: opacity 0.5s ease;
 }
 
+/* Navbar Scrolled Styling */
+#main-nav {
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#main-nav.scrolled {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    background-color: rgba(5, 5, 5, 0.8) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.light-mode #main-nav.scrolled {
+    background-color: rgba(245, 245, 247, 0.85) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 /* Light Mode Variables */
 body.light-mode {
     --bg: #f5f5f7;
     --accent: #FF4500;
     --card: #ffffff;
-    background-color: var(--bg);
-    color: #1d1d1f;
+    background-color: var(--bg) !important;
+    color: #1d1d1f !important;
+}
+
+/* Force light background on all sections and dark containers */
+body.light-mode section,
+body.light-mode .bg-\[\#050505\],
+body.light-mode .min-h-screen,
+body.light-mode .bg-black {
+    background-color: #f5f5f7 !important;
+}
+
+/* Force dark text globally for light mode */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6,
+body.light-mode p,
+body.light-mode span:not(.text-\[\#FF4500\]):not(.text-\[\#ff4500\]):not(.theme-icon-sun):not(.theme-icon-moon) {
+    color: #1d1d1f !important;
+}
+
+body.light-mode .text-white,
+body.light-mode .text-gray-300,
+body.light-mode .text-gray-400,
+body.light-mode .text-gray-500 {
+    color: #515154 !important;
+}
+
+body.light-mode .text-white\/40 {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+body.light-mode .text-white\/80 {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+
+body.light-mode .border-white\/5,
+body.light-mode .border-white\/10,
+body.light-mode .border-white\/15,
+body.light-mode .border-white\/20,
+body.light-mode .border-t,
+body.light-mode .border-b {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Force background cards to turn white */
+body.light-mode .bg-\[\#111\],
+body.light-mode .bg-cardDark,
+body.light-mode .media-card {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
 }
 
 body.light-mode #main-nav {
@@ -197,6 +269,19 @@ body.light-mode #home .text-white\/40 {
 
 body.light-mode #home .bg-white\/20 {
     background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light-mode #home .pointer-events-none.select-none {
+    opacity: 0.15 !important;
+}
+
+body.light-mode #home .bg-gradient-to-b {
+    background-image: linear-gradient(to bottom, transparent, transparent, #f5f5f7) !important;
+}
+
+body.light-mode .animate-float-left,
+body.light-mode .animate-float-right {
+    opacity: 0.4 !important;
 }
 
 /* About / Info grid changes */

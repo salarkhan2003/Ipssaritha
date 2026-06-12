@@ -38,11 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            nav.classList.add('py-4', 'bg-[#050505]/90', 'backdrop-blur-md', 'border-b', 'border-white/5');
-            nav.classList.remove('py-8', 'bg-transparent');
+            nav.classList.add('scrolled');
         } else {
-            nav.classList.remove('py-4', 'bg-[#050505]/90', 'backdrop-blur-md', 'border-b', 'border-white/5');
-            nav.classList.add('py-8', 'bg-transparent');
+            nav.classList.remove('scrolled');
         }
     });
 
