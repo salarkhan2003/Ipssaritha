@@ -382,11 +382,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatbotSend = document.getElementById('chatbotSend');
 
     if (chatbotToggle && chatbotWindow && chatbotClose) {
-        chatbotToggle.addEventListener('click', () => {
+        chatbotToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             chatbotWindow.classList.toggle('active');
             chatbotWindow.classList.toggle('opacity-0');
             chatbotWindow.classList.toggle('scale-95');
             chatbotWindow.classList.toggle('pointer-events-none');
+            if (chatbotMessages) {
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
         });
 
         chatbotClose.addEventListener('click', () => {
@@ -400,6 +404,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 handleUserSendMessage();
             }
         });
+
+        // Close chatbot when clicking outside the widget window
+        document.addEventListener('click', (e) => {
+            if (chatbotWindow.classList.contains('active')) {
+                if (!chatbotWindow.contains(e.target) && !chatbotToggle.contains(e.target)) {
+                    chatbotWindow.classList.remove('active');
+                    chatbotWindow.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                }
+            }
+        });
     }
 
     function appendMessage(text, sender) {
@@ -407,10 +421,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const msgDiv = document.createElement('div');
         if (sender === 'user') {
             msgDiv.className = 'bg-[#FF4500] text-white rounded-2xl p-3 max-w-[85%] self-end text-sm';
+            msgDiv.textContent = text;
         } else {
             msgDiv.className = 'bg-white/5 border border-white/5 rounded-2xl p-3 text-gray-300 max-w-[85%] self-start text-sm';
+            
+            // Simple markdown parser to support formatting/links in replies
+            let formattedText = text
+                .replace(/\n/g, '<br>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="underline text-[#FF4500] hover:text-white">$1</a>');
+            msgDiv.innerHTML = formattedText;
         }
-        msgDiv.textContent = text;
         chatbotMessages.appendChild(msgDiv);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
@@ -423,10 +444,55 @@ document.addEventListener('DOMContentLoaded', () => {
         appendMessage(text, 'user');
         chatbotInput.value = '';
 
+        // Show typing indicator
+        const typingIndicator = document.createElement('div');
+        typingIndicator.className = 'bg-white/5 border border-white/5 rounded-2xl p-3 text-gray-400 max-w-[85%] self-start text-sm animate-pulse italic';
+        typingIndicator.innerText = 'Typing...';
+        chatbotMessages.appendChild(typingIndicator);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
         setTimeout(() => {
+            typingIndicator.remove();
             const reply = getChatbotResponse(text);
             appendMessage(reply, 'assistant');
-        }, 500);
+        }, 600);
+    }
+
+    function renderPreloadedQuestions() {
+        if (!chatbotMessages) return;
+        if (chatbotMessages.querySelector('.preloaded-chips-container')) return;
+
+        const preloadedQA = [
+            { question: "Cyber Fraud?", key: "cyber" },
+            { question: "Office Location?", key: "contact" },
+            { question: "Online Portal?", key: "resource" },
+            { question: "WhatsApp Helpline?", key: "whatsapp" },
+            { question: "Swechha Campaign?", key: "swechha" }
+        ];
+
+        const chipsContainer = document.createElement('div');
+        chipsContainer.className = 'flex flex-wrap gap-2 my-2 preloaded-chips-container';
+        
+        preloadedQA.forEach((qa) => {
+            const chip = document.createElement('button');
+            chip.className = 'px-3 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-[#FF4500]/10 hover:border-[#FF4500] text-xs text-gray-300 hover:text-white transition duration-300 text-left';
+            chip.innerText = qa.question;
+            chip.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (chatbotInput) {
+                    chatbotInput.value = qa.question;
+                    handleUserSendMessage();
+                }
+            });
+            chipsContainer.appendChild(chip);
+        });
+        
+        chatbotMessages.appendChild(chipsContainer);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    if (chatbotMessages) {
+        setTimeout(renderPreloadedQuestions, 1000);
     }
 
     function getChatbotResponse(query) {
@@ -659,170 +725,4 @@ document.addEventListener('DOMContentLoaded', () => {
             goToSlide(currentSlide + 1);
             resetAutoPlay();
         });
-    }
-
-    // --- AI Chatbot Widget Logic ---
-    const chatbotToggle = document.getElementById('chatbotToggle');
-    const chatbotWindow = document.getElementById('chatbotWindow');
-    const chatbotClose = document.getElementById('chatbotClose');
-    const chatbotInput = document.getElementById('chatbotInput');
-    const chatbotSend = document.getElementById('chatbotSend');
-    const chatbotMessages = document.getElementById('chatbotMessages');
-
-    const preloadedQA = [
-        {
-            question: "Cyber Fraud?",
-            answer: "For immediate reporting of financial cyber fraud, dial the Cyber Fraud Helpline at **1930** immediately. You can also report cyber incidents online at [cybercrime.gov.in](https://cybercrime.gov.in)."
-        },
-        {
-            question: "Office Location?",
-            answer: "The Office of the DCP (Administration) is located at the **NTR Police Commissionerate, Vijayawada, Andhra Pradesh, India**."
-        },
-        {
-            question: "Online Portal?",
-            answer: "Citizens can access services (like status verification and check status) via the AP Police Citizen Portal at [citizen.appolice.gov.in](https://citizen.appolice.gov.in)."
-        },
-        {
-            question: "WhatsApp Helpline?",
-            answer: "The Citizen WhatsApp Services Helpline number is **+91 91543 70790**. Message this helpline for status inquiries and support."
-        },
-        {
-            question: "Officer Profile?",
-            answer: "Smt. K.G.V. Saritha, IPS is a meritorious police officer currently serving as the **DCP (Administration) in Vijayawada, Andhra Pradesh**. She is renowned for her academic merit, discipline, and community leadership."
-        }
-    ];
-
-    if (chatbotToggle && chatbotWindow) {
-        chatbotToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            chatbotWindow.classList.toggle('active');
-            if (chatbotMessages) {
-                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-            }
-        });
-    }
-
-    if (chatbotClose && chatbotWindow) {
-        chatbotClose.addEventListener('click', () => {
-            chatbotWindow.classList.remove('active');
-        });
-    }
-
-    // Close chatbot when clicking outside
-    document.addEventListener('click', (e) => {
-        if (chatbotWindow && chatbotWindow.classList.contains('active')) {
-            if (!chatbotWindow.contains(e.target) && !chatbotToggle.contains(e.target)) {
-                chatbotWindow.classList.remove('active');
-            }
-        }
-    });
-
-    function appendMessage(text, isUser = false) {
-        if (!chatbotMessages) return;
-        const msgDiv = document.createElement('div');
-        if (isUser) {
-            msgDiv.className = 'bg-[#FF4500] text-white rounded-2xl p-3 max-w-[85%] self-end shadow-sm';
-            msgDiv.innerText = text;
-        } else {
-            msgDiv.className = 'bg-white/5 border border-white/5 rounded-2xl p-3 text-gray-300 max-w-[85%] self-start';
-            
-            // Simple markdown parser
-            let formattedText = text
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="underline text-[#FF4500] hover:text-white">$1</a>');
-            msgDiv.innerHTML = formattedText;
-        }
-        chatbotMessages.appendChild(msgDiv);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
-
-    function handleUserQuestion(question, precalculatedAnswer = null) {
-        appendMessage(question, true);
-        
-        const botResponse = precalculatedAnswer || findBestAnswer(question);
-        
-        // Show typing indicator
-        const typingIndicator = document.createElement('div');
-        typingIndicator.className = 'bg-white/5 border border-white/5 rounded-2xl p-3 text-gray-400 max-w-[85%] self-start animate-pulse italic';
-        typingIndicator.innerText = 'Typing...';
-        chatbotMessages.appendChild(typingIndicator);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        
-        setTimeout(() => {
-            typingIndicator.remove();
-            appendMessage(botResponse, false);
-        }, 500);
-    }
-
-    function findBestAnswer(query) {
-        const lowerQuery = query.toLowerCase();
-        
-        for (const qa of preloadedQA) {
-            const cleanQ = qa.question.toLowerCase().replace('?', '');
-            if (lowerQuery.includes(cleanQ) || cleanQ.split(' ').some(word => word.length > 3 && lowerQuery.includes(word))) {
-                return qa.answer;
-            }
-        }
-        
-        if (lowerQuery.includes('saritha') || lowerQuery.includes('profile') || lowerQuery.includes('officer') || lowerQuery.includes('who is')) {
-            return "Smt. K.G.V. Saritha, IPS is a meritorious police officer currently serving as the **DCP (Administration) in Vijayawada, Andhra Pradesh**.";
-        }
-        if (lowerQuery.includes('contact') || lowerQuery.includes('phone') || lowerQuery.includes('email') || lowerQuery.includes('number')) {
-            return "You can contact Smt. K.G.V. Saritha, IPS through the official channels listed in the Contact section of this portal, or use the Cyber Fraud Helpline (**1930**).";
-        }
-        if (lowerQuery.includes('hello') || lowerQuery.includes('hi') || lowerQuery.includes('hey')) {
-            return "Hello! I am here to help you navigate Smt. K.G.V. Saritha, IPS's public information portal. Feel free to select any of the preloaded questions above or ask about specific details!";
-        }
-        
-        return "Thank you for your inquiry. I don't have a specific record matching that request. For official services, please use the AP Police Citizen Portal at **citizen.appolice.gov.in** or reach out via the **Contact Form**.";
-    }
-
-    function renderPreloadedQuestions() {
-        if (!chatbotMessages) return;
-        
-        // Avoid duplicate rendering
-        if (chatbotMessages.querySelector('.preloaded-chips-container')) return;
-
-        const chipsContainer = document.createElement('div');
-        chipsContainer.className = 'flex flex-wrap gap-2 my-2 preloaded-chips-container';
-        
-        preloadedQA.forEach((qa) => {
-            const chip = document.createElement('button');
-            chip.className = 'px-3 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-[#FF4500]/10 hover:border-[#FF4500] text-xs text-gray-300 hover:text-white transition duration-300 text-left';
-            chip.innerText = qa.question;
-            chip.addEventListener('click', (e) => {
-                e.stopPropagation();
-                handleUserQuestion(qa.question, qa.answer);
-            });
-            chipsContainer.appendChild(chip);
-        });
-        
-        chatbotMessages.appendChild(chipsContainer);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
-
-    if (chatbotMessages) {
-        setTimeout(renderPreloadedQuestions, 600);
-    }
-
-    if (chatbotSend && chatbotInput) {
-        chatbotSend.addEventListener('click', () => {
-            const text = chatbotInput.value.trim();
-            if (text) {
-                handleUserQuestion(text);
-                chatbotInput.value = '';
-            }
-        });
-
-        chatbotInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const text = chatbotInput.value.trim();
-                if (text) {
-                    handleUserQuestion(text);
-                    chatbotInput.value = '';
-                }
-            }
-        });
-    }
-
-});
+    }});
