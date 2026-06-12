@@ -635,3 +635,14 @@ body.light-mode .preloaded-chips-container button:hover {
     color: #FF4500 !important;
 }
 
+/* AI Chatbot Widget Positioning & Active overrides */
+#chatbotWindow {
+    bottom: 76px !important;
+}
+
+#chatbotWindow.active {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    pointer-events: auto !important;
+}
+
