@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. Mobile Navigation Menu ---
     const menuToggle = document.getElementById('menuToggler');
     const navMenu = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .nav-cta');
     const navCloseBtn = document.querySelector('.nav-close-btn');
 
     if (menuToggle && navMenu) {
