@@ -235,19 +235,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 5c. Hero Parallax / Floating Cursor effect ---
     const heroSection = document.querySelector('.hero');
     const heroImgWrapper = document.querySelector('.hero-img-wrapper');
+    const badge1 = document.querySelector('.floating-badge.badge-1');
+    const badge2 = document.querySelector('.floating-badge.badge-2');
     if (heroSection) {
         heroSection.addEventListener('mousemove', (e) => {
             const { clientX, clientY } = e;
             const { innerWidth, innerHeight } = window;
-            const dx = (clientX - innerWidth / 2) / 40;
-            const dy = (clientY - innerHeight / 2) / 40;
+            const dx = (clientX - innerWidth / 2) / 30;
+            const dy = (clientY - innerHeight / 2) / 30;
             if (heroImgWrapper) {
-                heroImgWrapper.style.transform = `translate3d(${dx}px, ${dy}px, 0) scale(1.02)`;
+                heroImgWrapper.style.transform = `translate3d(${dx}px, ${dy}px, 0) scale(1.03)`;
+            }
+            if (badge1) {
+                badge1.style.transform = `translate3d(${-dx * 1.5}px, ${-dy * 1.5}px, 0)`;
+            }
+            if (badge2) {
+                badge2.style.transform = `translate3d(${dx * 1.8}px, ${dy * 1.8}px, 0)`;
             }
         });
         heroSection.addEventListener('mouseleave', () => {
             if (heroImgWrapper) {
                 heroImgWrapper.style.transform = 'translate3d(0, 0, 0) scale(1)';
+            }
+            if (badge1) {
+                badge1.style.transform = 'translate3d(0, 0, 0)';
+            }
+            if (badge2) {
+                badge2.style.transform = 'translate3d(0, 0, 0)';
             }
         });
     }
@@ -267,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dx = (x - xc) / xc;
             const dy = (y - yc) / yc;
             
-            card.style.transform = `perspective(1000px) rotateY(${dx * 3}deg) rotateX(${-dy * 3}deg) translateY(-4px) scale(1.01)`;
+            card.style.transform = `perspective(1000px) rotateY(${dx * 5}deg) rotateX(${-dy * 5}deg) translateY(-8px) scale(1.02)`;
             card.style.setProperty('--x', `${x}px`);
             card.style.setProperty('--y', `${y}px`);
         });

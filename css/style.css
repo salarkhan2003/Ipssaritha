@@ -19,20 +19,20 @@
     --radius-full: 9999px;/* Pill containers */
     
     /* User-Specified Section Colors - Light Theme */
-    --bg-home: #F7F7F5;
-    --bg-about: #EEF3FF;
-    --bg-outreach: #EEF9F1;
-    --bg-media: #FFF1E8;
-    --bg-gallery: #F5F0FF;
-    --bg-resources: #F1F5F9;
-    --bg-contact: #FFF4F6;
-    --bg-chatbot: #EDEBFF;
-    --bg-footer: #111827;
+    --bg-home: #F2F2F0;
+    --bg-about: #D9E4FF;
+    --bg-outreach: #D1F2D9;
+    --bg-media: #FFE3CF;
+    --bg-gallery: #F0E6FF;
+    --bg-resources: #E2E8F0;
+    --bg-contact: #FFE2E7;
+    --bg-chatbot: #E4E1FF;
+    --bg-footer: #0A0F1A;
     
     /* User-Specified Accents */
     --btn-primary: #111827;
     --btn-secondary: #FFFFFF;
-    --border-color: #E5E7EB;
+    --border-color: rgba(17, 24, 39, 0.08);
     --text-highlight: #4F46E5;
     
     /* Base UI Mappings for Light Theme */
@@ -42,8 +42,8 @@
     --bg-card: rgba(255, 255, 255, 0.95);
     
     --text-primary: #111827;
-    --text-secondary: #374151;
-    --text-muted: #6B7280;
+    --text-secondary: #2C3E50;
+    --text-muted: #5D6D7E;
     --text-on-dark: #ffffff;
     
     /* iOS 18 Control Center Color Palette (For Colorful Widget Icons) */
@@ -54,25 +54,26 @@
     --ios-purple: #5856d6;
     --ios-yellow: #ffcc00;
     
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.03);
-    --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 24px 50px rgba(0, 0, 0, 0.06);
+    /* Heavier, Multi-layered Dynamic Shadows for Depth */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 12px 30px rgba(17, 24, 39, 0.08), 0 4px 12px rgba(17, 24, 39, 0.03);
+    --shadow-lg: 0 20px 48px rgba(17, 24, 39, 0.12), 0 8px 20px rgba(17, 24, 39, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    --shadow-xl: 0 32px 72px rgba(17, 24, 39, 0.16), 0 12px 32px rgba(17, 24, 39, 0.06);
     
     --siri-gradient: linear-gradient(135deg, #007aff 0%, #5856d6 35%, #ff2d55 70%, #ff9500 100%);
 }
 
 body.dark-theme {
     /* User-Specified Section Colors - Dark Theme (Counterparts adjusted for readability) */
-    --bg-home: #121213;
-    --bg-about: #141725;
-    --bg-outreach: #111B14;
-    --bg-media: #1B1310;
-    --bg-gallery: #151120;
-    --bg-resources: #12151B;
-    --bg-contact: #1E1012;
-    --bg-chatbot: #13122B;
-    --bg-footer: #0B0E17;
+    --bg-home: #0D0D0E;
+    --bg-about: #0A102E;
+    --bg-outreach: #051A0D;
+    --bg-media: #261105;
+    --bg-gallery: #140826;
+    --bg-resources: #0F131A;
+    --bg-contact: #290810;
+    --bg-chatbot: #0B0A1C;
+    --bg-footer: #05070D;
     
     /* User-Specified Accents in Dark Theme */
     --btn-primary: #ffffff;
@@ -90,10 +91,11 @@ body.dark-theme {
     --text-secondary: #D1D5DB;
     --text-muted: #9CA3AF;
     
-    --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.5);
-    --shadow-xl: 0 24px 50px rgba(0, 0, 0, 0.6);
+    /* Glowing Shadows for Dark Theme */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.02);
+    --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 255, 255, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    --shadow-xl: 0 32px 72px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 255, 255, 0.04);
 }
 
 /* ==========================================================================
@@ -1124,13 +1126,13 @@ body.dark-theme .floating-badge-icon {
    About Officer Section (About Officer — #EEF3FF)
    ========================================================================== */
 .about-section {
-    background: linear-gradient(180deg, var(--bg-about) 0%, rgba(238, 243, 255, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-about) 0%, rgba(186, 204, 255, 0.6) 100%);
     position: relative;
     overflow: hidden;
 }
 
 body.dark-theme .about-section {
-    background: linear-gradient(180deg, var(--bg-about) 0%, rgba(20, 23, 37, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-about) 0%, #030611 100%);
 }
 
 .about-section::before {
@@ -1140,14 +1142,14 @@ body.dark-theme .about-section {
     right: -10%;
     width: 45%;
     height: 70%;
-    background: radial-gradient(circle, rgba(0, 122, 255, 0.04) 0%, transparent 70%);
-    filter: blur(50px);
+    background: radial-gradient(circle, rgba(0, 122, 255, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
     z-index: 1;
     pointer-events: none;
 }
 
 body.dark-theme .about-section::before {
-    background: radial-gradient(circle, rgba(129, 140, 248, 0.03) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 70%);
 }
 
 .profile-layout {
@@ -1288,13 +1290,13 @@ body.dark-theme .about-section::before {
    Public Outreach Initiatives (Public Outreach — #EEF9F1)
    ========================================================================== */
 .outreach-section {
-    background: linear-gradient(180deg, var(--bg-outreach) 0%, rgba(238, 249, 241, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-outreach) 0%, rgba(169, 231, 187, 0.6) 100%);
     position: relative;
     overflow: hidden;
 }
 
 body.dark-theme .outreach-section {
-    background: linear-gradient(180deg, var(--bg-outreach) 0%, rgba(17, 27, 20, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-outreach) 0%, #010603 100%);
 }
 
 .outreach-section::before {
@@ -1304,14 +1306,14 @@ body.dark-theme .outreach-section {
     left: -10%;
     width: 45%;
     height: 70%;
-    background: radial-gradient(circle, rgba(52, 199, 89, 0.04) 0%, transparent 70%);
-    filter: blur(50px);
+    background: radial-gradient(circle, rgba(52, 199, 89, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
     z-index: 1;
     pointer-events: none;
 }
 
 body.dark-theme .outreach-section::before {
-    background: radial-gradient(circle, rgba(52, 199, 89, 0.02) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(52, 199, 89, 0.08) 0%, transparent 70%);
 }
 
 .initiatives-grid {
@@ -1332,24 +1334,30 @@ body.dark-theme .outreach-section::before {
     }
 }
 
-/* iOS 18 Widget Card */
 .initiative-card {
-    background-color: var(--bg-secondary);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
-    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s;
+    box-shadow: var(--shadow-md);
     position: relative;
     overflow: hidden;
 }
 
+body.dark-theme .initiative-card {
+    background: rgba(31, 41, 55, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .initiative-card:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
     border-color: var(--color-accent);
 }
 
@@ -1410,13 +1418,13 @@ body.dark-theme .icon-container-geom {
    Speeches & Media Section (Speeches & Media — #FFF1E8)
    ========================================================================== */
 .media-section {
-    background: linear-gradient(180deg, var(--bg-media) 0%, rgba(255, 241, 232, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-media) 0%, rgba(255, 203, 164, 0.6) 100%);
     position: relative;
     overflow: hidden;
 }
 
 body.dark-theme .media-section {
-    background: linear-gradient(180deg, var(--bg-media) 0%, rgba(27, 19, 16, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-media) 0%, #0C0502 100%);
 }
 
 .media-section::before {
@@ -1426,14 +1434,14 @@ body.dark-theme .media-section {
     right: -10%;
     width: 45%;
     height: 70%;
-    background: radial-gradient(circle, rgba(255, 149, 0, 0.04) 0%, transparent 70%);
-    filter: blur(50px);
+    background: radial-gradient(circle, rgba(255, 149, 0, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
     z-index: 1;
     pointer-events: none;
 }
 
 body.dark-theme .media-section::before {
-    background: radial-gradient(circle, rgba(255, 149, 0, 0.02) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 149, 0, 0.08) 0%, transparent 70%);
 }
 
 .speeches-media-tabs {
@@ -1481,19 +1489,26 @@ body.dark-theme .media-section::before {
 }
 
 .media-card {
-    background-color: var(--bg-secondary);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s;
+}
+
+body.dark-theme .media-card {
+    background: rgba(31, 41, 55, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .media-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
     border-color: var(--text-highlight);
 }
 
@@ -1597,13 +1612,13 @@ body.dark-theme .media-section::before {
    Photo Gallery (Photo Gallery — #F5F0FF)
    ========================================================================== */
 .gallery-section {
-    background: linear-gradient(180deg, var(--bg-gallery) 0%, rgba(245, 240, 255, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-gallery) 0%, rgba(220, 190, 255, 0.6) 100%);
     position: relative;
     overflow: hidden;
 }
 
 body.dark-theme .gallery-section {
-    background: linear-gradient(180deg, var(--bg-gallery) 0%, rgba(21, 17, 32, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-gallery) 0%, #05020A 100%);
 }
 
 .gallery-section::before {
@@ -1613,14 +1628,14 @@ body.dark-theme .gallery-section {
     right: -10%;
     width: 45%;
     height: 70%;
-    background: radial-gradient(circle, rgba(88, 86, 214, 0.04) 0%, transparent 70%);
-    filter: blur(50px);
+    background: radial-gradient(circle, rgba(88, 86, 214, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
     z-index: 1;
     pointer-events: none;
 }
 
 body.dark-theme .gallery-section::before {
-    background: radial-gradient(circle, rgba(130, 80, 250, 0.02) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(130, 80, 250, 0.08) 0%, transparent 70%);
 }
 
 .gallery-view-toggle {
@@ -1865,16 +1880,23 @@ body.dark-theme .gallery-section::before {
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-secondary);
-    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-md);
     cursor: pointer;
-    transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s;
+}
+
+body.dark-theme .gallery-item {
+    background: rgba(31, 41, 55, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .gallery-item:hover {
-    transform: scale(1.015);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
     border-color: var(--text-highlight);
 }
 
@@ -2018,7 +2040,7 @@ body.dark-theme .gallery-section::before {
    Contact Section & Inset Grouped Settings Form (Contact / Connect — #FFF4F6)
    ========================================================================== */
 #contact {
-    background: linear-gradient(180deg, var(--bg-contact) 0%, rgba(255, 244, 246, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-contact) 0%, rgba(255, 191, 200, 0.6) 100%);
     color: var(--text-primary);
     position: relative;
     overflow: hidden;
@@ -2026,7 +2048,7 @@ body.dark-theme .gallery-section::before {
 }
 
 body.dark-theme #contact {
-    background: linear-gradient(180deg, var(--bg-contact) 0%, rgba(30, 16, 18, 0.4) 100%);
+    background: linear-gradient(135deg, var(--bg-contact) 0%, #0F0205 100%);
 }
 
 #contact::before {
@@ -2036,14 +2058,14 @@ body.dark-theme #contact {
     left: -10%;
     width: 45%;
     height: 70%;
-    background: radial-gradient(circle, rgba(255, 59, 48, 0.03) 0%, transparent 70%);
-    filter: blur(50px);
+    background: radial-gradient(circle, rgba(255, 59, 48, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
     z-index: 1;
     pointer-events: none;
 }
 
 body.dark-theme #contact::before {
-    background: radial-gradient(circle, rgba(255, 59, 48, 0.015) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 59, 48, 0.08) 0%, transparent 70%);
 }
 
 .contact-grid {
