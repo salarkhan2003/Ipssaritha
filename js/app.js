@@ -1,5 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- Theme Toggle Logic ---
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const sunIcon = themeToggleBtn ? themeToggleBtn.querySelector('.theme-icon-sun') : null;
+    const moonIcon = themeToggleBtn ? themeToggleBtn.querySelector('.theme-icon-moon') : null;
+
+    // Load saved preference or default to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-mode');
+        if (sunIcon) sunIcon.classList.add('hidden');
+        if (moonIcon) moonIcon.classList.remove('hidden');
+    } else {
+        document.body.classList.remove('light-mode');
+        if (sunIcon) sunIcon.classList.remove('hidden');
+        if (moonIcon) moonIcon.classList.add('hidden');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+            if (isLight) {
+                if (sunIcon) sunIcon.classList.add('hidden');
+                if (moonIcon) moonIcon.classList.remove('hidden');
+            } else {
+                if (sunIcon) sunIcon.classList.remove('hidden');
+                if (moonIcon) moonIcon.classList.add('hidden');
+            }
+        });
+    }
+
     // --- 1. Navbar Scroll glassmorphism effect ---
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {

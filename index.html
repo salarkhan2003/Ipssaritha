@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smt K.G.V. Saritha, IPS - Official Public Information Portal</title>
     <!-- Meta Descriptions for SEO -->
-    <meta name="description" content="Official website of Smt K.G.V. Saritha, IPS. Public information portal containing official posting details, contact information, and community initiatives.">
-    <meta name="keywords" content="IPS, KGV Saritha, Indian Police Service, DCP Administration Vijayawada, Police Portal">
+    <meta name="description"
+        content="Official website of Smt K.G.V. Saritha, IPS. Public information portal containing official posting details, contact information, and community initiatives.">
+    <meta name="keywords"
+        content="IPS, KGV Saritha, Indian Police Service, DCP Administration Vijayawada, Police Portal">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,21 +26,24 @@
             }
         }
     </script>
-    
+
     <!-- Iconify script -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    
+
     <!-- Google Fonts (Inter & Playfair Display) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body class="bg-black text-white selection:bg-[#FF4500] selection:text-white">
     <div class="min-h-screen bg-[#050505] relative overflow-hidden">
         <!-- Global Noise Overlay -->
@@ -47,21 +53,39 @@
         <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-8 bg-transparent">
             <div class="container mx-auto px-6 flex items-center justify-between">
                 <a href="#home" id="nav-logo-link" class="flex items-center gap-3 font-serif">
-                    <img src="images/kgv_saritha.jpg" alt="Logo" class="w-8 h-8 rounded-full object-cover border border-white/20">
+                    <img src="images/kgv_saritha.jpg" alt="Logo"
+                        class="w-8 h-8 rounded-full object-cover border border-white/20">
                     <span class="text-xl font-bold tracking-tighter">Saritha IPS.</span>
                 </a>
-                
+
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">About Officer</a>
-                    <a href="#outreach" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Outreach</a>
-                    <a href="#speeches" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Speeches & Media</a>
-                    <a href="#gallery" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Photo Gallery</a>
-                    <a href="#resources" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Resources</a>
+                    <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">About
+                        Officer</a>
+                    <a href="#outreach"
+                        class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Outreach</a>
+                    <a href="#speeches"
+                        class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Speeches &
+                        Media</a>
+                    <a href="#gallery"
+                        class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Photo Gallery</a>
+                    <a href="#resources"
+                        class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Resources</a>
                 </div>
 
-                <a href="#contact" id="nav-cta-link" class="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-medium bg-white text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300">
-                    Contact & Connect
-                </a>
+                <div class="flex items-center gap-4">
+                    <!-- Theme Toggle Button -->
+                    <button id="themeToggleBtn"
+                        class="w-10 h-10 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 flex items-center justify-center text-white"
+                        aria-label="Toggle Theme">
+                        <i class="fas fa-sun text-sm theme-icon-sun"></i>
+                        <i class="fas fa-moon text-sm theme-icon-moon hidden"></i>
+                    </button>
+
+                    <a href="#contact" id="nav-cta-link"
+                        class="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-medium bg-white text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300">
+                        Contact & Connect
+                    </a>
+                </div>
             </div>
         </nav>
 
@@ -70,18 +94,23 @@
             <!-- Background Atmosphere -->
             <div class="absolute inset-0 z-0 pointer-events-none select-none">
                 <div class="absolute top-0 left-0 w-full h-full opacity-60 mix-blend-screen">
-                    <img src="https://framerusercontent.com/images/9zvwRJAavKKacVyhFCwHyXW1U.png?width=1536&height=1024" alt="Atmosphere" class="w-full h-full object-cover object-center opacity-85">
+                    <img src="https://framerusercontent.com/images/9zvwRJAavKKacVyhFCwHyXW1U.png?width=1536&height=1024"
+                        alt="Atmosphere" class="w-full h-full object-cover object-center opacity-85">
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050505] z-10"></div>
             </div>
 
             <!-- Floating Surrealist Elements -->
-            <div class="absolute -left-[10%] top-[-10%] md:left-[-5%] md:top-[-15%] w-[50vw] md:w-[40vw] max-w-[800px] z-10 pointer-events-none mix-blend-hard-light opacity-80 animate-float-left">
-                 <img src="https://framerusercontent.com/images/KNhiA5A2ykNYqNkj04Hk6BVg5A.png?width=1540&height=1320" alt="Hand Reaching" class="w-full h-auto object-contain">
+            <div
+                class="absolute -left-[10%] top-[-10%] md:left-[-5%] md:top-[-15%] w-[50vw] md:w-[40vw] max-w-[800px] z-10 pointer-events-none mix-blend-hard-light opacity-80 animate-float-left">
+                <img src="https://framerusercontent.com/images/KNhiA5A2ykNYqNkj04Hk6BVg5A.png?width=1540&height=1320"
+                    alt="Hand Reaching" class="w-full h-auto object-contain">
             </div>
 
-            <div class="absolute -right-[10%] bottom-[-10%] md:right-[-5%] md:bottom-[-5%] w-[45vw] md:w-[35vw] max-w-[700px] z-10 pointer-events-none mix-blend-hard-light opacity-80 animate-float-right">
-                 <img src="https://framerusercontent.com/images/X89VFCABCEjjZ4oLGa3PjbOmsA.png?width=1542&height=1002" alt="Hand Receiving" class="w-full h-auto object-contain">
+            <div
+                class="absolute -right-[10%] bottom-[-10%] md:right-[-5%] md:bottom-[-5%] w-[45vw] md:w-[35vw] max-w-[700px] z-10 pointer-events-none mix-blend-hard-light opacity-80 animate-float-right">
+                <img src="https://framerusercontent.com/images/X89VFCABCEjjZ4oLGa3PjbOmsA.png?width=1542&height=1002"
+                    alt="Hand Receiving" class="w-full h-auto object-contain">
             </div>
 
             <!-- Hero Content -->
@@ -90,52 +119,63 @@
                     <!-- Left column: Hero text -->
                     <div id="hero-content-wrapper" class="lg:col-span-7 flex flex-col items-start text-left">
                         <div class="reveal">
-                            <div class="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-6">
+                            <div
+                                class="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-6">
                                 <i class="fas fa-shield-halved text-xs"></i> Official Public Information Portal
                             </div>
                         </div>
-                        
+
                         <div class="reveal" style="transition-delay: 100ms;">
-                            <h1 class="text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tight mb-6 text-[#ffe0e0] mix-blend-overlay font-serif" 
+                            <h1 class="text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tight mb-6 text-[#ffe0e0] mix-blend-overlay font-serif"
                                 style="text-shadow: 0 0 12px rgba(255,255,255,0.71);">
                                 K.G.V. SARITHA, IPS. <br />
                                 <span class="italic font-light text-[#ffe0e0]">DCP (Admn.), Vijayawada.</span>
                             </h1>
                         </div>
-                        
+
                         <div class="reveal" style="transition-delay: 200ms;">
                             <div class="flex items-center gap-2 mb-6 font-mono text-sm text-gray-400">
                                 <span>Focus:</span>
                                 <span id="typewriterText" class="text-[#FF4500] font-semibold"></span>
                             </div>
                             <p class="text-base md:text-lg text-[#ffe0e0]/90 max-w-xl mb-12 font-light tracking-wide leading-relaxed mix-blend-overlay"
-                               style="text-shadow: 0 0 12px rgba(255,255,255,0.71);">
-                                Scholar by Merit. Officer by Discipline. Leader by Compassion. Official public safety updates and coordination cell.
+                                style="text-shadow: 0 0 12px rgba(255,255,255,0.71);">
+                                Scholar by Merit. Officer by Discipline. Leader by Compassion. Official public safety
+                                updates and coordination cell.
                             </p>
                         </div>
 
-                        <div class="reveal flex flex-col sm:flex-row items-start sm:items-center gap-6" style="transition-delay: 400ms;">
+                        <div class="reveal flex flex-col sm:flex-row items-start sm:items-center gap-6"
+                            style="transition-delay: 400ms;">
                             <div class="relative group cursor-pointer" onclick="location.href='#about'">
-                               <div class="absolute inset-0 bg-[#FF4500]/20 blur-xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-                               <div class="relative border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3 text-xs md:text-sm text-white/80 uppercase tracking-widest hover:bg-white/10 transition-colors duration-300">
-                                 <span>Explore Portal</span>
-                               </div>
+                                <div
+                                    class="absolute inset-0 bg-[#FF4500]/20 blur-xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500">
+                                </div>
+                                <div
+                                    class="relative border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3 text-xs md:text-sm text-white/80 uppercase tracking-widest hover:bg-white/10 transition-colors duration-300">
+                                    <span>Explore Portal</span>
+                                </div>
                             </div>
-                            
-                            <div class="flex items-center gap-4 text-[10px] md:text-xs text-white/40 uppercase tracking-widest font-mono py-3">
-                               <span id="current-time">11:11 PM</span>
-                               <span class="w-px h-3 bg-white/20"></span>
-                               <span>VIJAYAWADA, INDIA</span>
+
+                            <div
+                                class="flex items-center gap-4 text-[10px] md:text-xs text-white/40 uppercase tracking-widest font-mono py-3">
+                                <span id="current-time">11:11 PM</span>
+                                <span class="w-px h-3 bg-white/20"></span>
+                                <span>VIJAYAWADA, INDIA</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right column: Big Image -->
-                    <div class="lg:col-span-5 reveal flex justify-center lg:justify-end" style="transition-delay: 200ms;">
-                        <div class="relative w-full max-w-[420px] aspect-[3/4] rounded-3xl overflow-hidden border border-white/15 shadow-[0_20px_50px_rgba(255,69,0,0.15)] group">
+                    <div class="lg:col-span-5 reveal flex justify-center lg:justify-end"
+                        style="transition-delay: 200ms;">
+                        <div
+                            class="relative w-full max-w-[420px] aspect-[3/4] rounded-3xl overflow-hidden border border-white/15 shadow-[0_20px_50px_rgba(255,69,0,0.15)] group">
                             <!-- Background glow in frame -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent z-10"></div>
-                            <img src="KGV SarithaIPS.jpg" alt="Smt K.G.V. Saritha, IPS" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent z-10">
+                            </div>
+                            <img src="KGV SarithaIPS.jpg" alt="Smt K.G.V. Saritha, IPS"
+                                class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
                         </div>
                     </div>
                 </div>
@@ -147,23 +187,27 @@
         <section id="about" class="py-32 relative border-t border-white/5">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center reveal">
-                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Officer Profile</span>
+                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Officer
+                        Profile</span>
                     <h2 class="text-3xl md:text-5xl lg:text-6xl leading-tight text-white/90 mb-12 font-serif">
                         Scholar by Merit. Officer by Discipline. Leader by Compassion.
                     </h2>
                     <p class="text-xl md:text-2xl text-gray-500 leading-relaxed font-light mb-16">
-                        Integrating psychological expertise and legal mastery with field duty to secure safety, transparency, and public accessibility.
+                        Integrating psychological expertise and legal mastery with field duty to secure safety,
+                        transparency, and public accessibility.
                     </p>
                 </div>
 
                 <!-- Profile Grid -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mt-20">
                     <div class="reveal rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                        <img src="images/hq720.jpg" alt="Official Portrait - K.G.V. Saritha, IPS" class="w-full h-auto object-cover">
+                        <img src="images/hq720.jpg" alt="Official Portrait - K.G.V. Saritha, IPS"
+                            class="w-full h-auto object-cover">
                     </div>
                     <div class="reveal flex flex-col gap-6" style="transition-delay: 150ms;">
                         <div class="bg-[#111] border border-white/10 rounded-3xl p-6 md:p-8 flex flex-col gap-6">
-                            <h3 class="text-2xl font-serif text-white border-b border-white/10 pb-4">Service Profile</h3>
+                            <h3 class="text-2xl font-serif text-white border-b border-white/10 pb-4">Service Profile
+                            </h3>
                             <div class="grid grid-cols-1 gap-y-4 text-sm">
                                 <div class="border-b border-white/5 pb-2 flex justify-between gap-4">
                                     <span class="text-gray-500">Name</span>
@@ -171,11 +215,13 @@
                                 </div>
                                 <div class="border-b border-white/5 pb-2 flex justify-between gap-4">
                                     <span class="text-gray-500">Designation</span>
-                                    <span class="text-white text-right">Deputy Commissioner of Police (Admin), NTR Commissionerate</span>
+                                    <span class="text-white text-right">Deputy Commissioner of Police (Admin), NTR
+                                        Commissionerate</span>
                                 </div>
                                 <div class="border-b border-white/5 pb-2 flex justify-between gap-4">
                                     <span class="text-gray-500">Office Location</span>
-                                    <span class="text-white text-right">NTR Police Commissionerate Headquarters, Vijayawada</span>
+                                    <span class="text-white text-right">NTR Police Commissionerate Headquarters,
+                                        Vijayawada</span>
                                 </div>
                                 <div class="border-b border-white/5 pb-2 flex justify-between gap-4">
                                     <span class="text-gray-500">Official WhatsApp</span>
@@ -183,11 +229,13 @@
                                 </div>
                                 <div class="border-b border-white/5 pb-2 flex justify-between gap-4">
                                     <span class="text-gray-500">Office Hours</span>
-                                    <span class="text-white text-right">10:30 AM - 05:00 PM (By Prior Appointment)</span>
+                                    <span class="text-white text-right">10:30 AM - 05:00 PM (By Prior
+                                        Appointment)</span>
                                 </div>
                                 <div class="border-b border-white/5 pb-2 flex justify-between gap-4">
                                     <span class="text-gray-500">Education</span>
-                                    <span class="text-white text-right">M.Sc. Psychology (Topper), LL.M (Gold Medallist)</span>
+                                    <span class="text-white text-right">M.Sc. Psychology (Topper), LL.M (Gold
+                                        Medallist)</span>
                                 </div>
                                 <div class="flex justify-between gap-4">
                                     <span class="text-gray-500">Awards / Medals</span>
@@ -202,32 +250,39 @@
                 <div class="mt-24 border-t border-white/5 pt-20 max-w-5xl mx-auto">
                     <h3 class="text-3xl font-serif text-white mb-12 text-center">Career Journey</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300">
+                        <div
+                            class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300">
                             <span class="text-[#FF4500] font-mono text-xs block mb-2">2010 – 2020</span>
                             <h4 class="text-xl font-serif text-white mb-3">Field Leadership</h4>
                             <p class="text-gray-400 text-sm leading-relaxed">
-                                DySP field postings: Bodhan, Narsampet, Eluru, and Guntur West. Resolved crises, managed police divisions, and built trust across diverse communities.
+                                DySP field postings: Bodhan, Narsampet, Eluru, and Guntur West. Resolved crises, managed
+                                police divisions, and built trust across diverse communities.
                             </p>
                         </div>
-                        <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300" style="transition-delay: 100ms;">
+                        <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300"
+                            style="transition-delay: 100ms;">
                             <span class="text-[#FF4500] font-mono text-xs block mb-2">2020 – 2024</span>
                             <h4 class="text-xl font-serif text-white mb-3">CID & Women Safety</h4>
                             <p class="text-gray-400 text-sm leading-relaxed">
-                                Directed the Women Protection Cell at CID. Led statewide child welfare campaigns and organized cyber safety and anti-human trafficking operations.
+                                Directed the Women Protection Cell at CID. Led statewide child welfare campaigns and
+                                organized cyber safety and anti-human trafficking operations.
                             </p>
                         </div>
-                        <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300" style="transition-delay: 200ms;">
+                        <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300"
+                            style="transition-delay: 200ms;">
                             <span class="text-[#FF4500] font-mono text-xs block mb-2">2025 – Present</span>
                             <h4 class="text-xl font-serif text-white mb-3">DCP Administration</h4>
                             <p class="text-gray-400 text-sm leading-relaxed">
-                                Selected into IPS cadre. Driving staff welfare programs, citizen outreach services, and administrative reforms for the Vijayawada Police Commissionerate.
+                                Selected into IPS cadre. Driving staff welfare programs, citizen outreach services, and
+                                administrative reforms for the Vijayawada Police Commissionerate.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Philosophy / Pillars -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-20 border-t border-white/5 pt-20">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-20 border-t border-white/5 pt-20">
                     <div class="reveal bg-[#111] border-l-2 border-[#FF4500] rounded-r-3xl p-8">
                         <h4 class="text-xl font-serif text-white mb-3">Operation Swechha</h4>
                         <div class="text-gray-400 text-sm leading-relaxed">
@@ -235,19 +290,24 @@
                             <div class="mt-2 text-[#FF4500] font-semibold text-lg">
                                 <span class="counter-num text-2xl" data-target="1500">0</span>+ Rescues
                             </div>
-                            <span class="block mt-1">rescuing child laborers and reintegrating them into education.</span>
+                            <span class="block mt-1">rescuing child laborers and reintegrating them into
+                                education.</span>
                         </div>
                     </div>
-                    <div class="reveal bg-[#111] border-l-2 border-purple-500 rounded-r-3xl p-8" style="transition-delay: 100ms;">
+                    <div class="reveal bg-[#111] border-l-2 border-purple-500 rounded-r-3xl p-8"
+                        style="transition-delay: 100ms;">
                         <h4 class="text-xl font-serif text-white mb-3">Academic Excellence</h4>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            Leveraging specialized learning (Psychology topper and LL.M Gold Medallist) to design victim care services and structure administrative decisions legally.
+                            Leveraging specialized learning (Psychology topper and LL.M Gold Medallist) to design victim
+                            care services and structure administrative decisions legally.
                         </p>
                     </div>
-                    <div class="reveal bg-[#111] border-l-2 border-[#FF4500] rounded-r-3xl p-8" style="transition-delay: 200ms;">
+                    <div class="reveal bg-[#111] border-l-2 border-[#FF4500] rounded-r-3xl p-8"
+                        style="transition-delay: 200ms;">
                         <h4 class="text-xl font-serif text-white mb-3">Core Philosophy</h4>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            Methodical discipline, community accessibility, victim empathy, and total administrative transparency guiding daily official safety assignments.
+                            Methodical discipline, community accessibility, victim empathy, and total administrative
+                            transparency guiding daily official safety assignments.
                         </p>
                     </div>
                 </div>
@@ -258,7 +318,8 @@
         <section class="py-40 relative overflow-hidden border-t border-white/5">
             <div class="container mx-auto px-6 relative z-10">
                 <div class="reveal mb-32 text-center">
-                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Portal Highlights</span>
+                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Portal
+                        Highlights</span>
                     <h2 class="text-5xl md:text-7xl font-serif">
                         Explore our <br />
                         <span class="italic text-[#ffe0e0]">public sections</span>
@@ -268,55 +329,63 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                     <!-- Card 1 - Red -->
                     <div class="parallax-card-down">
-                        <div class="reveal bg-[#FF4500] rounded-[36px] p-8 md:p-12 aspect-[4/5] flex flex-col justify-between shadow-2xl hover:shadow-[0_20px_50px_rgba(255,69,0,0.35)] transition-all duration-500 group cursor-pointer" onclick="location.href='#outreach'">
+                        <div class="reveal bg-[#FF4500] rounded-[36px] p-8 md:p-12 aspect-[4/5] flex flex-col justify-between shadow-2xl hover:shadow-[0_20px_50px_rgba(255,69,0,0.35)] transition-all duration-500 group cursor-pointer"
+                            onclick="location.href='#outreach'">
                             <div class="flex justify-between items-start">
-                                <div class="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
                                     <iconify-icon icon="lucide:shield" class="text-black text-2xl"></iconify-icon>
                                 </div>
-                                <span class="text-black font-medium text-sm border border-black/20 px-3 py-1 rounded-full">01</span>
+                                <span
+                                    class="text-black font-medium text-sm border border-black/20 px-3 py-1 rounded-full">01</span>
                             </div>
-                            
+
                             <div>
                                 <h3 class="text-4xl md:text-5xl text-black mb-4 leading-none tracking-tight font-serif">
                                     Public <br />Outreach
                                 </h3>
                                 <p class="text-black/70 text-lg leading-snug">
-                                    Approved citizen safety plans. Explore child security wings, women protection initiatives, and cybercrime cells.
+                                    Approved citizen safety plans. Explore child security wings, women protection
+                                    initiatives, and cybercrime cells.
                                 </p>
                             </div>
-                            
+
                             <div class="w-full h-px bg-black/10 mt-8"></div>
                         </div>
                     </div>
 
                     <!-- Card 2 - Black -->
                     <div class="parallax-card-up md:mt-24">
-                        <div class="reveal bg-[#111] border border-white/10 rounded-[36px] p-8 md:p-12 aspect-[4/5] flex flex-col justify-between shadow-2xl group cursor-pointer hover:border-[#FF4500]/50 transition-all duration-500" style="transition-delay: 150ms;" onclick="location.href='#speeches'">
+                        <div class="reveal bg-[#111] border border-white/10 rounded-[36px] p-8 md:p-12 aspect-[4/5] flex flex-col justify-between shadow-2xl group cursor-pointer hover:border-[#FF4500]/50 transition-all duration-500"
+                            style="transition-delay: 150ms;" onclick="location.href='#speeches'">
                             <div class="flex justify-between items-start">
-                                <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                                   <iconify-icon icon="lucide:video" class="text-white text-2xl"></iconify-icon>
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                    <iconify-icon icon="lucide:video" class="text-white text-2xl"></iconify-icon>
                                 </div>
-                                <span class="text-white/50 font-medium text-sm border border-white/10 px-3 py-1 rounded-full">02</span>
+                                <span
+                                    class="text-white/50 font-medium text-sm border border-white/10 px-3 py-1 rounded-full">02</span>
                             </div>
-                            
+
                             <div>
                                 <h3 class="text-4xl md:text-5xl text-white mb-4 leading-none tracking-tight font-serif">
                                     Speeches & <br />Media
                                 </h3>
                                 <p class="text-gray-400 text-lg leading-snug">
-                                    Watch verified video addresses, motivational talks, crime diaries, and official gazette announcements.
+                                    Watch verified video addresses, motivational talks, crime diaries, and official
+                                    gazette announcements.
                                 </p>
                             </div>
-                            
+
                             <div class="w-full h-px bg-white/10 mt-8"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Background Pattern -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-10 pointer-events-none"
-                 style="background-image: radial-gradient(circle, #333 1px, transparent 1px); background-size: 40px 40px;">
+                style="background-image: radial-gradient(circle, #333 1px, transparent 1px); background-size: 40px 40px;">
             </div>
         </section>
 
@@ -324,58 +393,84 @@
         <section id="outreach" class="py-32 relative border-t border-white/5">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center reveal mb-20">
-                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Official Programs</span>
+                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Official
+                        Programs</span>
                     <h2 class="text-3xl md:text-5xl font-serif text-white mb-6">Public Outreach Initiatives</h2>
-                    <p class="text-gray-500 text-lg">Administrative programs and awareness campaigns coordinated for community safety.</p>
+                    <p class="text-gray-500 text-lg">Administrative programs and awareness campaigns coordinated for
+                        community safety.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <!-- Card 1: Women Safety -->
-                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300">
+                    <div
+                        class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300">
                         <div class="text-[#FF4500] font-mono text-xs mb-4">01 / WING</div>
                         <h3 class="text-2xl font-serif text-white mb-4">Women Safety</h3>
-                        <p class="text-gray-400 text-sm mb-8">Information on women safety awareness, support pathways, and approved public outreach programs.</p>
-                        <a href="#contact" class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit Request <i class="fas fa-arrow-right text-[10px]"></i></a>
+                        <p class="text-gray-400 text-sm mb-8">Information on women safety awareness, support pathways,
+                            and approved public outreach programs.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit
+                            Request <i class="fas fa-arrow-right text-[10px]"></i></a>
                     </div>
 
                     <!-- Card 2: Child Protection -->
-                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300" style="transition-delay: 50ms;">
+                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300"
+                        style="transition-delay: 50ms;">
                         <div class="text-[#FF4500] font-mono text-xs mb-4">02 / WING</div>
                         <h3 class="text-2xl font-serif text-white mb-4">Child Protection</h3>
-                        <p class="text-gray-400 text-sm mb-8">Awareness and support content for child safety, reporting guidance, and public information.</p>
-                        <a href="#contact" class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit Request <i class="fas fa-arrow-right text-[10px]"></i></a>
+                        <p class="text-gray-400 text-sm mb-8">Awareness and support content for child safety, reporting
+                            guidance, and public information.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit
+                            Request <i class="fas fa-arrow-right text-[10px]"></i></a>
                     </div>
 
                     <!-- Card 3: Cyber Safety -->
-                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300" style="transition-delay: 100ms;">
+                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300"
+                        style="transition-delay: 100ms;">
                         <div class="text-[#FF4500] font-mono text-xs mb-4">03 / WING</div>
                         <h3 class="text-2xl font-serif text-white mb-4">Cyber Safety</h3>
-                        <p class="text-gray-400 text-sm mb-8">Guidance on online fraud prevention, digital safety, and official helpline registration routes.</p>
-                        <a href="#contact" class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit Request <i class="fas fa-arrow-right text-[10px]"></i></a>
+                        <p class="text-gray-400 text-sm mb-8">Guidance on online fraud prevention, digital safety, and
+                            official helpline registration routes.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit
+                            Request <i class="fas fa-arrow-right text-[10px]"></i></a>
                     </div>
 
                     <!-- Card 4: Community Policing -->
-                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300" style="transition-delay: 150ms;">
+                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300"
+                        style="transition-delay: 150ms;">
                         <div class="text-[#FF4500] font-mono text-xs mb-4">04 / CORE</div>
                         <h3 class="text-2xl font-serif text-white mb-4">Community Policing</h3>
-                        <p class="text-gray-400 text-sm mb-8">Citizen-police interaction, local coordination, and neighborhood issue resolution portals.</p>
-                        <a href="#contact" class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit Request <i class="fas fa-arrow-right text-[10px]"></i></a>
+                        <p class="text-gray-400 text-sm mb-8">Citizen-police interaction, local coordination, and
+                            neighborhood issue resolution portals.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit
+                            Request <i class="fas fa-arrow-right text-[10px]"></i></a>
                     </div>
 
                     <!-- Card 5: School / College Outreach -->
-                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300" style="transition-delay: 200ms;">
+                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300"
+                        style="transition-delay: 200ms;">
                         <div class="text-[#FF4500] font-mono text-xs mb-4">05 / CORE</div>
                         <h3 class="text-2xl font-serif text-white mb-4">School Outreach</h3>
-                        <p class="text-gray-400 text-sm mb-8">Official invitations and awareness sessions for institutions, students, and faculty groups.</p>
-                        <a href="#contact" class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit Request <i class="fas fa-arrow-right text-[10px]"></i></a>
+                        <p class="text-gray-400 text-sm mb-8">Official invitations and awareness sessions for
+                            institutions, students, and faculty groups.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit
+                            Request <i class="fas fa-arrow-right text-[10px]"></i></a>
                     </div>
 
                     <!-- Card 6: Public Interaction -->
-                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300" style="transition-delay: 250ms;">
+                    <div class="reveal bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#FF4500]/50 transition-all duration-300"
+                        style="transition-delay: 250ms;">
                         <div class="text-[#FF4500] font-mono text-xs mb-4">06 / CORE</div>
                         <h3 class="text-2xl font-serif text-white mb-4">Public Interaction</h3>
-                        <p class="text-gray-400 text-sm mb-8">Send approved public requests, seminar invitations, and official messages to the office.</p>
-                        <a href="#contact" class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit Request <i class="fas fa-arrow-right text-[10px]"></i></a>
+                        <p class="text-gray-400 text-sm mb-8">Send approved public requests, seminar invitations, and
+                            official messages to the office.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center text-xs text-[#FF4500] uppercase tracking-wider hover:underline gap-2">Submit
+                            Request <i class="fas fa-arrow-right text-[10px]"></i></a>
                     </div>
                 </div>
             </div>
@@ -385,110 +480,163 @@
         <section id="speeches" class="py-32 relative border-t border-white/5">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center reveal mb-16">
-                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Public Records</span>
+                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Public
+                        Records</span>
                     <h2 class="text-3xl md:text-5xl font-serif text-white mb-6">Speeches & Media</h2>
-                    <p class="text-gray-500 text-lg">Factual listings of official addresses, press statements, and media interviews.</p>
+                    <p class="text-gray-500 text-lg">Factual listings of official addresses, press statements, and media
+                        interviews.</p>
                 </div>
 
                 <!-- Tab Navigation for Media -->
                 <div class="speeches-media-tabs reveal flex flex-wrap justify-center gap-3 mb-16 max-w-2xl mx-auto">
-                    <button class="tab-btn active px-5 py-2.5 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300" data-filter="all">All Items</button>
-                    <button class="tab-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300" data-filter="speech">Addresses & Videos</button>
-                    <button class="tab-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300" data-filter="interview">Interviews</button>
-                    <button class="tab-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300" data-filter="press">Press Releases</button>
+                    <button
+                        class="tab-btn active px-5 py-2.5 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300"
+                        data-filter="all">All Items</button>
+                    <button
+                        class="tab-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300"
+                        data-filter="speech">Addresses & Videos</button>
+                    <button
+                        class="tab-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300"
+                        data-filter="interview">Interviews</button>
+                    <button
+                        class="tab-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300"
+                        data-filter="press">Press Releases</button>
                 </div>
 
                 <!-- Media Grid -->
                 <div class="media-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <!-- Item 1: Interview (Dil Se With Anjali) -->
-                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between" data-category="interview" data-youtube-id="Vp-1fXT3bu8">
+                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between"
+                        data-category="interview" data-youtube-id="Vp-1fXT3bu8">
                         <div class="relative overflow-hidden aspect-video cursor-pointer">
-                            <img src="https://img.youtube.com/vi/Vp-1fXT3bu8/hqdefault.jpg" alt="Dil Se With Anjali Interview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
-                                <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl group-hover:scale-110 transition"><i class="fas fa-play"></i></div>
+                            <img src="https://img.youtube.com/vi/Vp-1fXT3bu8/hqdefault.jpg"
+                                alt="Dil Se With Anjali Interview"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl group-hover:scale-110 transition">
+                                    <i class="fas fa-play"></i></div>
                             </div>
                         </div>
                         <div class="p-8">
-                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">Addl SP (CID) KGV Saritha Exclusive Interview | Dil Se With Anjali</h3>
+                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">Addl SP (CID) KGV Saritha
+                                Exclusive Interview | Dil Se With Anjali</h3>
                             <div class="grid grid-cols-1 gap-2 text-xs text-gray-500 mb-6">
                                 <div><strong>Platform:</strong> iDream Media Channel</div>
                                 <div><strong>Date:</strong> 2020</div>
-                                <div><strong>Link:</strong> <a href="https://youtu.be/Vp-1fXT3bu8" target="_blank" class="text-[#FF4500] hover:underline">https://youtu.be/Vp-1fXT3bu8</a></div>
+                                <div><strong>Link:</strong> <a href="https://youtu.be/Vp-1fXT3bu8" target="_blank"
+                                        class="text-[#FF4500] hover:underline">https://youtu.be/Vp-1fXT3bu8</a></div>
                             </div>
-                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">An interview discussing policing career, women's safety, digital hygiene, and youth welfare.</p>
+                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">An interview discussing
+                                policing career, women's safety, digital hygiene, and youth welfare.</p>
                         </div>
                     </div>
 
                     <!-- Item 2: Speech (Ramakrishna Math) -->
-                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between" data-category="speech" data-youtube-id="9MYpvRvj3Vs">
+                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between"
+                        data-category="speech" data-youtube-id="9MYpvRvj3Vs">
                         <div class="relative overflow-hidden aspect-video cursor-pointer">
-                            <img src="https://img.youtube.com/vi/9MYpvRvj3Vs/hqdefault.jpg" alt="Ramakrishna Math Speech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
-                                <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl group-hover:scale-110 transition"><i class="fas fa-play"></i></div>
+                            <img src="https://img.youtube.com/vi/9MYpvRvj3Vs/hqdefault.jpg"
+                                alt="Ramakrishna Math Speech"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl group-hover:scale-110 transition">
+                                    <i class="fas fa-play"></i></div>
                             </div>
                         </div>
                         <div class="p-8">
-                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">How to Live Courageously in Society?</h3>
+                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">How to Live Courageously in
+                                Society?</h3>
                             <div class="grid grid-cols-1 gap-2 text-xs text-gray-500 mb-6">
                                 <div><strong>Platform:</strong> Sri Ramakrishna Prabha</div>
                                 <div><strong>Date:</strong> June 8, 2026</div>
-                                <div><strong>Link:</strong> <a href="https://youtu.be/9MYpvRvj3Vs" target="_blank" class="text-[#FF4500] hover:underline">https://youtu.be/9MYpvRvj3Vs</a></div>
+                                <div><strong>Link:</strong> <a href="https://youtu.be/9MYpvRvj3Vs" target="_blank"
+                                        class="text-[#FF4500] hover:underline">https://youtu.be/9MYpvRvj3Vs</a></div>
                             </div>
-                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">A motivational talk focused on facing challenges, value-based education, and drawing strength from Swami Vivekananda's teachings.</p>
+                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">A motivational talk focused on
+                                facing challenges, value-based education, and drawing strength from Swami Vivekananda's
+                                teachings.</p>
                         </div>
                     </div>
 
                     <!-- Item 3: Press Release (IPS Cadre Appointment) -->
-                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between" data-category="press">
+                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between"
+                        data-category="press">
                         <div class="relative overflow-hidden aspect-video">
-                            <img src="images/hq720.jpg" alt="IPS Cadre Appointment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="images/hq720.jpg" alt="IPS Cadre Appointment"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-8">
-                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">IPS Cadre Appointments for Select List 2023</h3>
+                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">IPS Cadre Appointments for
+                                Select List 2023</h3>
                             <div class="grid grid-cols-1 gap-2 text-xs text-gray-500 mb-6">
                                 <div><strong>Platform:</strong> Government of India / AP Gazette</div>
                                 <div><strong>Date:</strong> January 2025</div>
-                                <div><strong>Link:</strong> <a href="https://www.ap.gov.in" target="_blank" class="text-[#FF4500] hover:underline">https://www.ap.gov.in</a></div>
+                                <div><strong>Link:</strong> <a href="https://www.ap.gov.in" target="_blank"
+                                        class="text-[#FF4500] hover:underline">https://www.ap.gov.in</a></div>
                             </div>
-                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">Official notification regarding the appointment of state police service officers to the Indian Police Service (IPS) cadre.</p>
+                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">Official notification
+                                regarding the appointment of state police service officers to the Indian Police Service
+                                (IPS) cadre.</p>
                         </div>
                     </div>
 
                     <!-- Item 4: Interview (Crime Diaries With Muralidhar) -->
-                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between" data-category="interview" data-youtube-id="f2xCoINKMxI">
+                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between"
+                        data-category="interview" data-youtube-id="f2xCoINKMxI">
                         <div class="relative overflow-hidden aspect-video cursor-pointer">
-                            <img src="https://img.youtube.com/vi/f2xCoINKMxI/hqdefault.jpg" alt="Crime Diaries Interview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
-                                <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl group-hover:scale-110 transition"><i class="fas fa-play"></i></div>
+                            <img src="https://img.youtube.com/vi/f2xCoINKMxI/hqdefault.jpg"
+                                alt="Crime Diaries Interview"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl group-hover:scale-110 transition">
+                                    <i class="fas fa-play"></i></div>
                             </div>
                         </div>
                         <div class="p-8">
-                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">K.G.V. Saritha, IPS | Exclusive Interview | Crime Diaries With Muralidhar</h3>
+                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">K.G.V. Saritha, IPS | Exclusive
+                                Interview | Crime Diaries With Muralidhar</h3>
                             <div class="grid grid-cols-1 gap-2 text-xs text-gray-500 mb-6">
                                 <div><strong>Platform:</strong> iDream News Channel</div>
                                 <div><strong>Date:</strong> 2021</div>
-                                <div><strong>Link:</strong> <a href="https://youtu.be/f2xCoINKMxI" target="_blank" class="text-[#FF4500] hover:underline">https://youtu.be/f2xCoINKMxI</a></div>
+                                <div><strong>Link:</strong> <a href="https://youtu.be/f2xCoINKMxI" target="_blank"
+                                        class="text-[#FF4500] hover:underline">https://youtu.be/f2xCoINKMxI</a></div>
                             </div>
-                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">Detailed professional and case diaries discussion highlighting investigative experiences and public safety.</p>
+                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">Detailed professional and case
+                                diaries discussion highlighting investigative experiences and public safety.</p>
                         </div>
                     </div>
 
                     <!-- Item 5: Speech (DSP Saritha Speech to Students) -->
-                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between" data-category="speech" data-youtube-id="_6JtQoXD4A8">
+                    <div class="reveal media-card bg-[#111] border border-white/10 rounded-3xl overflow-hidden group hover:border-[#FF4500]/50 transition-all duration-300 flex flex-col justify-between"
+                        data-category="speech" data-youtube-id="_6JtQoXD4A8">
                         <div class="relative overflow-hidden aspect-video cursor-pointer">
-                            <img src="https://img.youtube.com/vi/_6JtQoXD4A8/hqdefault.jpg" alt="Inspirational Speech to Students" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
-                                <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl group-hover:scale-110 transition"><i class="fas fa-play"></i></div>
+                            <img src="https://img.youtube.com/vi/_6JtQoXD4A8/hqdefault.jpg"
+                                alt="Inspirational Speech to Students"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl group-hover:scale-110 transition">
+                                    <i class="fas fa-play"></i></div>
                             </div>
                         </div>
                         <div class="p-8">
-                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">DSP Saritha Inspirational Speech To Students As A Mother</h3>
+                            <h3 class="text-xl font-serif text-white mb-4 line-clamp-2">DSP Saritha Inspirational Speech
+                                To Students As A Mother</h3>
                             <div class="grid grid-cols-1 gap-2 text-xs text-gray-500 mb-6">
                                 <div><strong>Platform:</strong> Manastars YouTube Channel</div>
                                 <div><strong>Date:</strong> 2019</div>
-                                <div><strong>Link:</strong> <a href="https://youtu.be/_6JtQoXD4A8" target="_blank" class="text-[#FF4500] hover:underline">https://youtu.be/_6JtQoXD4A8</a></div>
+                                <div><strong>Link:</strong> <a href="https://youtu.be/_6JtQoXD4A8" target="_blank"
+                                        class="text-[#FF4500] hover:underline">https://youtu.be/_6JtQoXD4A8</a></div>
                             </div>
-                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">An inspirational address to students focusing on values, guidance, personal growth, and education.</p>
+                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">An inspirational address to
+                                students focusing on values, guidance, personal growth, and education.</p>
                         </div>
                     </div>
                 </div>
@@ -499,41 +647,64 @@
         <section id="gallery" class="py-32 relative border-t border-white/5">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center reveal mb-16">
-                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Visual Archives</span>
+                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Visual
+                        Archives</span>
                     <h2 class="text-3xl md:text-5xl font-serif text-white mb-6">Photo Gallery</h2>
-                    <p class="text-gray-500 text-lg">Verified photographs representing official ceremonies and community outreach campaigns.</p>
+                    <p class="text-gray-500 text-lg">Verified photographs representing official ceremonies and community
+                        outreach campaigns.</p>
                 </div>
 
                 <!-- Gallery Filter Buttons -->
                 <div class="gallery-filters reveal flex flex-wrap justify-center gap-3 mb-8 max-w-3xl mx-auto">
-                    <button class="tab-btn active px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition" data-filter="all">All Photos</button>
-                    <button class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition" data-filter="official-portrait">Official Portrait</button>
-                    <button class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition" data-filter="community-interaction">Community Interaction</button>
-                    <button class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition" data-filter="awareness-program">Awareness Program</button>
-                    <button class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition" data-filter="media-appearance">Media Appearance</button>
-                    <button class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition" data-filter="press-interaction">Press Interaction</button>
+                    <button
+                        class="tab-btn active px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition"
+                        data-filter="all">All Photos</button>
+                    <button
+                        class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition"
+                        data-filter="official-portrait">Official Portrait</button>
+                    <button
+                        class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition"
+                        data-filter="community-interaction">Community Interaction</button>
+                    <button
+                        class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition"
+                        data-filter="awareness-program">Awareness Program</button>
+                    <button
+                        class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition"
+                        data-filter="media-appearance">Media Appearance</button>
+                    <button
+                        class="tab-btn px-5 py-2 rounded-full text-xs font-mono uppercase border border-white/10 bg-white/5 text-gray-400 hover:text-white transition"
+                        data-filter="press-interaction">Press Interaction</button>
                 </div>
 
                 <!-- Gallery View Toggle -->
                 <div class="gallery-view-toggle reveal flex justify-center gap-4 mb-12">
-                    <button class="view-toggle-btn active px-4 py-2 border border-white/10 rounded-full text-xs flex items-center gap-2 hover:bg-white/5 transition" id="viewGridBtn">
+                    <button
+                        class="view-toggle-btn active px-4 py-2 border border-white/10 rounded-full text-xs flex items-center gap-2 hover:bg-white/5 transition"
+                        id="viewGridBtn">
                         <i class="fas fa-th"></i> Grid View
                     </button>
-                    <button class="view-toggle-btn px-4 py-2 border border-white/10 rounded-full text-xs flex items-center gap-2 hover:bg-white/5 transition" id="viewSlideshowBtn">
+                    <button
+                        class="view-toggle-btn px-4 py-2 border border-white/10 rounded-full text-xs flex items-center gap-2 hover:bg-white/5 transition"
+                        id="viewSlideshowBtn">
                         <i class="fas fa-play"></i> Slideshow View
                     </button>
                 </div>
 
                 <!-- Gallery Slider Wrapper (initially hidden) -->
-                <div class="gallery-slider-wrapper relative max-w-4xl mx-auto overflow-hidden rounded-3xl border border-white/10 bg-[#111]" id="gallerySliderWrapper" style="display: none;">
+                <div class="gallery-slider-wrapper relative max-w-4xl mx-auto overflow-hidden rounded-3xl border border-white/10 bg-[#111]"
+                    id="gallerySliderWrapper" style="display: none;">
                     <div class="gallery-slider flex" id="gallerySlider">
                         <!-- Slides are dynamically created by JS -->
                     </div>
                     <!-- Navigation Buttons -->
-                    <button class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:bg-black transition" id="sliderPrevBtn" aria-label="Previous Slide">
+                    <button
+                        class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:bg-black transition"
+                        id="sliderPrevBtn" aria-label="Previous Slide">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:bg-black transition" id="sliderNextBtn" aria-label="Next Slide">
+                    <button
+                        class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:bg-black transition"
+                        id="sliderNextBtn" aria-label="Next Slide">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                     <!-- Slide Dots -->
@@ -543,19 +714,26 @@
                 <!-- Gallery Grid -->
                 <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                     <!-- Image 1: Official Portrait -->
-                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer" data-category="official-portrait">
-                        <img src="images/kgv_saritha.jpg" alt="Official Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer"
+                        data-category="official-portrait">
+                        <img src="images/kgv_saritha.jpg" alt="Official Portrait"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                             <span class="text-[#FF4500] text-xs font-mono uppercase mb-1">Official Portrait</span>
                             <h4 class="text-lg font-serif text-white font-medium">Official Portrait</h4>
-                            <span class="text-gray-500 text-[10px] mt-1">Source: NTR Police Commissionerate Office</span>
+                            <span class="text-gray-500 text-[10px] mt-1">Source: NTR Police Commissionerate
+                                Office</span>
                         </div>
                     </div>
 
                     <!-- Image 2: Community Outreach -->
-                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer" data-category="community-interaction">
-                        <img src="https://img.youtube.com/vi/_6JtQoXD4A8/hqdefault.jpg" alt="Student Awareness Program" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer"
+                        data-category="community-interaction">
+                        <img src="https://img.youtube.com/vi/_6JtQoXD4A8/hqdefault.jpg" alt="Student Awareness Program"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                             <span class="text-[#FF4500] text-xs font-mono uppercase mb-1">Community Interaction</span>
                             <h4 class="text-lg font-serif text-white font-medium">Student Awareness Program</h4>
                             <span class="text-gray-500 text-[10px] mt-1">Source: Manastars Channel</span>
@@ -563,9 +741,12 @@
                     </div>
 
                     <!-- Image 3: Public Interaction -->
-                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer" data-category="community-interaction">
-                        <img src="images/hq720.jpg" alt="Official Public Session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer"
+                        data-category="community-interaction">
+                        <img src="images/hq720.jpg" alt="Official Public Session"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                             <span class="text-[#FF4500] text-xs font-mono uppercase mb-1">Community Interaction</span>
                             <h4 class="text-lg font-serif text-white font-medium">Official Public Session</h4>
                             <span class="text-gray-500 text-[10px] mt-1">Source: NTR Police Commissionerate</span>
@@ -573,19 +754,27 @@
                     </div>
 
                     <!-- Image 4: Awareness Program -->
-                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer" data-category="awareness-program">
-                        <img src="https://img.youtube.com/vi/9MYpvRvj3Vs/hqdefault.jpg" alt="Awareness Session: Ramakrishna Math" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer"
+                        data-category="awareness-program">
+                        <img src="https://img.youtube.com/vi/9MYpvRvj3Vs/hqdefault.jpg"
+                            alt="Awareness Session: Ramakrishna Math"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                             <span class="text-[#FF4500] text-xs font-mono uppercase mb-1">Awareness Program</span>
-                            <h4 class="text-lg font-serif text-white font-medium">Awareness Session: Ramakrishna Math</h4>
+                            <h4 class="text-lg font-serif text-white font-medium">Awareness Session: Ramakrishna Math
+                            </h4>
                             <span class="text-gray-500 text-[10px] mt-1">Source: Sri Ramakrishna Prabha</span>
                         </div>
                     </div>
 
                     <!-- Image 5: Official Event -->
-                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer" data-category="official-portrait">
-                        <img src="images/hq720.jpg" alt="Official Public Briefing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer"
+                        data-category="official-portrait">
+                        <img src="images/hq720.jpg" alt="Official Public Briefing"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                             <span class="text-[#FF4500] text-xs font-mono uppercase mb-1">Official Portrait</span>
                             <h4 class="text-lg font-serif text-white font-medium">Official Public Briefing</h4>
                             <span class="text-gray-500 text-[10px] mt-1">Source: NTR Police Commissionerate</span>
@@ -593,9 +782,12 @@
                     </div>
 
                     <!-- Image 6: Public Interaction -->
-                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer" data-category="community-interaction">
-                        <img src="images/kgv_saritha.jpg" alt="Officer Interactive Session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer"
+                        data-category="community-interaction">
+                        <img src="images/kgv_saritha.jpg" alt="Officer Interactive Session"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                             <span class="text-[#FF4500] text-xs font-mono uppercase mb-1">Community Interaction</span>
                             <h4 class="text-lg font-serif text-white font-medium">Officer Interactive Session</h4>
                             <span class="text-gray-500 text-[10px] mt-1">Source: Vijayawada Police</span>
@@ -603,19 +795,28 @@
                     </div>
 
                     <!-- Image 7: Awareness Program -->
-                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer" data-category="awareness-program">
-                        <img src="https://img.youtube.com/vi/Vp-1fXT3bu8/hqdefault.jpg" alt="CID Anti-Human Trafficking Briefing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer"
+                        data-category="awareness-program">
+                        <img src="https://img.youtube.com/vi/Vp-1fXT3bu8/hqdefault.jpg"
+                            alt="CID Anti-Human Trafficking Briefing"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                             <span class="text-[#FF4500] text-xs font-mono uppercase mb-1">Awareness Program</span>
-                            <h4 class="text-lg font-serif text-white font-medium">CID Anti-Human Trafficking Briefing</h4>
+                            <h4 class="text-lg font-serif text-white font-medium">CID Anti-Human Trafficking Briefing
+                            </h4>
                             <span class="text-gray-500 text-[10px] mt-1">Source: CID Andhra Pradesh</span>
                         </div>
                     </div>
 
                     <!-- Image 8: Press Interaction -->
-                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer" data-category="press-interaction">
-                        <img src="https://img.youtube.com/vi/f2xCoINKMxI/hqdefault.jpg" alt="Press Meet - CID Investigation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer"
+                        data-category="press-interaction">
+                        <img src="https://img.youtube.com/vi/f2xCoINKMxI/hqdefault.jpg"
+                            alt="Press Meet - CID Investigation"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                             <span class="text-[#FF4500] text-xs font-mono uppercase mb-1">Press Interaction</span>
                             <h4 class="text-lg font-serif text-white font-medium">Press Meet - CID Investigation</h4>
                             <span class="text-gray-500 text-[10px] mt-1">Source: iDream News</span>
@@ -623,11 +824,16 @@
                     </div>
 
                     <!-- Image 9: Media Appearance -->
-                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer" data-category="media-appearance">
-                        <img src="https://img.youtube.com/vi/Vp-1fXT3bu8/hqdefault.jpg" alt="Media Interaction on Child Protection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                    <div class="reveal gallery-item relative overflow-hidden rounded-3xl border border-white/10 aspect-square group cursor-pointer"
+                        data-category="media-appearance">
+                        <img src="https://img.youtube.com/vi/Vp-1fXT3bu8/hqdefault.jpg"
+                            alt="Media Interaction on Child Protection"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
                             <span class="text-[#FF4500] text-xs font-mono uppercase mb-1">Media Appearance</span>
-                            <h4 class="text-lg font-serif text-white font-medium">Media Interaction on Child Protection</h4>
+                            <h4 class="text-lg font-serif text-white font-medium">Media Interaction on Child Protection
+                            </h4>
                             <span class="text-gray-500 text-[10px] mt-1">Source: iDream Media Interview</span>
                         </div>
                     </div>
@@ -639,10 +845,12 @@
         <section id="contact" class="py-32 relative border-t border-white/5">
             <div class="container mx-auto px-6">
                 <!-- Disclaimer Banner -->
-                <div class="reveal bg-red-950/40 border border-red-500/20 rounded-2xl p-5 mb-16 flex items-start gap-4 max-w-5xl mx-auto">
+                <div
+                    class="reveal bg-red-950/40 border border-red-500/20 rounded-2xl p-5 mb-16 flex items-start gap-4 max-w-5xl mx-auto">
                     <div class="text-[#FF4500] mt-0.5"><i class="fas fa-circle-exclamation text-lg"></i></div>
                     <div class="text-gray-300 text-sm leading-relaxed">
-                        <strong>Notice:</strong> This portal is for approved public communication only. It is not for emergency reporting. For urgent police assistance, call 100 or 112 immediately.
+                        <strong>Notice:</strong> This portal is for approved public communication only. It is not for
+                        emergency reporting. For urgent police assistance, call 100 or 112 immediately.
                     </div>
                 </div>
 
@@ -650,16 +858,20 @@
                     <!-- Left Info Panel -->
                     <div class="lg:col-span-5 reveal flex flex-col justify-between">
                         <div>
-                            <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Official Communication</span>
+                            <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Official
+                                Communication</span>
                             <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Official Channels</h2>
                             <p class="text-gray-400 text-base leading-relaxed mb-10">
-                                Approved contact methods for scheduling inquiries, university seminars, administrative representations, and outreach coordination.
+                                Approved contact methods for scheduling inquiries, university seminars, administrative
+                                representations, and outreach coordination.
                             </p>
                         </div>
 
                         <div class="flex flex-col gap-6">
                             <div class="flex gap-4">
-                                <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 mt-1"><i class="far fa-envelope"></i></div>
+                                <div
+                                    class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 mt-1">
+                                    <i class="far fa-envelope"></i></div>
                                 <div>
                                     <h4 class="text-sm font-semibold text-white">Official Correspondence Email</h4>
                                     <p class="text-sm text-gray-400 mt-1">Pending official confirmation</p>
@@ -667,79 +879,123 @@
                             </div>
 
                             <div class="flex gap-4">
-                                <div class="w-10 h-10 rounded-full border border-[#FF4500]/20 flex items-center justify-center text-[#FF4500] mt-1"><i class="fas fa-shield-halved"></i></div>
+                                <div
+                                    class="w-10 h-10 rounded-full border border-[#FF4500]/20 flex items-center justify-center text-[#FF4500] mt-1">
+                                    <i class="fas fa-shield-halved"></i></div>
                                 <div>
                                     <h4 class="text-sm font-semibold text-white">Cyber Fraud Helpline</h4>
-                                    <p class="text-sm text-gray-400 mt-1">For immediate reporting of financial cyber fraud, dial <strong class="text-[#FF4500]">1930</strong> (toll-free) or file a complaint online.</p>
-                                    <a href="https://cybercrime.gov.in" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-[#FF4500] hover:underline mt-2">Report Cybercrime Portal <i class="fas fa-arrow-up-right-from-square text-[9px]"></i></a>
+                                    <p class="text-sm text-gray-400 mt-1">For immediate reporting of financial cyber
+                                        fraud, dial <strong class="text-[#FF4500]">1930</strong> (toll-free) or file a
+                                        complaint online.</p>
+                                    <a href="https://cybercrime.gov.in" target="_blank"
+                                        class="inline-flex items-center gap-1.5 text-xs text-[#FF4500] hover:underline mt-2">Report
+                                        Cybercrime Portal <i
+                                            class="fas fa-arrow-up-right-from-square text-[9px]"></i></a>
                                 </div>
                             </div>
 
                             <div class="flex gap-4">
-                                <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 mt-1"><i class="fab fa-whatsapp"></i></div>
+                                <div
+                                    class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 mt-1">
+                                    <i class="fab fa-whatsapp"></i></div>
                                 <div>
                                     <h4 class="text-sm font-semibold text-white">Citizen Whatsapp Helpline</h4>
-                                    <p class="text-sm text-gray-400 mt-1">WhatsApp-based Citizen Services Helpline: 9552300009</p>
-                                    <a href="https://wa.me/919552300009" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-white hover:underline mt-2">Open Citizen Chat <i class="fas fa-comments text-[9px]"></i></a>
+                                    <p class="text-sm text-gray-400 mt-1">WhatsApp-based Citizen Services Helpline:
+                                        9552300009</p>
+                                    <a href="https://wa.me/919552300009" target="_blank"
+                                        class="inline-flex items-center gap-1.5 text-xs text-white hover:underline mt-2">Open
+                                        Citizen Chat <i class="fas fa-comments text-[9px]"></i></a>
                                 </div>
                             </div>
 
                             <div class="flex gap-4">
-                                <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 mt-1"><i class="fas fa-building"></i></div>
+                                <div
+                                    class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 mt-1">
+                                    <i class="fas fa-building"></i></div>
                                 <div>
                                     <h4 class="text-sm font-semibold text-white">Office Address</h4>
-                                    <p class="text-sm text-gray-400 mt-1">Office of the DCP (Administration), NTR Police Commissionerate Headquarters, Vijayawada, AP, India.</p>
+                                    <p class="text-sm text-gray-400 mt-1">Office of the DCP (Administration), NTR Police
+                                        Commissionerate Headquarters, Vijayawada, AP, India.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right Form Wrapper -->
-                    <div class="lg:col-span-7 reveal bg-[#111] border border-white/10 rounded-3xl p-8 md:p-10" id="formWrapper">
+                    <div class="lg:col-span-7 reveal bg-[#111] border border-white/10 rounded-3xl p-8 md:p-10"
+                        id="formWrapper">
                         <h3 class="text-2xl font-serif text-white mb-2">Official Public Request Form</h3>
-                        <p class="text-gray-400 text-sm mb-8">Submit scheduling invitations, feedback, or administrative inquiries directly to the office.</p>
+                        <p class="text-gray-400 text-sm mb-8">Submit scheduling invitations, feedback, or administrative
+                            inquiries directly to the office.</p>
 
                         <form id="contactForm" class="flex flex-col gap-6">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div class="flex flex-col gap-2">
-                                    <label for="formName" class="text-xs uppercase tracking-wider text-gray-500 font-mono">Full Name *</label>
-                                    <input type="text" class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition" id="formName" placeholder="Enter Full Name" required>
+                                    <label for="formName"
+                                        class="text-xs uppercase tracking-wider text-gray-500 font-mono">Full Name
+                                        *</label>
+                                    <input type="text"
+                                        class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition"
+                                        id="formName" placeholder="Enter Full Name" required>
                                 </div>
                                 <div class="flex flex-col gap-2">
-                                    <label for="formEmail" class="text-xs uppercase tracking-wider text-gray-500 font-mono">Email Address *</label>
-                                    <input type="email" class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition" id="formEmail" placeholder="name@domain.com" required>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div class="flex flex-col gap-2">
-                                    <label for="formPhone" class="text-xs uppercase tracking-wider text-gray-500 font-mono">Phone Number *</label>
-                                    <input type="tel" class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition" id="formPhone" placeholder="Enter Phone Number" required>
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <label for="formSubject" class="text-xs uppercase tracking-wider text-gray-500 font-mono">Subject *</label>
-                                    <input type="text" class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition" id="formSubject" placeholder="Inquiry Topic / Seminar Request" required>
+                                    <label for="formEmail"
+                                        class="text-xs uppercase tracking-wider text-gray-500 font-mono">Email Address
+                                        *</label>
+                                    <input type="email"
+                                        class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition"
+                                        id="formEmail" placeholder="name@domain.com" required>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div class="flex flex-col gap-2">
-                                    <label for="formCategory" class="text-xs uppercase tracking-wider text-gray-500 font-mono">Category *</label>
-                                    <select class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition" id="formCategory" required>
+                                    <label for="formPhone"
+                                        class="text-xs uppercase tracking-wider text-gray-500 font-mono">Phone Number
+                                        *</label>
+                                    <input type="tel"
+                                        class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition"
+                                        id="formPhone" placeholder="Enter Phone Number" required>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label for="formSubject"
+                                        class="text-xs uppercase tracking-wider text-gray-500 font-mono">Subject
+                                        *</label>
+                                    <input type="text"
+                                        class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition"
+                                        id="formSubject" placeholder="Inquiry Topic / Seminar Request" required>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-2">
+                                    <label for="formCategory"
+                                        class="text-xs uppercase tracking-wider text-gray-500 font-mono">Category
+                                        *</label>
+                                    <select
+                                        class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition"
+                                        id="formCategory" required>
                                         <option value="" disabled selected class="bg-[#111]">Select Category</option>
                                         <option value="Women Safety" class="bg-[#111]">Women Safety</option>
                                         <option value="Child Protection" class="bg-[#111]">Child Protection</option>
                                         <option value="Cyber Safety" class="bg-[#111]">Cyber Safety</option>
-                                        <option value="School / College Session" class="bg-[#111]">School / College Session</option>
+                                        <option value="School / College Session" class="bg-[#111]">School / College
+                                            Session</option>
                                         <option value="Community Outreach" class="bg-[#111]">Community Outreach</option>
                                         <option value="Media Request" class="bg-[#111]">Media Request</option>
-                                        <option value="Other Official Query" class="bg-[#111]">Other Official Query</option>
+                                        <option value="Other Official Query" class="bg-[#111]">Other Official Query
+                                        </option>
                                     </select>
                                 </div>
                                 <div class="flex flex-col gap-2">
-                                    <label for="formChannel" class="text-xs uppercase tracking-wider text-gray-500 font-mono">Preferred Contact Method *</label>
-                                    <select class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition" id="formChannel" required>
-                                        <option value="" disabled selected class="bg-[#111]">Select Contact Method</option>
+                                    <label for="formChannel"
+                                        class="text-xs uppercase tracking-wider text-gray-500 font-mono">Preferred
+                                        Contact Method *</label>
+                                    <select
+                                        class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm focus:outline-none focus:border-[#FF4500] transition"
+                                        id="formChannel" required>
+                                        <option value="" disabled selected class="bg-[#111]">Select Contact Method
+                                        </option>
                                         <option value="email" class="bg-[#111]">Email</option>
                                         <option value="phone" class="bg-[#111]">Phone / WhatsApp</option>
                                     </select>
@@ -747,19 +1003,28 @@
                             </div>
 
                             <div class="flex flex-col gap-2">
-                                <label for="formMessage" class="text-xs uppercase tracking-wider text-gray-500 font-mono">Message Details *</label>
-                                <textarea class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm h-32 focus:outline-none focus:border-[#FF4500] transition resize-none" id="formMessage" placeholder="Provide details of your request, schedule proposals, or inquiries..." required></textarea>
+                                <label for="formMessage"
+                                    class="text-xs uppercase tracking-wider text-gray-500 font-mono">Message Details
+                                    *</label>
+                                <textarea
+                                    class="bg-white/5 border border-white/10 rounded-lg p-3 text-white text-sm h-32 focus:outline-none focus:border-[#FF4500] transition resize-none"
+                                    id="formMessage"
+                                    placeholder="Provide details of your request, schedule proposals, or inquiries..."
+                                    required></textarea>
                             </div>
 
                             <p class="text-gray-500 text-[11px] leading-relaxed">
-                                <strong>Notice:</strong> Use this form only for official/public communication. Do not use it for emergency complaints.
+                                <strong>Notice:</strong> Use this form only for official/public communication. Do not
+                                use it for emergency complaints.
                             </p>
 
-                            <button type="submit" class="w-full bg-[#FF4500] text-white font-medium py-3.5 rounded-full hover:bg-[#ff5714] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
+                            <button type="submit"
+                                class="w-full bg-[#FF4500] text-white font-medium py-3.5 rounded-full hover:bg-[#ff5714] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2">
                                 Submit Request <i class="fas fa-paper-plane text-xs"></i>
                             </button>
 
-                            <div class="submit-message text-center text-sm font-medium py-2 rounded-lg hidden" id="submitMessage"></div>
+                            <div class="submit-message text-center text-sm font-medium py-2 rounded-lg hidden"
+                                id="submitMessage"></div>
                         </form>
                     </div>
                 </div>
@@ -770,69 +1035,101 @@
         <section id="resources" class="py-32 relative border-t border-white/5">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center reveal mb-20">
-                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Citizen Resources</span>
+                    <span class="text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-4 block">Citizen
+                        Resources</span>
                     <h2 class="text-3xl md:text-5xl font-serif text-white mb-6">Official Resources</h2>
-                    <p class="text-gray-500 text-lg">Access official citizen services, safety wing pages, and emergency channels managed by the Andhra Pradesh Police.</p>
+                    <p class="text-gray-500 text-lg">Access official citizen services, safety wing pages, and emergency
+                        channels managed by the Andhra Pradesh Police.</p>
                 </div>
 
                 <div class="reveal resources-grid grid grid-cols-2 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
                     <!-- Tile 1 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-handshake-angle text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-handshake-angle text-xl"></i></div>
                         <span class="text-sm font-medium text-white">Citizen Services</span>
                     </div>
 
                     <!-- Tile 2 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-person-shelter text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-person-shelter text-xl"></i></div>
                         <span class="text-sm font-medium text-white">Women Protection</span>
                     </div>
 
                     <!-- Tile 3 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-children text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-children text-xl"></i></div>
                         <span class="text-sm font-medium text-white">Child Protection</span>
                     </div>
 
                     <!-- Tile 4 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="window.open('https://appolice.gov.in', '_blank')">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-people-group text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="window.open('https://appolice.gov.in', '_blank')">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-people-group text-xl"></i></div>
                         <span class="text-sm font-medium text-white">Community Policing</span>
                     </div>
 
                     <!-- Tile 5 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="window.open('https://appolice.gov.in', '_blank')">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-award text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="window.open('https://appolice.gov.in', '_blank')">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-award text-xl"></i></div>
                         <span class="text-sm font-medium text-white">Good Work Done</span>
                     </div>
 
                     <!-- Tile 6 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-circle-question text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-circle-question text-xl"></i></div>
                         <span class="text-sm font-medium text-white">FAQ Desk</span>
                     </div>
 
                     <!-- Tile 7 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="location.href='#contact'">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-address-book text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="location.href='#contact'">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-address-book text-xl"></i></div>
                         <span class="text-sm font-medium text-white">Contact Us</span>
                     </div>
 
                     <!-- Tile 8 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="window.open('https://appolice.gov.in', '_blank')">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-phone-volume text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="window.open('https://appolice.gov.in', '_blank')">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-phone-volume text-xl"></i></div>
                         <span class="text-sm font-medium text-white">Emergency Numbers</span>
                     </div>
 
                     <!-- Tile 9 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-file-arrow-down text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-file-arrow-down text-xl"></i></div>
                         <span class="text-sm font-medium text-white">Download Forms</span>
                     </div>
 
                     <!-- Tile 10 -->
-                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group" onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
-                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition"><i class="fas fa-file-signature text-xl"></i></div>
+                    <div class="bg-[#111] border border-white/10 rounded-2xl p-6 text-center hover:border-[#FF4500]/50 transition cursor-pointer flex flex-col items-center gap-4 group"
+                        onclick="window.open('https://citizen.appolice.gov.in', '_blank')">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] group-hover:scale-110 transition">
+                            <i class="fas fa-file-signature text-xl"></i></div>
                         <span class="text-sm font-medium text-white">E-Complaint</span>
                     </div>
                 </div>
@@ -845,10 +1142,12 @@
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
                     <div class="md:col-span-6">
                         <a href="#home" class="flex items-center gap-3 font-serif mb-6">
-                            <img src="images/kgv_saritha.jpg" alt="Logo" class="w-8 h-8 rounded-full object-cover border border-white/20">
+                            <img src="images/kgv_saritha.jpg" alt="Logo"
+                                class="w-8 h-8 rounded-full object-cover border border-white/20">
                             <span class="text-xl font-bold tracking-tighter">Saritha IPS.</span>
                         </a>
-                        <p class="text-gray-500 text-sm leading-relaxed max-w-sm mb-6">Official public information portal for K.G.V. Saritha, IPS, DCP (Admn.), Vijayawada, NTR Police Commissionerate.</p>
+                        <p class="text-gray-500 text-sm leading-relaxed max-w-sm mb-6">Official public information
+                            portal for K.G.V. Saritha, IPS, DCP (Admn.), Vijayawada, NTR Police Commissionerate.</p>
                         <p class="text-gray-600 text-xs">© 2026 K.G.V. Saritha, IPS. All rights reserved.</p>
                     </div>
 
@@ -866,10 +1165,15 @@
 
                     <div class="md:col-span-3 flex flex-col justify-between h-full min-h-[160px]">
                         <div>
-                            <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-6">Citizen Safety Wings</h3>
+                            <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-6">Citizen Safety
+                                Wings</h3>
                             <ul class="flex flex-col gap-4 text-sm text-gray-500">
-                                <li><a href="https://citizen.appolice.gov.in" target="_blank" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-link text-[10px]"></i> AP Citizen Portal</a></li>
-                                <li><a href="https://citizen.appolice.gov.in" target="_blank" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-shield-halved text-[10px]"></i> Women Safety Wing</a></li>
+                                <li><a href="https://citizen.appolice.gov.in" target="_blank"
+                                        class="hover:text-white transition flex items-center gap-1.5"><i
+                                            class="fas fa-link text-[10px]"></i> AP Citizen Portal</a></li>
+                                <li><a href="https://citizen.appolice.gov.in" target="_blank"
+                                        class="hover:text-white transition flex items-center gap-1.5"><i
+                                            class="fas fa-shield-halved text-[10px]"></i> Women Safety Wing</a></li>
                             </ul>
                         </div>
                     </div>
@@ -877,7 +1181,8 @@
 
                 <div class="mt-20 border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between gap-6">
                     <div class="w-full">
-                        <h2 class="text-[8vw] leading-[0.8] tracking-tighter text-white/5 font-bold select-none pointer-events-none font-serif">
+                        <h2
+                            class="text-[8vw] leading-[0.8] tracking-tighter text-white/5 font-bold select-none pointer-events-none font-serif">
                             SARITHA IPS.
                         </h2>
                     </div>
@@ -887,7 +1192,9 @@
 
         <!-- Custom Lightbox Modal -->
         <div class="lightbox" id="lightbox">
-            <span class="lightbox-close absolute top-6 right-6 text-white text-3xl cursor-pointer hover:scale-110 transition"><i class="fas fa-times"></i></span>
+            <span
+                class="lightbox-close absolute top-6 right-6 text-white text-3xl cursor-pointer hover:scale-110 transition"><i
+                    class="fas fa-times"></i></span>
             <div class="lightbox-content flex flex-col items-center gap-4">
                 <img src="" alt="" class="lightbox-img max-h-[70vh] rounded-2xl border border-white/10 shadow-2xl">
                 <div class="lightbox-caption text-center">
@@ -899,33 +1206,48 @@
 
         <!-- Custom Video Modal -->
         <div class="video-modal" id="videoModal">
-            <span class="video-modal-close absolute top-6 right-6 text-white text-3xl cursor-pointer hover:scale-110 transition"><i class="fas fa-times"></i></span>
-            <div class="video-modal-content w-full max-w-4xl aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <iframe class="video-modal-iframe w-full h-full" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span
+                class="video-modal-close absolute top-6 right-6 text-white text-3xl cursor-pointer hover:scale-110 transition"><i
+                    class="fas fa-times"></i></span>
+            <div
+                class="video-modal-content w-full max-w-4xl aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <iframe class="video-modal-iframe w-full h-full" src=""
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
 
         <!-- AI Chatbot Widget -->
         <div class="fixed bottom-6 right-6 z-50">
-            <button class="w-14 h-14 rounded-full bg-[#FF4500] text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300" id="chatbotToggle" aria-label="Open AI Assistant">
+            <button
+                class="w-14 h-14 rounded-full bg-[#FF4500] text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300"
+                id="chatbotToggle" aria-label="Open AI Assistant">
                 <iconify-icon icon="lucide:message-square" class="text-2xl"></iconify-icon>
             </button>
-            <div class="absolute bottom-18 right-0 w-80 md:w-96 bg-[#111] border border-white/10 rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 opacity-0 scale-95 pointer-events-none" id="chatbotWindow">
+            <div class="absolute bottom-18 right-0 w-80 md:w-96 bg-[#111] border border-white/10 rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 opacity-0 scale-95 pointer-events-none"
+                id="chatbotWindow">
                 <div class="bg-[#1a1a1a] border-b border-white/10 p-4 flex justify-between items-center">
                     <div class="flex items-center gap-2">
                         <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                         <span class="text-sm font-medium text-white">Saritha IPS Assistant</span>
                     </div>
-                    <button class="text-gray-500 hover:text-white" id="chatbotClose"><i class="fas fa-times"></i></button>
+                    <button class="text-gray-500 hover:text-white" id="chatbotClose"><i
+                            class="fas fa-times"></i></button>
                 </div>
                 <div class="h-80 overflow-y-auto p-4 flex flex-col gap-3 text-sm" id="chatbotMessages">
                     <div class="bg-white/5 border border-white/5 rounded-2xl p-3 text-gray-300 max-w-[85%] self-start">
-                        Hello. I am the Saritha IPS Public Information Assistant. How can I help you find approved public information? You can ask about the officer's profile, outreach programs, media updates, contact details, or citizen resources.
+                        Hello. I am the Saritha IPS Public Information Assistant. How can I help you find approved
+                        public information? You can ask about the officer's profile, outreach programs, media updates,
+                        contact details, or citizen resources.
                     </div>
                 </div>
                 <div class="border-t border-white/10 p-3 bg-[#111] flex gap-2">
-                    <input type="text" class="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-white text-sm focus:outline-none focus:border-[#FF4500]" id="chatbotInput" placeholder="Type a message..." aria-label="Chat input">
-                    <button class="w-9 h-9 rounded-full bg-[#FF4500] text-white flex items-center justify-center hover:bg-[#ff5714] transition" id="chatbotSend" aria-label="Send message">
+                    <input type="text"
+                        class="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-white text-sm focus:outline-none focus:border-[#FF4500]"
+                        id="chatbotInput" placeholder="Type a message..." aria-label="Chat input">
+                    <button
+                        class="w-9 h-9 rounded-full bg-[#FF4500] text-white flex items-center justify-center hover:bg-[#ff5714] transition"
+                        id="chatbotSend" aria-label="Send message">
                         <i class="fas fa-paper-plane text-xs"></i>
                     </button>
                 </div>
@@ -936,4 +1258,5 @@
     <!-- Script Injection -->
     <script src="js/app.js"></script>
 </body>
+
 </html>

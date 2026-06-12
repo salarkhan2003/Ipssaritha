@@ -111,3 +111,430 @@ body {
     flex: 0 0 100%;
     transition: opacity 0.5s ease;
 }
+
+/* Light Mode Variables */
+body.light-mode {
+    --bg: #f5f5f7;
+    --accent: #FF4500;
+    --card: #ffffff;
+    background-color: var(--bg);
+    color: #1d1d1f;
+}
+
+body.light-mode #main-nav {
+    color: #1d1d1f;
+}
+
+body.light-mode #main-nav .text-gray-400 {
+    color: #515154;
+}
+
+body.light-mode #main-nav .text-gray-400:hover {
+    color: #1d1d1f;
+}
+
+body.light-mode #nav-logo-link {
+    color: #1d1d1f;
+}
+
+body.light-mode #nav-cta-link {
+    background-color: #1d1d1f;
+    color: #ffffff;
+}
+
+body.light-mode #nav-cta-link:hover {
+    background-color: #323236;
+}
+
+body.light-mode #themeToggleBtn {
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #1d1d1f;
+}
+
+body.light-mode #themeToggleBtn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Hero changes */
+body.light-mode #home {
+    background-color: #f5f5f7;
+}
+
+body.light-mode h1 {
+    color: #1d1d1f !important;
+    text-shadow: none !important;
+    mix-blend-mode: normal !important;
+}
+
+body.light-mode .italic.font-light.text-\[\#ffe0e0\] {
+    color: #515154 !important;
+}
+
+body.light-mode #home p {
+    color: #1d1d1f !important;
+    text-shadow: none !important;
+    mix-blend-mode: normal !important;
+}
+
+body.light-mode #home .text-gray-400 {
+    color: #515154 !important;
+}
+
+body.light-mode #home .border-white\/20 {
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #1d1d1f !important;
+}
+
+body.light-mode #home .border-white\/20:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode #home .text-white\/40 {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+body.light-mode #home .bg-white\/20 {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* About / Info grid changes */
+body.light-mode #about {
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #about h2 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #about p.text-gray-500 {
+    color: #515154 !important;
+}
+
+body.light-mode #about .bg-\[\#111\] {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+body.light-mode #about h3,
+body.light-mode #about h4 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #about .text-gray-500 {
+    color: #86868b !important;
+}
+
+body.light-mode #about .text-white {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #about .border-white\/10 {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-mode #about .border-white\/5 {
+    border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-mode #about .text-gray-400 {
+    color: #515154 !important;
+}
+
+/* Parallax Card details */
+body.light-mode .parallax-card-up .bg-\[\#111\] {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode .parallax-card-up h3 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode .parallax-card-up p {
+    color: #515154 !important;
+}
+
+body.light-mode .parallax-card-up .bg-white\/5 {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #1d1d1f !important;
+}
+
+body.light-mode .parallax-card-up .border-white\/10 {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode .parallax-card-up .bg-white\/10 {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Initiatives section */
+body.light-mode #outreach {
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #outreach h2 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #outreach p {
+    color: #515154 !important;
+}
+
+body.light-mode #outreach .bg-\[\#111\] {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+body.light-mode #outreach h3 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #outreach .text-gray-400 {
+    color: #515154 !important;
+}
+
+/* Speeches section */
+body.light-mode #speeches {
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #speeches h2 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #speeches p {
+    color: #515154 !important;
+}
+
+body.light-mode #speeches .tab-btn {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #515154 !important;
+}
+
+body.light-mode #speeches .tab-btn.active {
+    background-color: #1d1d1f !important;
+    color: #ffffff !important;
+}
+
+body.light-mode #speeches .media-card {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+body.light-mode #speeches .media-card h3 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #speeches .media-card p {
+    color: #515154 !important;
+}
+
+body.light-mode #speeches .media-card .text-gray-500 {
+    color: #86868b !important;
+}
+
+body.light-mode #speeches .media-card .border-white\/10 {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Gallery Section */
+body.light-mode #gallery {
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #gallery h2 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #gallery p {
+    color: #515154 !important;
+}
+
+body.light-mode #gallery .tab-btn {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #515154 !important;
+}
+
+body.light-mode #gallery .tab-btn.active {
+    background-color: #FF4500 !important;
+    color: #ffffff !important;
+}
+
+body.light-mode #gallery .view-toggle-btn {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    color: #1d1d1f !important;
+}
+
+body.light-mode #gallery .view-toggle-btn.active {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-mode #gallery .gallery-item {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode #gallerySliderWrapper {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Contact section */
+body.light-mode #contact {
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #contact h2,
+body.light-mode #contact h3 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #contact p.text-gray-400 {
+    color: #515154 !important;
+}
+
+body.light-mode #contact .text-gray-500 {
+    color: #86868b !important;
+}
+
+body.light-mode #contact .text-white {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #contact .border-white\/10 {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-mode #contact .bg-\[\#111\] {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+body.light-mode #contact input,
+body.light-mode #contact select,
+body.light-mode #contact textarea {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    color: #1d1d1f !important;
+}
+
+body.light-mode #contact input::placeholder,
+body.light-mode #contact textarea::placeholder {
+    color: #86868b !important;
+}
+
+body.light-mode #contact select {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #contact option {
+    background-color: #ffffff !important;
+    color: #1d1d1f !important;
+}
+
+body.light-mode #contact .bg-red-950\/40 {
+    background-color: #fff5f5 !important;
+    border-color: rgba(239, 68, 68, 0.2) !important;
+}
+
+body.light-mode #contact .bg-red-950\/40 .text-gray-300 {
+    color: #b91c1c !important;
+}
+
+/* Resources section */
+body.light-mode #resources {
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode #resources h2 {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #resources p {
+    color: #515154 !important;
+}
+
+body.light-mode #resources .bg-\[\#111\] {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+body.light-mode #resources .text-white {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #resources .bg-white\/5 {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Footer Section */
+body.light-mode footer {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-mode footer .text-gray-500 {
+    color: #515154 !important;
+}
+
+body.light-mode footer .text-gray-600 {
+    color: #86868b !important;
+}
+
+body.light-mode footer .text-white {
+    color: #1d1d1f !important;
+}
+
+body.light-mode footer .text-white\/5 {
+    color: rgba(0, 0, 0, 0.03) !important;
+}
+
+body.light-mode footer .border-white\/5 {
+    border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Chatbot widget in light mode */
+body.light-mode #chatbotWindow {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+body.light-mode #chatbotWindow .bg-\[\#1a1a1a\] {
+    background-color: #f5f5f7 !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode #chatbotWindow .bg-\[\#1a1a1a\] .text-white {
+    color: #1d1d1f !important;
+}
+
+body.light-mode #chatbotMessages .bg-white\/5 {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
+    color: #1d1d1f !important;
+}
+
+body.light-mode #chatbotInput {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    color: #1d1d1f !important;
+}
+
+body.light-mode #chatbotInput::placeholder {
+    color: #86868b !important;
+}
+
+body.light-mode #chatbotWindow .border-t {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    background-color: #ffffff !important;
+}
+
