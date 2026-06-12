@@ -66,7 +66,7 @@
         </nav>
 
         <!-- Hero Section -->
-        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 bg-[#050505]">
+        <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20 bg-[#050505]">
             <!-- Background Atmosphere -->
             <div class="absolute inset-0 z-0 pointer-events-none select-none">
                 <div class="absolute top-0 left-0 w-full h-full opacity-60 mix-blend-screen">
@@ -85,50 +85,63 @@
             </div>
 
             <!-- Hero Content -->
-            <div class="container mx-auto px-6 relative z-20 text-center flex flex-col items-center justify-center h-full">
-                <div id="hero-content-wrapper" class="max-w-4xl mx-auto">
-                    <div class="reveal">
-                        <div class="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-6">
-                            <i class="fas fa-shield-halved text-xs"></i> Official Public Information Portal
-                        </div>
-                    </div>
-                    
-                    <div class="reveal" style="transition-delay: 100ms;">
-                        <h1 class="text-5xl md:text-7xl font-medium leading-[1.1] tracking-tight mb-6 text-[#ffe0e0] mix-blend-overlay font-serif" 
-                            style="text-shadow: 0 0 12px rgba(255,255,255,0.71);">
-                            K.G.V. SARITHA, IPS. <br />
-                            <span class="italic font-light text-[#ffe0e0]">DCP (Admn.), Vijayawada.</span>
-                        </h1>
-                    </div>
-                    
-                    <div class="reveal" style="transition-delay: 200ms;">
-                        <div class="flex items-center justify-center gap-2 mb-6 font-mono text-sm text-gray-400">
-                            <span>Focus:</span>
-                            <span id="typewriterText" class="text-[#FF4500] font-semibold"></span>
-                        </div>
-                        <p class="text-base md:text-lg text-[#ffe0e0]/90 max-w-xl mx-auto mb-12 font-light tracking-wide leading-relaxed mix-blend-overlay"
-                           style="text-shadow: 0 0 12px rgba(255,255,255,0.71);">
-                            Scholar by Merit. Officer by Discipline. Leader by Compassion. Official public safety updates and coordination cell.
-                        </p>
-                    </div>
-
-                    <div class="reveal flex flex-col items-center gap-6" style="transition-delay: 400ms;">
-                        <div class="relative group cursor-pointer" onclick="location.href='#about'">
-                           <div class="absolute inset-0 bg-[#FF4500]/20 blur-xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-                           <div class="relative border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3 text-xs md:text-sm text-white/80 uppercase tracking-widest hover:bg-white/10 transition-colors duration-300">
-                             <span>Explore Portal</span>
-                           </div>
+            <div class="container mx-auto px-6 relative z-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Left column: Hero text -->
+                    <div id="hero-content-wrapper" class="lg:col-span-7 flex flex-col items-start text-left">
+                        <div class="reveal">
+                            <div class="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest text-[#FF4500] font-mono mb-6">
+                                <i class="fas fa-shield-halved text-xs"></i> Official Public Information Portal
+                            </div>
                         </div>
                         
-                        <div class="flex items-center gap-4 text-[10px] md:text-xs text-white/40 uppercase tracking-widest mt-8 font-mono">
-                           <span id="current-time">11:11 PM</span>
-                           <span class="w-px h-3 bg-white/20"></span>
-                           <span>VIJAYAWADA, INDIA</span>
+                        <div class="reveal" style="transition-delay: 100ms;">
+                            <h1 class="text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tight mb-6 text-[#ffe0e0] mix-blend-overlay font-serif" 
+                                style="text-shadow: 0 0 12px rgba(255,255,255,0.71);">
+                                K.G.V. SARITHA, IPS. <br />
+                                <span class="italic font-light text-[#ffe0e0]">DCP (Admn.), Vijayawada.</span>
+                            </h1>
+                        </div>
+                        
+                        <div class="reveal" style="transition-delay: 200ms;">
+                            <div class="flex items-center gap-2 mb-6 font-mono text-sm text-gray-400">
+                                <span>Focus:</span>
+                                <span id="typewriterText" class="text-[#FF4500] font-semibold"></span>
+                            </div>
+                            <p class="text-base md:text-lg text-[#ffe0e0]/90 max-w-xl mb-12 font-light tracking-wide leading-relaxed mix-blend-overlay"
+                               style="text-shadow: 0 0 12px rgba(255,255,255,0.71);">
+                                Scholar by Merit. Officer by Discipline. Leader by Compassion. Official public safety updates and coordination cell.
+                            </p>
+                        </div>
+
+                        <div class="reveal flex flex-col sm:flex-row items-start sm:items-center gap-6" style="transition-delay: 400ms;">
+                            <div class="relative group cursor-pointer" onclick="location.href='#about'">
+                               <div class="absolute inset-0 bg-[#FF4500]/20 blur-xl rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                               <div class="relative border border-white/20 bg-white/5 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-3 text-xs md:text-sm text-white/80 uppercase tracking-widest hover:bg-white/10 transition-colors duration-300">
+                                 <span>Explore Portal</span>
+                               </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 text-[10px] md:text-xs text-white/40 uppercase tracking-widest font-mono py-3">
+                               <span id="current-time">11:11 PM</span>
+                               <span class="w-px h-3 bg-white/20"></span>
+                               <span>VIJAYAWADA, INDIA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right column: Big Image -->
+                    <div class="lg:col-span-5 reveal flex justify-center lg:justify-end" style="transition-delay: 200ms;">
+                        <div class="relative w-full max-w-[420px] aspect-[3/4] rounded-3xl overflow-hidden border border-white/15 shadow-[0_20px_50px_rgba(255,69,0,0.15)] group">
+                            <!-- Background glow in frame -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent z-10"></div>
+                            <img src="KGV SarithaIPS.jpg" alt="Smt K.G.V. Saritha, IPS" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- About Section -->
         <section id="about" class="py-32 relative border-t border-white/5">
