@@ -524,9 +524,6 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .hero {
     position: relative;
-    position: sticky;
-    top: 64px;
-    z-index: 10;
     padding-top: 150px;
     padding-bottom: 90px;
     background: linear-gradient(135deg, #E8EBFF 0%, #D8F0FF 50%, #F3E8FF 100%);
@@ -1213,22 +1210,16 @@ body.dark-theme .floating-badge-icon {
    About Officer Section (About Officer — #EEF3FF)
    ========================================================================== */
 .about-section {
-    background: linear-gradient(135deg, #FFF9E6 0%, #FFEBE6 100%);
-    position: relative;
-    position: sticky;
-    top: 64px;
-    z-index: 11;
-    border-radius: 40px 40px 0 0;
-    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    padding: 100px 0 80px 0;
-    margin-top: -40px;
-    transition: background var(--transition-snappy);
-}
-
-body.dark-theme .about-section {
     background: linear-gradient(135deg, #0D0F1B 0%, #12091A 100%);
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.45);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    transition: background var(--transition-snappy);
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-secondary: rgba(30, 41, 59, 0.6);
 }
 
 .about-section::before {
@@ -1423,22 +1414,16 @@ body.dark-theme .philosophy-col {
    Public Outreach Initiatives (Public Outreach — #EEF9F1)
    ========================================================================== */
 .outreach-section {
-    background: linear-gradient(135deg, #EEF9F1 0%, #E6F7ED 100%);
-    position: relative;
-    position: sticky;
-    top: 64px;
-    z-index: 12;
-    border-radius: 40px 40px 0 0;
-    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    padding: 100px 0 80px 0;
-    margin-top: -40px;
-    transition: background var(--transition-snappy);
-}
-
-body.dark-theme .outreach-section {
     background: linear-gradient(135deg, #06150F 0%, #0A1C16 100%);
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.45);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    transition: background var(--transition-snappy);
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-secondary: rgba(30, 41, 59, 0.6);
 }
 
 .outreach-section::before {
@@ -1571,22 +1556,16 @@ body.dark-theme .icon-container-geom {
    Speeches & Media Section (Speeches & Media — #FFF1E8)
    ========================================================================== */
 .media-section {
-    background: linear-gradient(135deg, #F3F1FF 0%, #EAE6FF 100%);
-    position: relative;
-    position: sticky;
-    top: 64px;
-    z-index: 13;
-    border-radius: 40px 40px 0 0;
-    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    padding: 100px 0 80px 0;
-    margin-top: -40px;
-    transition: background var(--transition-snappy);
-}
-
-body.dark-theme .media-section {
     background: linear-gradient(135deg, #0A0F1D 0%, #0F122C 100%);
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.45);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    transition: background var(--transition-snappy);
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-secondary: rgba(30, 41, 59, 0.6);
 }
 
 .media-section::before {
@@ -1782,22 +1761,16 @@ body.dark-theme .media-card {
    Photo Gallery (Photo Gallery — #F5F0FF)
    ========================================================================== */
 .gallery-section {
-    background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
-    position: relative;
-    position: sticky;
-    top: 64px;
-    z-index: 14;
-    border-radius: 40px 40px 0 0;
-    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    padding: 100px 0 80px 0;
-    margin-top: -40px;
-    transition: background var(--transition-snappy);
-}
-
-body.dark-theme .gallery-section {
     background: linear-gradient(135deg, #1C0A15 0%, #11050D 100%);
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.45);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    transition: background var(--transition-snappy);
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-secondary: rgba(30, 41, 59, 0.6);
 }
 
 .gallery-section::before {
@@ -2242,24 +2215,17 @@ body.dark-theme .resource-tile {
    Contact Section & Inset Grouped Settings Form (Contact / Connect — #FFF4F6)
    ========================================================================== */
 #contact {
-    background: linear-gradient(135deg, #FFF5E6 0%, #FFEAD0 100%);
+    background: linear-gradient(135deg, #180F08 0%, #20140A 100%);
     color: var(--text-primary);
     position: relative;
-    position: sticky;
-    top: 64px;
-    z-index: 15;
-    border-radius: 40px 40px 0 0;
-    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    padding: 100px 0 80px 0;
-    margin-top: -40px;
-    margin-bottom: 0;
+    padding: 80px 0;
     transition: background-color var(--transition-snappy), color var(--transition-snappy);
-}
-
-body.dark-theme #contact {
-    background: linear-gradient(135deg, #180F08 0%, #20140A 100%);
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.45);
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-secondary: rgba(30, 41, 59, 0.6);
 }
 
 #contact::before {
@@ -2672,9 +2638,6 @@ textarea.form-control {
     padding: 70px 0 32px 0;
     font-size: 0.8rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    position: relative;
-    z-index: 20;
-    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .footer-grid {
