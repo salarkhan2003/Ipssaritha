@@ -1124,7 +1124,30 @@ body.dark-theme .floating-badge-icon {
    About Officer Section (About Officer — #EEF3FF)
    ========================================================================== */
 .about-section {
-    background-color: var(--bg-about);
+    background: linear-gradient(180deg, var(--bg-about) 0%, rgba(238, 243, 255, 0.4) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-theme .about-section {
+    background: linear-gradient(180deg, var(--bg-about) 0%, rgba(20, 23, 37, 0.4) 100%);
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 45%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(0, 122, 255, 0.04) 0%, transparent 70%);
+    filter: blur(50px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+body.dark-theme .about-section::before {
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.03) 0%, transparent 70%);
 }
 
 .profile-layout {
@@ -1265,7 +1288,30 @@ body.dark-theme .floating-badge-icon {
    Public Outreach Initiatives (Public Outreach — #EEF9F1)
    ========================================================================== */
 .outreach-section {
-    background-color: var(--bg-outreach);
+    background: linear-gradient(180deg, var(--bg-outreach) 0%, rgba(238, 249, 241, 0.4) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-theme .outreach-section {
+    background: linear-gradient(180deg, var(--bg-outreach) 0%, rgba(17, 27, 20, 0.4) 100%);
+}
+
+.outreach-section::before {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 45%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(52, 199, 89, 0.04) 0%, transparent 70%);
+    filter: blur(50px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+body.dark-theme .outreach-section::before {
+    background: radial-gradient(circle, rgba(52, 199, 89, 0.02) 0%, transparent 70%);
 }
 
 .initiatives-grid {
@@ -1364,7 +1410,30 @@ body.dark-theme .icon-container-geom {
    Speeches & Media Section (Speeches & Media — #FFF1E8)
    ========================================================================== */
 .media-section {
-    background-color: var(--bg-media);
+    background: linear-gradient(180deg, var(--bg-media) 0%, rgba(255, 241, 232, 0.4) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-theme .media-section {
+    background: linear-gradient(180deg, var(--bg-media) 0%, rgba(27, 19, 16, 0.4) 100%);
+}
+
+.media-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 45%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(255, 149, 0, 0.04) 0%, transparent 70%);
+    filter: blur(50px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+body.dark-theme .media-section::before {
+    background: radial-gradient(circle, rgba(255, 149, 0, 0.02) 0%, transparent 70%);
 }
 
 .speeches-media-tabs {
@@ -1528,7 +1597,231 @@ body.dark-theme .icon-container-geom {
    Photo Gallery (Photo Gallery — #F5F0FF)
    ========================================================================== */
 .gallery-section {
-    background-color: var(--bg-gallery);
+    background: linear-gradient(180deg, var(--bg-gallery) 0%, rgba(245, 240, 255, 0.4) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-theme .gallery-section {
+    background: linear-gradient(180deg, var(--bg-gallery) 0%, rgba(21, 17, 32, 0.4) 100%);
+}
+
+.gallery-section::before {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 45%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(88, 86, 214, 0.04) 0%, transparent 70%);
+    filter: blur(50px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+body.dark-theme .gallery-section::before {
+    background: radial-gradient(circle, rgba(130, 80, 250, 0.02) 0%, transparent 70%);
+}
+
+.gallery-view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.view-toggle-btn {
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-snappy);
+}
+
+.view-toggle-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--text-highlight);
+    transform: translateY(-1px);
+}
+
+.view-toggle-btn.active {
+    color: #ffffff;
+    background-color: var(--text-highlight);
+    border-color: var(--text-highlight);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+/* Gallery Slider Wrapper and items */
+.gallery-slider-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 32px auto;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--bg-secondary);
+}
+
+.gallery-slider {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .gallery-slide {
+        aspect-ratio: 4/3;
+    }
+}
+
+.gallery-slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 32px 32px 32px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 576px) {
+    .gallery-slide-overlay {
+        padding: 16px 20px 20px 20px;
+    }
+}
+
+.gallery-slide-cat {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-highlight);
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    width: fit-content;
+    backdrop-filter: blur(4px);
+}
+
+.gallery-slide-title {
+    font-size: 1.15rem;
+    font-weight: 850;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.gallery-slide-source {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.slider-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.88rem;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-snappy);
+    z-index: 10;
+}
+
+.slider-nav-btn:hover {
+    background-color: #ffffff;
+    color: var(--text-highlight);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+@media (max-width: 576px) {
+    .slider-nav-btn {
+        width: 36px;
+        height: 36px;
+    }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all var(--transition-snappy);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.slider-dot:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.slider-dot.active {
+    background-color: #ffffff;
+    width: 20px;
+    border-radius: 4px;
 }
 
 .gallery-filters {
@@ -1725,9 +2018,32 @@ body.dark-theme .icon-container-geom {
    Contact Section & Inset Grouped Settings Form (Contact / Connect — #FFF4F6)
    ========================================================================== */
 #contact {
-    background-color: var(--bg-contact);
+    background: linear-gradient(180deg, var(--bg-contact) 0%, rgba(255, 244, 246, 0.4) 100%);
     color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
     transition: background-color var(--transition-snappy), color var(--transition-snappy);
+}
+
+body.dark-theme #contact {
+    background: linear-gradient(180deg, var(--bg-contact) 0%, rgba(30, 16, 18, 0.4) 100%);
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    width: 45%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(255, 59, 48, 0.03) 0%, transparent 70%);
+    filter: blur(50px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+body.dark-theme #contact::before {
+    background: radial-gradient(circle, rgba(255, 59, 48, 0.015) 0%, transparent 70%);
 }
 
 .contact-grid {

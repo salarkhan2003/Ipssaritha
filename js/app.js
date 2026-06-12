@@ -677,4 +677,201 @@ document.addEventListener('DOMContentLoaded', () => {
                "• To access the form, scroll down to the 'Official Public Request Form' section.\n" +
                "• For general police services or complaints, please use the official AP Police Citizen Portal at: https://citizen.appolice.gov.in";
     }
+
+    // --- 11. Photo Gallery Carousel / Slider Logic ---
+    const viewGridBtn = document.getElementById('viewGridBtn');
+    const viewSlideshowBtn = document.getElementById('viewSlideshowBtn');
+    const galleryGrid = document.querySelector('.gallery-grid');
+    const gallerySliderWrapper = document.getElementById('gallerySliderWrapper');
+    const gallerySlider = document.getElementById('gallerySlider');
+    const sliderPrevBtn = document.getElementById('sliderPrevBtn');
+    const sliderNextBtn = document.getElementById('sliderNextBtn');
+    const sliderDotsContainer = document.getElementById('sliderDots');
+
+    let currentSlide = 0;
+    let slidesCount = 0;
+    let autoPlayInterval = null;
+
+    function buildSlides() {
+        if (!gallerySlider) return;
+        
+        // Clear previous slides and dots
+        gallerySlider.innerHTML = '';
+        if (sliderDotsContainer) {
+            sliderDotsContainer.innerHTML = '';
+        }
+        
+        // Find visible gallery items (respecting the active filter)
+        const visibleGalleryItems = Array.from(document.querySelectorAll('.gallery-grid .gallery-item')).filter(item => {
+            return window.getComputedStyle(item).display !== 'none';
+        });
+
+        slidesCount = visibleGalleryItems.length;
+        currentSlide = 0;
+
+        if (slidesCount === 0) {
+            gallerySlider.innerHTML = '<div style="flex: 0 0 100%; display: flex; align-items: center; justify-content: center; height: 300px; color: var(--text-muted);">No images found in this category.</div>';
+            return;
+        }
+
+        visibleGalleryItems.forEach((item, index) => {
+            const imgEl = item.querySelector('.gallery-item-img');
+            const titleEl = item.querySelector('.gallery-item-title');
+            const catEl = item.querySelector('.gallery-item-cat');
+            const sourceEl = item.querySelector('span[style*="font-size: 0.75rem"]');
+
+            const imgSrc = imgEl ? imgEl.src : '';
+            const imgAlt = imgEl ? imgEl.alt : '';
+            const titleText = titleEl ? titleEl.textContent : '';
+            const catText = catEl ? catEl.textContent : '';
+            const sourceText = sourceEl ? sourceEl.textContent : '';
+
+            // Create slide element
+            const slide = document.createElement('div');
+            slide.className = 'gallery-slide';
+            slide.innerHTML = `
+                <img src="${imgSrc}" alt="${imgAlt}" class="gallery-slide-img">
+                <div class="gallery-slide-overlay">
+                    <span class="gallery-slide-cat">${catText}</span>
+                    <h4 class="gallery-slide-title">${titleText}</h4>
+                    <span class="gallery-slide-source">${sourceText}</span>
+                </div>
+            `;
+            
+            // Connect to lightbox modal
+            slide.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = lightbox ? lightbox.querySelector('.lightbox-img') : null;
+                const lightboxTitle = lightbox ? lightbox.querySelector('.lightbox-caption h4') : null;
+                const lightboxCat = lightbox ? lightbox.querySelector('.lightbox-caption p') : null;
+                
+                if (imgSrc && lightboxImg) {
+                    lightboxImg.src = imgSrc;
+                }
+                if (titleText && lightboxTitle) {
+                    lightboxTitle.textContent = titleText;
+                }
+                if (catText && lightboxCat) {
+                    lightboxCat.textContent = catText;
+                }
+                if (lightbox) {
+                    lightbox.classList.add('active');
+                }
+                document.body.style.overflow = 'hidden';
+            });
+            gallerySlider.appendChild(slide);
+
+            // Create pagination dot
+            if (sliderDotsContainer) {
+                const dot = document.createElement('button');
+                dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
+                dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                    resetAutoPlay();
+                });
+                sliderDotsContainer.appendChild(dot);
+            }
+        });
+
+        updateSliderPosition();
+    }
+
+    function goToSlide(index) {
+        if (index < 0) {
+            currentSlide = slidesCount - 1;
+        } else if (index >= slidesCount) {
+            currentSlide = 0;
+        } else {
+            currentSlide = index;
+        }
+
+        updateSliderPosition();
+    }
+
+    function updateSliderPosition() {
+        if (gallerySlider) {
+            gallerySlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Update active class on dots
+        const dots = sliderDotsContainer ? sliderDotsContainer.querySelectorAll('.slider-dot') : [];
+        dots.forEach((dot, idx) => {
+            if (idx === currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 4000);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+
+    function resetAutoPlay() {
+        if (gallerySliderWrapper && gallerySliderWrapper.style.display !== 'none') {
+            startAutoPlay();
+        }
+    }
+
+    if (viewGridBtn && viewSlideshowBtn && galleryGrid && gallerySliderWrapper) {
+        viewGridBtn.addEventListener('click', () => {
+            viewGridBtn.classList.add('active');
+            viewSlideshowBtn.classList.remove('active');
+            galleryGrid.style.display = 'grid';
+            gallerySliderWrapper.style.display = 'none';
+            stopAutoPlay();
+        });
+
+        viewSlideshowBtn.addEventListener('click', () => {
+            viewSlideshowBtn.classList.add('active');
+            viewGridBtn.classList.remove('active');
+            galleryGrid.style.display = 'none';
+            gallerySliderWrapper.style.display = 'block';
+            buildSlides();
+            startAutoPlay();
+        });
+
+        if (sliderPrevBtn) {
+            sliderPrevBtn.addEventListener('click', () => {
+                goToSlide(currentSlide - 1);
+                resetAutoPlay();
+            });
+        }
+
+        if (sliderNextBtn) {
+            sliderNextBtn.addEventListener('click', () => {
+                goToSlide(currentSlide + 1);
+                resetAutoPlay();
+            });
+        }
+
+        // Hover events to pause slideshow
+        gallerySliderWrapper.addEventListener('mouseenter', stopAutoPlay);
+        gallerySliderWrapper.addEventListener('mouseleave', resetAutoPlay);
+
+        // Listen to tab filters to rebuild slides dynamically if currently active
+        const galleryFilters = document.querySelectorAll('.gallery-filters .tab-btn');
+        galleryFilters.forEach(filterBtn => {
+            filterBtn.addEventListener('click', () => {
+                setTimeout(() => {
+                    if (gallerySliderWrapper.style.display !== 'none') {
+                        buildSlides();
+                        resetAutoPlay();
+                    }
+                }, 100);
+            });
+        });
+    }
 });

@@ -456,8 +456,8 @@
     </section>
 
     <!-- Photo Gallery Section -->
-    <section class="section-padding" id="gallery"
-        style="background-color: var(--bg-primary); border-top: 1px solid var(--border-color);">
+    <section class="section-padding gallery-section" id="gallery"
+        style="border-top: 1px solid var(--border-color);">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Visual Archives</span>
@@ -474,6 +474,32 @@
                 <button class="tab-btn" data-filter="awareness-program">Awareness Program</button>
                 <button class="tab-btn" data-filter="media-appearance">Media Appearance</button>
                 <button class="tab-btn" data-filter="press-interaction">Press Interaction</button>
+            </div>
+
+            <!-- Gallery View Toggle -->
+            <div class="gallery-view-toggle reveal">
+                <button class="view-toggle-btn active" id="viewGridBtn">
+                    <i class="fas fa-th"></i> Grid View
+                </button>
+                <button class="view-toggle-btn" id="viewSlideshowBtn">
+                    <i class="fas fa-play"></i> Slideshow View
+                </button>
+            </div>
+
+            <!-- Gallery Slider Wrapper (initially hidden) -->
+            <div class="gallery-slider-wrapper" id="gallerySliderWrapper" style="display: none;">
+                <div class="gallery-slider" id="gallerySlider">
+                    <!-- Slides are dynamically created by JS -->
+                </div>
+                <!-- Navigation Buttons -->
+                <button class="slider-nav-btn prev-btn" id="sliderPrevBtn" aria-label="Previous Slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-nav-btn next-btn" id="sliderNextBtn" aria-label="Next Slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <!-- Slide Dots -->
+                <div class="slider-dots" id="sliderDots"></div>
             </div>
 
             <!-- Gallery Grid -->
