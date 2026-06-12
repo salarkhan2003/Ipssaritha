@@ -106,20 +106,164 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 5. Intersection Observer for Scroll Animations ---
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    
+    // Classify list container elements programmatically for staggered reveals
+    const grids = document.querySelectorAll(
+        '.philosophy-grid, .initiatives-grid, .media-grid, .gallery-grid, .resources-grid'
+    );
+    grids.forEach(grid => {
+        grid.classList.add('reveal-stagger');
+        const children = grid.children;
+        Array.from(children).forEach(child => {
+            child.classList.add('reveal');
+        });
+    });
+
+    // Staggered scroll animation observer
+    const staggerObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Trigger only once
+                const children = entry.target.querySelectorAll('.reveal');
+                children.forEach((child, index) => {
+                    child.style.transitionDelay = `${index * 60}ms`;
+                    child.classList.add('active');
+                });
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -30px 0px'
+        threshold: 0,
+        rootMargin: '0px 0px -10px 0px'
+    });
+    
+    document.querySelectorAll('.reveal-stagger').forEach(grid => {
+        staggerObserver.observe(grid);
     });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    // Single elements reveal observer
+    const singleObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0,
+        rootMargin: '0px 0px -10px 0px'
+    });
+
+    // Find and observe all other revealable items
+    const elementsToReveal = document.querySelectorAll(
+        '.section-header, .portal-badge, .hero-name, .hero-posting, .hero-subtitle, .hero-desc, .hero-actions, .hero-img-wrapper, .disclaimer-banner, .profile-table-container, .profile-portrait, .contact-form-wrapper, .contact-info-card'
+    );
+    elementsToReveal.forEach(el => {
+        if (!el.closest('.reveal-stagger')) {
+            el.classList.add('reveal');
+            singleObserver.observe(el);
+        }
+    });
+
+    // Reveal Hero elements immediately on load for dynamic first impression
+    const heroElements = document.querySelectorAll('.hero .portal-badge, .hero .hero-name, .hero .hero-posting, .hero .hero-subtitle, .hero .hero-desc, .hero .hero-actions, .hero .hero-img-wrapper');
+    heroElements.forEach((el, index) => {
+        el.classList.add('reveal');
+        setTimeout(() => {
+            el.classList.add('active');
+        }, index * 80);
+    });
+
+    // Failsafe backup: reveal elements if they are already in the viewport
+    function revealBackupFailsafe() {
+        const reveals = document.querySelectorAll('.reveal:not(.active)');
+        reveals.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            if (rect.top <= windowHeight - 10 && rect.bottom >= 0) {
+                el.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', revealBackupFailsafe);
+    window.addEventListener('resize', revealBackupFailsafe);
+    window.addEventListener('load', revealBackupFailsafe);
+    setTimeout(revealBackupFailsafe, 100);
+    setTimeout(revealBackupFailsafe, 500);
+    setTimeout(revealBackupFailsafe, 1000);
+
+    // --- 5b. Counter Animation ---
+    const counters = document.querySelectorAll('.counter-num');
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const countTo = parseInt(target.getAttribute('data-target'), 10);
+                let count = 0;
+                const duration = 2000;
+                const stepTime = Math.max(Math.floor(duration / countTo), 15);
+                
+                const timer = setInterval(() => {
+                    count += Math.ceil(countTo / (duration / stepTime));
+                    if (count >= countTo) {
+                        target.textContent = countTo.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        target.textContent = count.toLocaleString();
+                    }
+                }, stepTime);
+                
+                observer.unobserve(target);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    counters.forEach(c => counterObserver.observe(c));
+
+    // --- 5c. Hero Parallax / Floating Cursor effect ---
+    const heroSection = document.querySelector('.hero');
+    const heroImgWrapper = document.querySelector('.hero-img-wrapper');
+    if (heroSection) {
+        heroSection.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            const dx = (clientX - innerWidth / 2) / 40;
+            const dy = (clientY - innerHeight / 2) / 40;
+            if (heroImgWrapper) {
+                heroImgWrapper.style.transform = `translate3d(${dx}px, ${dy}px, 0) scale(1.02)`;
+            }
+        });
+        heroSection.addEventListener('mouseleave', () => {
+            if (heroImgWrapper) {
+                heroImgWrapper.style.transform = 'translate3d(0, 0, 0) scale(1)';
+            }
+        });
+    }
+
+    // --- 5d. Card 3D Pointer Tracking & Sheen effect ---
+    const premiumCards = document.querySelectorAll(
+        '.initiative-card, .media-card, .philosophy-col, .resource-tile, .gallery-item, .contact-form-wrapper, .contact-info-card'
+    );
+    premiumCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const xc = rect.width / 2;
+            const yc = rect.height / 2;
+            const dx = (x - xc) / xc;
+            const dy = (y - yc) / yc;
+            
+            card.style.transform = `perspective(1000px) rotateY(${dx * 3}deg) rotateX(${-dy * 3}deg) translateY(-4px) scale(1.01)`;
+            card.style.setProperty('--x', `${x}px`);
+            card.style.setProperty('--y', `${y}px`);
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale(1)';
+        });
+    });
 
     // Active Highlight on Scroll (Scrollspy)
     const sections = document.querySelectorAll('section[id]');
