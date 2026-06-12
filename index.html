@@ -58,43 +58,82 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-container">
+        <div class="container hero-container">
             <div class="hero-text-side">
                 <div class="hero-title-area">
-                    <span class="portal-badge"><i class="fas fa-shield-halved"></i> Official Public Information Portal</span>
+                    <div class="portal-badge-wrapper">
+                        <span class="portal-badge"><i class="fas fa-shield-halved"></i> Official Public Information Portal</span>
+                    </div>
                     <h1 class="hero-name">K.G.V. SARITHA, IPS</h1>
-                    <h2 class="hero-posting">Deputy Commissioner of Police (Admin), Vijayawada</h2>
+                    <h2 class="hero-posting">Deputy Commissioner of Police (Admn.), Vijayawada</h2>
                 </div>
 
                 <div class="hero-content">
-                    <div class="hero-subtitle" id="typewriterText">Deputy Commissioner of Police (Admin), Vijayawada</div>
+                    <div class="typewriter-container">
+                        <span class="typewriter-prefix">Portal Focus:</span>
+                        <span class="hero-subtitle" id="typewriterText"></span>
+                    </div>
                     <p class="hero-desc">
                         Scholar by Merit. Officer by Discipline. Leader by Compassion. Official public information portal for the Deputy Commissioner of Police (Admin), NTR District Police Commissionerate, Vijayawada.
                     </p>
-                    <div class="hero-image-side">
-                        <div class="hero-img-wrapper">
-                            <img src="images/kgv_saritha.jpg" alt="DCP K.G.V. Saritha, IPS" class="hero-img">
-                        </div>
-                    </div>
-                    <div class="hero-actions" style="flex-wrap: wrap; gap: 1rem;">
+                    <div class="hero-actions">
                         <a href="#about" class="btn btn-primary">About Officer <i class="fas fa-arrow-right"></i></a>
-                        <a href="#outreach" class="btn btn-secondary">Public Outreach <i class="fas fa-bullhorn"></i></a>
-                        <a href="#speeches" class="btn btn-secondary">Speeches & Media <i class="fas fa-newspaper"></i></a>
-                        <a href="#contact" class="btn btn-secondary">Contact / Connect <i class="fas fa-phone"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Contact & Connect <i class="fas fa-phone"></i></a>
+                        <a href="#outreach" class="btn btn-tertiary">Explore Initiatives <i class="fas fa-arrow-down"></i></a>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-num">DCP (Admin)</div>
-                            <div class="stat-label">Current Posting</div>
+                    <div class="hero-stats-grid">
+                        <div class="hero-stat-card">
+                            <div class="stat-card-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="stat-card-info">
+                                <span class="stat-card-num">DCP (Admn.)</span>
+                                <span class="stat-card-label">Current Assignment</span>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-num">Vijayawada</div>
-                            <div class="stat-label">NTR Commissionerate</div>
+                        <div class="hero-stat-card">
+                            <div class="stat-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="stat-card-info">
+                                <span class="stat-card-num">Vijayawada</span>
+                                <span class="stat-card-label">NTR District</span>
+                            </div>
+                        </div>
+                        <div class="hero-stat-card">
+                            <div class="stat-card-icon"><i class="fas fa-award"></i></div>
+                            <div class="stat-card-info">
+                                <span class="stat-card-num">IPS Cadre</span>
+                                <span class="stat-card-label">Service Wing</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="hero-image-side">
+                <div class="hero-image-composition hero-img-wrapper">
+                    <div class="hero-bg-glow"></div>
+                    
+                    <div class="hero-img-frame">
+                        <img src="images/kgv_saritha.jpg" alt="DCP K.G.V. Saritha, IPS" class="hero-portrait-img">
+                    </div>
+                    
+                    <!-- Floating Badge 1: Service Badge -->
+                    <div class="floating-badge badge-top-left">
+                        <div class="floating-badge-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div class="floating-badge-content">
+                            <span class="floating-badge-title">IPS</span>
+                            <span class="floating-badge-desc">Indian Police Service</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge 2: Award Badge -->
+                    <div class="floating-badge badge-bottom-right">
+                        <div class="floating-badge-icon"><i class="fas fa-medal"></i></div>
+                        <div class="floating-badge-content">
+                            <span class="floating-badge-title">AP Police Medal</span>
+                            <span class="floating-badge-desc">Seva Medalist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
