@@ -153,13 +153,19 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: '0px 0px -10px 0px'
     });
 
-    // Find and observe all other revealable items
+    // Find and observe all other revealable items (including new directional variants)
     const elementsToReveal = document.querySelectorAll(
-        '.section-header, .portal-badge, .hero-name, .hero-posting, .hero-subtitle, .hero-desc, .hero-actions, .hero-img-wrapper, .disclaimer-banner, .profile-table-container, .profile-portrait, .contact-form-wrapper, .contact-info-card'
+        '.section-header, .portal-badge, .hero-name, .hero-posting, .hero-subtitle, .hero-desc, .hero-actions, .hero-img-wrapper, .disclaimer-banner, .profile-table-container, .profile-portrait, .contact-form-wrapper, .contact-info-card, .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur, .profile-image-col, .profile-details-col, .contact-info-panel'
     );
     elementsToReveal.forEach(el => {
         if (!el.closest('.reveal-stagger')) {
-            el.classList.add('reveal');
+            if (!el.classList.contains('reveal') && 
+                !el.classList.contains('reveal-left') && 
+                !el.classList.contains('reveal-right') && 
+                !el.classList.contains('reveal-scale') && 
+                !el.classList.contains('reveal-blur')) {
+                el.classList.add('reveal');
+            }
             singleObserver.observe(el);
         }
     });
@@ -167,7 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reveal Hero elements immediately on load for dynamic first impression
     const heroElements = document.querySelectorAll('.hero .portal-badge, .hero .hero-name, .hero .hero-posting, .hero .hero-subtitle, .hero .hero-desc, .hero .hero-actions, .hero .hero-img-wrapper');
     heroElements.forEach((el, index) => {
-        el.classList.add('reveal');
+        if (!el.classList.contains('reveal') && 
+            !el.classList.contains('reveal-left') && 
+            !el.classList.contains('reveal-right') && 
+            !el.classList.contains('reveal-scale') && 
+            !el.classList.contains('reveal-blur')) {
+            el.classList.add('reveal');
+        }
         setTimeout(() => {
             el.classList.add('active');
         }, index * 80);
@@ -175,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Failsafe backup: reveal elements if they are already in the viewport
     function revealBackupFailsafe() {
-        const reveals = document.querySelectorAll('.reveal:not(.active)');
+        const reveals = document.querySelectorAll('.reveal:not(.active), .reveal-left:not(.active), .reveal-right:not(.active), .reveal-scale:not(.active), .reveal-blur:not(.active)');
         reveals.forEach(el => {
             const rect = el.getBoundingClientRect();
             const windowHeight = window.innerHeight || document.documentElement.clientHeight;
